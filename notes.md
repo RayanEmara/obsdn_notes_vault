@@ -32,7 +32,7 @@ $$
 \int_a^b (-u''\varphi + u \varphi) = \int_a^b f \varphi
 $$
 
-This integral obviously has sense iff the integrands are $L^1$:
+This integral obviously has sense if and only if the integrands are $L^1$:
 - To have $u\varphi \in L^1$ we need both of those functions to be $L^2$
 - To have $u'\varphi' \in L^1$ we need both of those derivatives to be in $L^1$ 
 - We also need $f \in L^2$
@@ -52,3 +52,4 @@ Keep in mind that $L^2$ contains discontinuous functions.
 > $H^1(I) = \{u\in L^2(I) ,\ u' \in L^2(I)$ in a weak sense$\}$ 
 
 $H^1$ is the simplest one dimensional Sobolev space. We are going to change the dimensionality of the space, the order of the derivative and the summability of the space. If $f$ becomes continuous and we have a weak formulation we use 
+
