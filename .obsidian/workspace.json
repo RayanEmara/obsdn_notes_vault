@@ -6,6 +6,7 @@
       {
         "id": "2c303b7a5db4f027",
         "type": "tabs",
+        "dimension": 48.282442748091604,
         "children": [
           {
             "id": "98be049b9db0f5ef",
@@ -25,6 +26,7 @@
       {
         "id": "3469c3dd6b27aedd",
         "type": "tabs",
+        "dimension": 51.717557251908396,
         "children": [
           {
             "id": "beab3c4622eed16e",
@@ -170,20 +172,30 @@
   },
   "active": "98be049b9db0f5ef",
   "lastOpenFiles": [
-    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
-    "exports",
+    "images/Pasted image 20240427233111.png",
+    "images/Pasted image 20240427182436.png",
+    "images/Pasted image 20240427174140.png",
+    "images/Pasted image 20240427163554.png",
+    "images/Pasted image 20240427162932.png",
+    "images/Pasted image 20240427162829.png",
+    "images/Pasted image 20240427162531.png",
+    "images/Pasted image 20240427161347.png",
+    "images/Pasted image 20240427193930.png",
+    "images/Pasted image 20240427232503.png",
+    "images/Pasted image 20240427232434.png",
+    "images",
     "New folder",
-    "Pasted image 20240427193930.png",
-    "Pasted image 20240427182436.png",
+    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
+    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pandoc.md",
+    "exports/~$DE - Advanced Partial Differential Equations - F. Gazzola.docx",
+    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.docx",
+    "~$DE - Advanced Partial Differential Equations - F. Gazzola.docx",
+    "APDE - Advanced Partial Differential Equations - F. Gazzola.docx",
+    "APDE - Advanced Partial Differential Equations - F. Gazzola.html",
+    "exports",
     "2024-04-27.md",
     "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "weak derivative.md",
-    "Pasted image 20240427174140.png",
-    "Pasted image 20240427163554.png",
-    "Pasted image 20240427162932.png",
-    "Pasted image 20240427162829.png",
-    "Pasted image 20240427162531.png",
-    "Pasted image 20240427161347.png",
     "notes.html",
     "APDE Notes.md"
   ]

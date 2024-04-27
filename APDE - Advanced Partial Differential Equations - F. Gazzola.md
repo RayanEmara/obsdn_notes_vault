@@ -240,3 +240,76 @@ Implies that $F$ has $-1$ derivative in $L^2$.
 >![[Pasted image 20240427193930.png]]
 
 ## The $\mathbb{R}^n$ case
+We'll take a domain $\Omega$ in $\mathbb{R}^n$ to be an open set, for example $\partial\Omega$.
+>[!example] 
+>$$
+>\Omega = \{ (x,y) \in [0,1]^2 \ , \ x,y \in \mathbb{Q} \}
+>$$
+>$$
+>\partial\Omega = [0,1]^2
+>$$
+
+Our main assumptions will be that $\Omega$ has to be an open set and $\partial\Omega$ smooth. Let's say we want $\partial\Omega \in C^1$, it can be constructed as the union of locally $C^1$ functions. (3.1.2)
+
+Now we want to define $H^1(\Omega)$ (we'll worry about the boundary later on).
+
+>[!definition] Weak derivative in $\mathbb{R}^n$
+>The $i$-th weak derivative $w =\frac{\partial u}{\partial x_i}$ of $u$ is such that:
+>$$
+>\int_{\Omega} u \ \frac{\partial v}{\partial x_i} = \int_{\Omega} w \ v \qquad \forall v \in \mathbb{D}(I)
+>$$
+
+>[!definition] Sobolev space (6.,2.11)
+>Let $\Omega \in \mathbb{R}^n$ be an open set, the Sobolev space $H^1$ is defined as:
+>$$
+> H^1(\Omega) = \left\{ u \in L^2(\Omega) \ ; \ \frac{\partial u}{\partial x_i} \in L^2(\Omega) \qquad \forall i = 1,..,n \right\}
+>$$
+
+(6.2.12)
+Given $u \in H^2(\Omega)$:
+ We take $$H^1(\Omega) \approx L^2(\Omega)^{n+1}$$ 
+ Meaning we take these spaces to be  isomorphic.
+ 
+ We define the gradient as :
+  $$\nabla u = \begin{bmatrix} \frac{\partial u}{\partial x_i} \\ .. \\ .. \end{bmatrix} \in L^2(\Omega)^n$$
+  
+  We define the norm to be:
+  $$| \nabla u |^2 = \sum_{i=1}^{n}  \left( \frac{\partial u}{\partial x_i} \right)$$
+  
+Taking derivative in the classical sense:
+$$
+\left(u  \in C^1(\Omega) \bigcap L^2(\Omega)\right) \land \left(u \frac{\partial u}{\partial x_i} \in L^2(\Omega) \right) \Longrightarrow u \in H^1(\Omega)
+$$
+Moreover the classical partial derivatives coincides with the weak ones, additionally if $\Omega$ is bounded:
+$$
+\Longrightarrow C^1(\overline{\Omega}) \subset H^1(\Omega)
+  $$
+We finally define the bilinear form on $H^1$ to be:
+$$
+(u,v)_{H^1} = \int_\Omega \left( u \cdot v + \nabla u \times\nabla v \right)
+$$
+Where the first is a product between two scalar functions and the second is a scalar product (sum of $n+1$ terms). 
+The former will be sometimes omitted.
+
+We can define a norm (6.2.13) therefore
+>[!theorem] $H^1$ separability in $\mathbb{R}^n$ (6.2.14)
+> $H^1$ is separable since we can:
+> - Define a scalar product such as:
+>   $$
+>   (u,v)_{H^1}
+>  $$
+> - We can define a norm
+> - The space is complete
+>
+>Refer to the book for an actual proof.
+
+>[!definition] Closure to $H^1$ (6.2.15)
+>$$
+> H^1_0(\Omega) = \overline{\mathbb{D}(\Omega)}^{H^1(\Omega)} \subset H^1(\Omega)
+>$$
+>The book goes in depth on how actually it is defined..
+
+>[!example]
+>![[Pasted image 20240427233111.png]]
+
+
