@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d7680335618ab637",
+        "id": "2c303b7a5db4f027",
         "type": "tabs",
         "children": [
           {
-            "id": "e379adc13fa4b094",
+            "id": "98be049b9db0f5ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,26 +18,26 @@
                 "source": true
               }
             },
-            "group": "6307920efbe83c29"
+            "group": "71bba1391d4ea620"
           }
         ]
       },
       {
-        "id": "c06316830f41f93f",
+        "id": "3469c3dd6b27aedd",
         "type": "tabs",
         "children": [
           {
-            "id": "4cd2960a33f9e32c",
+            "id": "beab3c4622eed16e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             },
-            "group": "6307920efbe83c29"
+            "group": "71bba1391d4ea620"
           }
         ]
       }
@@ -168,15 +168,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e379adc13fa4b094",
+  "active": "98be049b9db0f5ef",
   "lastOpenFiles": [
+    "Pasted image 20240427182436.png",
+    "2024-04-27.md",
+    "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "weak derivative.md",
     "Pasted image 20240427174140.png",
     "Pasted image 20240427163554.png",
     "Pasted image 20240427162932.png",
     "Pasted image 20240427162829.png",
     "Pasted image 20240427162531.png",
-    "weak derivative.md",
-    "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "Pasted image 20240427161347.png",
     "notes.html",
     "APDE Notes.md"

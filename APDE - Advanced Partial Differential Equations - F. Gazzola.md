@@ -110,7 +110,7 @@ Can we strengthen the assumptions on the hypotheses on our solution if we streng
 >>  Lu = (u,u')
 >>  $$
 
->[!theorem]
+>[!theorem] Map between Sobolev and Continuous spaces (6.2.5)
 > Every function in $H^1$ can be represented by a continuous function, formally:
 > $$
 > H^1(I)\subset C^0(\overline{I})
@@ -141,3 +141,27 @@ This is because $\mathcal{D}(I)$ is dense in $L^2(I)$, , meaning that the space 
 >$$
 > H^1_0(I) \subsetneq H^1(I)
 >$$
+
+>[!definition]
+>A weak solution satisfies 
+>$$
+>u \in H^1_0(a,b) 
+>$$
+>$$
+>\int_a^b(u'\varphi' + u \ \varphi) = \int_a^bf\varphi \qquad \forall \varphi \in H^1_0(a,b)
+>$$
+>We can rewrite this as 
+>$$
+>(u,\varphi)_{H^1} = (f,\varphi)_{L^2}
+>$$
+>You can then apply **Lax-Milgram** (1.7.4), prove the hypotheses on the bilinear form and conclude that $\exists!u$.
+
+>[!theorem] Poincarè inequality (6.2.9)
+>Let $I=(a,b)$ bounded then:
+>$$
+>||u||_{L^2(I)} \leq (b-a) \ ||u'||_{L^2(a,b)} \qquad \forall u \in H^1_0(I)
+>$$
+>As a consequence the map $u \to ||u'||_{L^2}$ defines a norm in $H^1_0(I)$ which is equivalent to the norm of $H^1(I)$
+>>[!theorem] Proof 
+>> It's better if you use the books proof.
+>>![[Pasted image 20240427182436.png]]
