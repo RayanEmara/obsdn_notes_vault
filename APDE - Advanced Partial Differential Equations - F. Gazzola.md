@@ -4,18 +4,19 @@
 
 
 > [!NOTE] Disclaimer
-> Any reference of type $X.X.X$ where $X \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
+> - Any reference of type $X.X.X$ where $X \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
+> **[Elements of Advanced Mathematical Analysis for Physics and Engineering](https://www.amazon.com/Elements-Advanced-Mathematical-Analysis-Engineering/dp/8874886454) 
+> By: A. Ferrero , F. Gazzola , M. Zanotti 
+> ISBN: 978-88-7488-645-6**. 
+>  I'm using the September 2013 version.
 > 
-> **Elements of Advanced Mathematical Analysis for Physics and Engineering 
-> A. Ferrero , F. Gazzola , M. Zanotti 
-> 978-88-7488-645-6**. 
-> 
-> I'm using the September 2013 version.
+> - These notes are based on the work done by students Ravizza and Mescolini, you can access their notes by logging on the [AIM website](https://aim-mate.it/) and checking out "Portale appunti".
+> - For any questions/mistakes you can contact me via smoke signals and/or CFU donation.
 
 
 
 
-## Sobolev spaces 
+## Sobolev spaces and initial derivation for discrete domains
 
 $C^*$ are banach spaces but not *Hilbert* spaces (i.e. we cannot use Lax-Milgram).
 
@@ -165,3 +166,77 @@ This is because $\mathcal{D}(I)$ is dense in $L^2(I)$, , meaning that the space 
 >>[!theorem] Proof 
 >> It's better if you use the books proof.
 >>![[Pasted image 20240427182436.png]]
+
+Let $H_1$ and $H_2$ be Hilbert spaces such that:
+$$
+H_1 \subset H_2 \qquad (H^1 \subset L^2 , \ H^1_0 \subset L^2)
+$$
+Any Hilbert space is the dual of itself:
+$$
+H_1' \approx H_1
+$$
+$$
+H_2' \approx H_2
+$$
+Therefore if $H_1\subset H_2$ and $H_2'\subset H_1'$ (since a smaller Hilbert space will have a larger number of linear and continuous functionals, this is taken straight from notes I don't condone this behaviour):
+$$
+H_2\subset H_1
+$$
+But this is absurd, look at the hypothesis !
+There's clearly a mistake somewhere and that mistake lies in the assumption that we can use both isomorphisms at the same time, which isn't true due to the **Riesz representation theorem** (1.5.5).
+
+>[!definition] Hilbert (Gelfand) triple (Bottom of 6.2.18)
+>The following is true:
+>$$
+>H_1 \subset H_2 \underbrace{\approx}_{(1)} H_2' \subset H_1'
+>$$
+>$$
+>H_0^1(I)\subset L^2(I) \underbrace{\subset}_{(2)}(H_0^1(I))' = H^{-1}(I)
+>$$
+>Where:
+>1. Is the Riesz representation theorem (1.5.5)
+>2. The pivot space is the space in which we make use of the dual (in this case $L^2$)
+>   
+>   Moreover if we define:
+>   $$
+>  Lu(v) = \int_Iu\ v \qquad \forall u \in L^2(I) 
+>  $$
+>  Then the map $v \to Lu(v)$ is linear and continuous $\forall v \in H^1_0(I)$
+
+>[!definition] Proposition 6.2.19
+>Let $F\in H^{-1}(I)$ then:
+>$$
+>\exists f_0,f_1\in L^2(I)
+>$$
+>Such that:
+>$$
+><F,v> = \int_I f_0v + \int_I f_1 v \qquad \forall v \in H^1_0
+>$$
+>and
+>$$
+>||F||_{H^{-1}(I)} = max\{||f_0||_{L^2}(I) \ , \ ||f_1||_{L^2}(I) \}
+>$$
+>In the case where $I=\mathbb{R}$ then substitute $H^1_0(I)$ with $H^1(I)$.
+>
+>In the case where $I$ is unbounded we can take $f_0 = 0$.
+
+This a sort of representation for linear and continuous functionals over $H^1_0(I)$.
+
+Now suppose that $f_0 = 0$ :
+$$
+<F,v> =\int_I f_1v' \underbrace{=}_{IBP} -\int_I f_1'v
+$$
+but this basically means $F=-f_1'$. 
+
+...
+
+Not so fast bucko, this is an illegal move since $f_1 \in L^2$ so we don't know its derivative necessarily.
+We, on the other hand, can say (by defining it as such) that :
+$$
+F = -f_1'
+$$
+Implies that $F$ has $-1$ derivative in $L^2$.
+>[!example] Dirac delta
+>![[Pasted image 20240427193930.png]]
+
+## The $\mathbb{R}^n$ case
