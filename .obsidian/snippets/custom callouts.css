@@ -1,0 +1,16 @@
+/* The below code creates a metadata field callout*/
+
+.callout[data-callout="theorem"] {
+	--callout-color: 106, 134, 149;
+	--callout-icon: lucide-book-a;
+}
+
+.callout[data-callout="definition"] {
+	--callout-color: 106, 134, 149;
+	--callout-icon: lucide-book-a;
+}
+
+.callout[data-callout="example"] {
+	--callout-color: 106, 134, 149;
+	--callout-icon: lucide-book-a;
+}
