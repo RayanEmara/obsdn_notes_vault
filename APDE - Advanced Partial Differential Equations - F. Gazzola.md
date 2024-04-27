@@ -1,5 +1,19 @@
-# Notes for the Advanced Partial Differential Equations course
+
 ### Held by prof. Gazzola at Politecnico di Milano
+
+
+
+> [!NOTE] Disclaimer
+> Any reference of type $X.X.X$ where $X \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
+> 
+> **Elements of Advanced Mathematical Analysis for Physics and Engineering 
+> A. Ferrero , F. Gazzola , M. Zanotti 
+> 978-88-7488-645-6**. 
+> 
+> I'm using the September 2013 version.
+
+
+
 
 ## Sobolev spaces 
 
@@ -79,7 +93,7 @@ Can we strengthen the assumptions on the hypotheses on our solution if we streng
 >  **Fourth example**: 
 >  ![[Pasted image 20240427162932.png]]
 
->[!theorem] Separability of $H^1$ 
+>[!theorem] Separability of $H^1$ (6.2.3) 
 >$H^1(I)$ is a separable Hilbert space when endowed with he following scalar product.
 >$$
 >(u,v)_{H^1} = \int_I (u'v' + u \ v)
@@ -99,6 +113,31 @@ Can we strengthen the assumptions on the hypotheses on our solution if we streng
 >[!theorem]
 > Every function in $H^1$ can be represented by a continuous function, formally:
 > $$
-> H^1(C)\subset C^0(\overline{I})
+> H^1(I)\subset C^0(\overline{I})
 > $$
+> 
+> This is interesting because $H^1$ also contains discontinuous functions, then how is it a subset of $C^0$ ?? 
+> This is of course not what the theorem is saying, more specifically
+> >[!theorem] Proof
+> >![[Pasted image 20240427174140.png]]
 
+>[!definition] Definition (6.2.7)
+> We define the closure of $\mathcal{D}(I)$ with respect to the $H^1(I)$ norm as the following: 
+> $$
+> H^1_0(I) = \overline{\mathcal{D}(I)}^{H^1(I)}
+> $$
+> Recall that $\mathcal{D}(\Omega)$ is the space of *smooth* functions with compact support over whatever $\Omega$ is. 
+> 
+> Essentially we're defining the space of $H^1(I)$ functions that vanish at the boundary of $I$.
+
+Note that the closure with respect to the $L^2$ norm has special properties, specifically:
+$$
+\overline{\mathcal{D}(I)}^{L^2(I)} = L^2(I)
+$$
+This is because $\mathcal{D}(I)$ is dense in $L^2(I)$, , meaning that the space of *smooth enough* functions with a compact support within the boundaries of $I$ is dense in $L^2$. If you think about it this makes sense since these functions would be $L^\infty$ (i think...).
+
+>[!definition] Remark (6.2.7)
+>If and only if $I \neq \mathbb{R}$
+>$$
+> H^1_0(I) \subsetneq H^1(I)
+>$$
