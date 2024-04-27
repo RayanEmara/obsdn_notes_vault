@@ -1,18 +1,21 @@
 
-### Held by prof. Gazzola at Politecnico di Milano
+### Held by prof. F. Gazzola at Politecnico di Milano
 
 
 
-> [!NOTE] Disclaimer
-> - Any reference of type $X.X.X$ where $X \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
+> [!INFO] Disclaimers
+> Read me! :
+> - These notes were taken during AY 2023/2024 using older material, your mileage may vary. They're meant to accompany the lectures and in no way aim to substitute a professor yapping away at an iPad 30m away.
+> - Any reference of form $\left( x.x.x \right)$ where $x \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
 > **[Elements of Advanced Mathematical Analysis for Physics and Engineering](https://www.amazon.com/Elements-Advanced-Mathematical-Analysis-Engineering/dp/8874886454) 
 > By: A. Ferrero , F. Gazzola , M. Zanotti 
 > ISBN: 978-88-7488-645-6**. 
 >  I'm using the September 2013 version.
 > 
-> - These notes are based on the work done by students Ravizza and Mescolini, you can access their notes by logging on the [AIM website](https://aim-mate.it/) and checking out "Portale appunti".
-> - For any questions/mistakes you can contact me via smoke signals and/or CFU donation.
-
+> - These notes are based on the work done by students Ravizza and Mescolini, you can access their notes by logging on the [AIM website](https://aim-mate.it/) and checking out **Portale appunti**. This would NOT have been possible if not for their notes..
+> - For any questions/mistakes you can reach me [here](mailto:notes@rayanemara.com?subject=APDE%20Notes%20-%20Problem%20problem%20).
+>
+>All rights go to their respective owners.
 
 
 
@@ -312,4 +315,31 @@ We can define a norm (6.2.13) therefore
 >[!example]
 >![[Pasted image 20240427233111.png]]
 
+>[!example] Example (6.2.16)
+>Basically just show that the function and its gradient are $L^2(\Omega)$ and you're good to go. This is also interesting because it's a counter example to the notion that (in $n\geq 2$) a function only need be limited to be in the respective Sobolev space.
+>
+>![[Pasted image 20240427234308.png]]
 
+>[!theorem] Poincarè inequality (6.2.18)
+>Assume that $\Omega$ is bouned. Then there exists a constant $C(\Omega)$ such that:
+>$$
+> \| u \|_{L^2} \leq C \ \| \nabla u \|_{L^2} \qquad \forall u \in H^1_0(\Omega)
+>$$
+>Moreover the map $u \to \| u \|_{L^2}$ us a norm in $H^1_0(\Omega)$ which is equivalent to the norm $\| u \|_{H^1}$.
+>
+>![[Pasted image 20240427234705.png]]
+>
+>Professor then goes on to define the relevant Hilibert triple
+>$$
+>H^1_0(\Omega) \subset L^2(\Omega) \subset H^{-1}(\Omega)
+>$$
+>Where the second continuous embedding is to be meant as follows:
+>Each function $u \in L^2(\Omega)$ is identified with the linear functional $I_u \in H^{-1}(\Omega)$ defined as :
+>$$
+> <I_u, v> \ := \int_{\Omega}u \ v \qquad \forall v \in H^1_0(\Omega)
+>$$
+>Essentially we can map each $L^2$ function to a functional from $H^1$ to $\mathbb{R}$.
+
+Note that we denote by $H^{-1}(\Omega)$ the dual space of $H^1_0(\Omega)$.
+
+GOT TO PAGE 8 OF RAVIZZA
