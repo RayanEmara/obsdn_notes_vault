@@ -388,7 +388,7 @@ We basically take 6.2.11 and apply it a bunch of times to define higher order we
 Note that in the image below the prof *formally* sets $H^0 = L^2$ (6.3.4)
 ![[Pasted image 20240428122540.png]]
 
->[!definition] Multi-index
+>[!definition] Multi-index notation
 >We call a multi-index a vector:
 >$$
 >\alpha=\left( \alpha_1 , ..., \alpha_n \right) \in \mathbb{N}^n
@@ -397,15 +397,28 @@ Note that in the image below the prof *formally* sets $H^0 = L^2$ (6.3.4)
 >$$
 >|\alpha| = \sum_{i=1}^m \alpha_i
 >$$
-
->[!definition] Notation for higher order weak derivatives
->![[Pasted image 20240428122941.png]]
+>We'll use this to define partial derivatives kinda like this:
+>$$
+>D^\alpha v = \frac{\partial^{|\alpha|}v}{\partial x_1^{\alpha_1} , ..., \partial x_n^{\alpha_n}}
+>$$
 
 >[!definition] Definition 6.3.1
->Let $u\in L^1_{\text{loc}}(\Omega)$ and $\Omega$
->HELLO
->TEST
->TEST
->TEST
->TEST
+>Let $u\in L^1_{\text{loc}}(\Omega)$ and $\Omega \subseteq \mathbb{R}^n$ be an open set. Given a multi-index $\alpha$ we'll say that $u$ admits a weak derivative $D^\alpha u$  if there exists $g \in L^1_{\text{loc}}(\Omega)$ such that:
+>$$
+> \int_{\Omega} u D^{\alpha} \varphi = (-1)^{| \alpha|} \int_{\Omega}g \varphi \qquad \forall \varphi \in \mathcal{D}(\Omega)
+>$$
+
+>[!definition] Definition (6.3.2)
+>Let $\Omega$ be as above and $k \in \mathbb{N}$. The $H^k(\Omega)$ is defined by:
+>$$
+>H^k(\Omega) = \left\{
 >
+u \in L^2(\Omega), \qquad D^{\alpha}u \in L^2(\Omega) \qquad \forall | \alpha | \leq k \
+>\right\} \qquad
+>\forall k \in \mathbb{N}
+>$$
+>We take $H^k(\Omega)$ to be a separable Hilbert space with scalar product:
+>$$
+>(u,v)_{H^k(\Omega)} = \int_{\Omega}{\left(u v + \sum_{1 \leq |\alpha| \leq k} D^{\alpha}u\  D^{\alpha}v\right)}
+>$$
+
