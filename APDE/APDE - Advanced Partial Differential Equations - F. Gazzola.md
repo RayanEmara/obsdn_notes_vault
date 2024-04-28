@@ -483,3 +483,6 @@ A problem now arises, how do we define the value of a function $u \in H^s(\Omega
 
 ![[Pasted image 20240428153839.png]]
 
+We'll solve it this way
+>[!definition] Trace operator (6.5.2 - 6.5.4)
+>Assume $\partial \Omega \in C^\infty$, now note that $C^\infty(\overline{\Omega})$ is [[Dense sets | dense]] in $H^s(\Omega) \ \forall s \geq 0$ 

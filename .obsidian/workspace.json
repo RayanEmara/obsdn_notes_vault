@@ -16,7 +16,7 @@
               "state": {
                 "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             },
             "group": "45b39848bf17ae9b"
@@ -172,6 +172,12 @@
   },
   "active": "98be049b9db0f5ef",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "GENERAL/Dense sets.md",
+    "README.md",
+    "GENERAL",
+    "Untitled.md",
     "images/Pasted image 20240428153839.png",
     "images/Pasted image 20240428152727.png",
     "images/Pasted image 20240428152304.png",
@@ -182,14 +188,11 @@
     "images/Pasted image 20240428143529.png",
     "images/Pasted image 20240428142515.png",
     "images/Pasted image 20240428142446.png",
-    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "APDE/Banach spaces.md",
-    "images/Pasted image 20240428141905.png",
     "APDE/Initial.md",
     "APDE",
     "Isaac Newton.md",
     "Law of Inertia.md",
-    "README.md",
     "images",
     "New folder",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
@@ -199,7 +202,6 @@
     "~$DE - Advanced Partial Differential Equations - F. Gazzola.docx",
     "APDE - Advanced Partial Differential Equations - F. Gazzola.docx",
     "APDE - Advanced Partial Differential Equations - F. Gazzola.html",
-    "exports",
     "2024-04-27.md",
     "weak derivative.md",
     "APDE Notes.md"
