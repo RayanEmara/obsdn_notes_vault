@@ -1,7 +1,4 @@
-
 ### Held by prof. F. Gazzola at Politecnico di Milano
-
-
 
 > [!INFO] Disclaimers
 > Read me! :
@@ -16,11 +13,7 @@
 > - For any questions/mistakes you can reach me [here](mailto:notes@rayanemara.com?subject=APDE%20Notes%20-%20Problem%20problem%20).
 >
 >All rights go to their respective owners.
-
-
-
 ## Sobolev spaces and initial derivation for discrete domains
-
 $C^*$ are banach spaces but not *Hilbert* spaces (i.e. we cannot use Lax-Milgram).
 
 > [!definition] Example
@@ -96,6 +89,7 @@ Can we strengthen the assumptions on the hypotheses on our solution if we streng
 >  
 >  **Fourth example**: 
 >  ![[Pasted image 20240427162932.png]]
+
 
 >[!theorem] Separability of $H^1$ (6.2.3) 
 >$H^1(I)$ is a separable Hilbert space when endowed with he following scalar product.
@@ -376,11 +370,15 @@ Note that we denote by $H^{-1}(\Omega)$ the dual space of $H^1_0(\Omega)$.
 >> $$
 >> A sequence that converges in the $H^1(\Omega)$ sense implies convergence in a certain $L^p$ sense, formally:
 >> $$
+>> 
 >>   
 u_n\mathop{\longrightarrow}^{H^1(\Omega)} u 
 \ \Longrightarrow \
 u_n\mathop{\longrightarrow}^{L^p} u
 >> $$
+>
+>>[!definition] Remark 
+>>The functions inside $H^1(\Omega)$ are defined up to a negligible set.
 
 ## The $H^k$ spaces
 We basically take 6.2.11 and apply it a bunch of times to define higher order weak derivatives.
@@ -408,7 +406,7 @@ Note that in the image below the prof *formally* sets $H^0 = L^2$ (6.3.4)
 > \int_{\Omega} u D^{\alpha} \varphi = (-1)^{| \alpha|} \int_{\Omega}g \varphi \qquad \forall \varphi \in \mathcal{D}(\Omega)
 >$$
 
->[!definition] Definition (6.3.2)
+>[!definition] Definition and Separability Theorem (6.3.2 - 6.3.5)
 >Let $\Omega$ be as above and $k \in \mathbb{N}$. The $H^k(\Omega)$ is defined by:
 >$$
 >H^k(\Omega) = \left\{
@@ -421,4 +419,67 @@ u \in L^2(\Omega), \qquad D^{\alpha}u \in L^2(\Omega) \qquad \forall | \alpha | 
 >$$
 >(u,v)_{H^k(\Omega)} = \int_{\Omega}{\left(u v + \sum_{1 \leq |\alpha| \leq k} D^{\alpha}u\  D^{\alpha}v\right)}
 >$$
+>With induced norm:
+>$$
+>\| u\|_{H^k(\Omega)} = \left( \int_{\Omega \land 0 \leq | \alpha| \leq k} \sum |D^{\alpha} u |^2 \right) ^{\frac{1}{2}}
+>$$
+>>[!theorem] Proof 
+>>Check the book for a more detailed proof, here's what the prof wrote,
+>>![[Pasted image 20240428141905.png]]
+
+>[!definition] Separable Banach spaces with no scalar product. (6.3.8)
+>![[Pasted image 20240428142515.png]]
+
+>[!definition] Remark (6.3.4)
+> We define $H^k(\Omega)$ inductively. Check the book.
+
+>[!theorem] Fourier definition for higher order Sobolev spaces(6.3.5 - 6.3.6)
+>We can define $H^k(\mathbb{R}^n, \mathbb{C})$ in a more straightforward way using the Fourier transform. 
+>$$H^k(\mathbb{R}^n, \mathbb{C}) = \{ u \in L^2(\mathbb{R}^n, \mathbb{C}); \quad (1 + |\xi|^2)^{\frac{k}{2}} \ \hat{u}(\xi) \in L^2(\mathbb{R}^n, \mathbb{C}) \}$$
+>In this construction $H^0 = L^2$ because $(1 + |\xi|^2)^{\frac{k}{2}} = 1$ if $k=0$ , we need, however, to define a scalar product to go further.
+>
+>![[Pasted image 20240428143529.png]]
+>
+>Note that $k$ doesn't *have* to be an integer in this construction, it just has to be $k = s \geq 1$. We then end up with what are called **Non Local PDE's** 
+
+## Non-integer $H^k$
+
+As previously mentioned, we'll take $s\geq 0$.
+$$
+H^s(\mathbb{R}^n ,\mathbb{C}) = 
+\left\{ u \in L^2(\mathbb{R}^n ,\mathbb{C}) \ , \quad (1 + |\xi|^2)^{\frac{k}{2}} \hat{u}(\xi) \in L^2(\mathbb{R}^n ,\mathbb{C}) \right\}
+$$
+Endowed with the scalar product
+
+![[Pasted image 20240428145134.png]](6.4.1)
+
+We can extend this construction to a general domain $\Omega$.
+>[!theorem] Theorem (6.4.5)
+>![[Pasted image 20240428145442.png]]
+>![[Pasted image 20240428150406.png]]
+
+## $H^s_0$ spaces and Trace operators
+>[!definition] Definition (6.5.1)
+>For every $s \geq 0$:
+>$$
+>H^s_0(\Omega) = \overline{\mathcal{D}(\Omega)}^{H^s(\Omega)}
+>$$
+>A special case is the following: 
+>$$\Omega = \mathbb{R}^n \Longrightarrow H^s_0(\Omega) = H^s(\Omega)$$ 
+>Otherwise 
+>
+>![[Pasted image 20240428152304.png]]
+>
+>What if  $s \in \left[ 0,1 \right]$ ?
+>Let's put ourselves in the case where $\Omega \neq \mathbb{R}^n$
+>
+>![[Pasted image 20240428152727.png]]
+>
+>Read the book for a better understanding of what's going on in the background. 
+>Essentially $\mathcal{D}(\Omega)$ is dense in $H^s(\Omega)$ if and only if $s \leq \frac{1}{2}$. Meaning the "closure" and the space are the same. (What's written in the pic). 
+>The $\mathbb{R}^n$ case is also explained.
+
+A problem now arises, how do we define the value of a function $u \in H^s(\Omega)$ on the boundary ? Remember these functions are defined up to a negligible set.
+
+![[Pasted image 20240428153839.png]]
 
