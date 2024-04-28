@@ -16,7 +16,7 @@
               "state": {
                 "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             },
             "group": "45b39848bf17ae9b"
@@ -170,7 +170,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98be049b9db0f5ef",
+  "active": "beab3c4622eed16e",
   "lastOpenFiles": [
     "Untitled.canvas",
     "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",

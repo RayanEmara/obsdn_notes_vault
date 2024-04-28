@@ -441,6 +441,8 @@ u \in L^2(\Omega), \qquad D^{\alpha}u \in L^2(\Omega) \qquad \forall | \alpha | 
 >![[Pasted image 20240428143529.png]]
 >
 >Note that $k$ doesn't *have* to be an integer in this construction, it just has to be $k = s \geq 1$. We then end up with what are called **Non Local PDE's** 
+>>[!definition] Remark
+>>This only works on $\mathbb{R}^n$, not on bounded domains (Duh!)
 
 ## Non-integer $H^k$
 
@@ -485,4 +487,18 @@ A problem now arises, how do we define the value of a function $u \in H^s(\Omega
 
 We'll solve it this way
 >[!definition] Trace operator (6.5.2 - 6.5.4)
->Assume $\partial \Omega \in C^\infty$, now note that $C^\infty(\overline{\Omega})$ is [[Dense sets | dense]] in $H^s(\Omega) \ \forall s \geq 0$ 
+>Assume $\partial \Omega \in C^\infty$, now note that $C^\infty(\overline{\Omega})$ is [[Dense sets | dense]] in $H^s(\Omega) \ \forall s \geq 0$ so the idea is to define a sequence that approximates $u$ and evaluate it at the boundary in this fashion:
+>
+>Take $u \in H^s(\Omega)$, $s> \frac{1}{2}$, then construct a sequence:
+>$$
+>\{ u_m \}\subset C^{\infty}(\overline{\Omega})
+>$$
+>Such that:
+>$$
+>u_m \mathop{\longrightarrow}^{H^s(\Omega)} u
+>$$
+>Now define the **Trace operator** as:
+>$$
+>\gamma_0 u = \lim_{m \rightarrow 0} u_m\big\rvert_{\partial \Omega}
+>$$
+>
