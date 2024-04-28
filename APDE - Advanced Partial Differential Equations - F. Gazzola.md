@@ -403,3 +403,9 @@ Note that in the image below the prof *formally* sets $H^0 = L^2$ (6.3.4)
 
 >[!definition] Definition 6.3.1
 >Let $u\in L^1_{\text{loc}}(\Omega)$ and $\Omega$
+>HELLO
+>TEST
+>TEST
+>TEST
+>TEST
+>
