@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "preview",
                 "source": true
               }
@@ -91,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "08e8b49cd03c8f34",
@@ -107,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "APDE - Advanced Partial Differential Equations - F. Gazzola.md"
               }
             }
           }
@@ -171,8 +172,12 @@
   },
   "active": "98be049b9db0f5ef",
   "lastOpenFiles": [
-    "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "images/Pasted image 20240428122941.png",
+    "images/Pasted image 20240428122540.png",
+    "images/Pasted image 20240428121318.png",
+    "images/Pasted image 20240428120422.png",
     "README.md",
+    "APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "images/Pasted image 20240427234705.png",
     "images/Pasted image 20240427234308.png",
     "images/Pasted image 20240427233111.png",
@@ -180,9 +185,6 @@
     "images/Pasted image 20240427174140.png",
     "images/Pasted image 20240427163554.png",
     "images/Pasted image 20240427162932.png",
-    "images/Pasted image 20240427162829.png",
-    "images/Pasted image 20240427162531.png",
-    "images/Pasted image 20240427161347.png",
     "images",
     "New folder",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",

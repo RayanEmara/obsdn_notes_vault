@@ -206,7 +206,7 @@ There's clearly a mistake somewhere and that mistake lies in the assumption that
 >  $$
 >  Then the map $v \to Lu(v)$ is linear and continuous $\forall v \in H^1_0(I)$
 
->[!definition] Proposition 6.2.19
+>[!definition] Proposition 6.2.10
 >Let $F\in H^{-1}(I)$ then:
 >$$
 >\exists f_0,f_1\in L^2(I)
@@ -217,11 +217,11 @@ There's clearly a mistake somewhere and that mistake lies in the assumption that
 >$$
 >and
 >$$
->||F||_{H^{-1}(I)} = max\{||f_0||_{L^2}(I) \ , \ ||f_1||_{L^2}(I) \}
+>||F||_{H^{-1}(I)} = \max\{||f_0||_{L^2}(I) \ , \ ||f_1||_{L^2}(I) \}
 >$$
 >In the case where $I=\mathbb{R}$ then substitute $H^1_0(I)$ with $H^1(I)$.
 >
->In the case where $I$ is unbounded we can take $f_0 = 0$.
+>In the case where $I$ is unbounded we can take $f_0 = 0$. ^6-2-10
 
 This a sort of representation for linear and continuous functionals over $H^1_0(I)$.
 
@@ -342,4 +342,64 @@ We can define a norm (6.2.13) therefore
 
 Note that we denote by $H^{-1}(\Omega)$ the dual space of $H^1_0(\Omega)$.
 
-GOT TO PAGE 8 OF RAVIZZA
+>[!definition] Proposition (6.2.19)
+>Let $\Omega \subset \mathbb{R}^n$ be open and let $F \in H^{-1}(\Omega)$, then $\exists \{ f_i\}_{i=0}^n \in L^"(\Omega)$ such that:
+>$$
+><F,v> \ = \int_{\Omega}f_0 \ v+ \sum_{i=1}^n f_i \frac{\partial u}{\partial x_i} \qquad \forall v \in H^1_0(\Omega)
+>$$
+>And:
+>$$
+>\|F \|_{H^{-1}} = \max_{i=0,...,n}\|f_i\|_L^2
+>$$
+>Moreover, if $\Omega$ is bounded, we can take $f_0 = 0$
+>>[!definition] Remark
+>>Note that in this case $v \in L^2( \Omega )$ because $v \in H^1_0(\Omega)$
+>
+>>[!definition] Proof
+>>There's a proof in the book but here's what the prof wrote:
+>>![[Pasted image 20240428120422.png]]
+
+>[!theorem] Sobolev embedding theorem (6.2.20 - 6.2.21)
+>Let $\Omega \subset \mathbb{R}^n$ be an open domain with $\partial \Omega \in Lip$ and $n \geq 2$ . Then:
+>$$
+>H^1(\Omega) \subset L^p(\Omega) \qquad \begin{cases}
+>\forall 2 \leq p <\infty \qquad if \ n=2 \\
+> \forall 2 \leq p < \frac{2n}{n-2} \qquad if \ n = 3
+\end{cases}
+>$$
+>In addition to the above, if $\Omega$ is bounded, then the embeddings become compact:
+>![[Pasted image 20240428121318.png]]
+>>[!definition] Remark
+>>The following is called the **Critical Sobolev exponent**:
+>> $$
+>> 2^* = \frac{2n}{n-2}
+>> $$
+>> A sequence that converges in the $H^1(\Omega)$ sense implies convergence in a certain $L^p$ sense, formally:
+>> $$
+>>   
+u_n\mathop{\longrightarrow}^{H^1(\Omega)} u 
+\ \Longrightarrow \
+u_n\mathop{\longrightarrow}^{L^p} u
+>> $$
+
+## The $H^k$ spaces
+We basically take 6.2.11 and apply it a bunch of times to define higher order weak derivatives.
+
+Note that in the image below the prof *formally* sets $H^0 = L^2$ (6.3.4)
+![[Pasted image 20240428122540.png]]
+
+>[!definition] Multi-index
+>We call a multi-index a vector:
+>$$
+>\alpha=\left( \alpha_1 , ..., \alpha_n \right) \in \mathbb{N}^n
+>$$
+>With norm:
+>$$
+>|\alpha| = \sum_{i=1}^m \alpha_i
+>$$
+
+>[!definition] Notation for higher order weak derivatives
+>![[Pasted image 20240428122941.png]]
+
+>[!definition] Definition 6.3.1
+>Let $u\in L^1_{\text{loc}}(\Omega)$ and $\Omega$

@@ -30,5 +30,13 @@
       ],
       "key": "M"
     }
+  ],
+  "editor:toggle-inline-math": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "."
+    }
   ]
 }

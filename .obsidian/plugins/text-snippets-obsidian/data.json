@@ -1,10 +1,16 @@
 {
-  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\ndef : >[!definition]\nex : >[!example]\ntm : >[!theorem]",
+  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\ndef : >[!definition]\nex : >[!example]\ntm : >[!theorem]\ndu : \\frac{\\partial u}{\\partial x_i}\nh1 : H^1(\\Omega)\nh10 : H^1_0(\\Omega)\nom : \\Omega\nrn : \\mathbb{R}^n\nr : \\mathbb{R}",
   "snippets": [
     "snippets : It is an obsidian plugin, that replaces your selected text.",
     "def : >[!definition]",
     "ex : >[!example]",
-    "tm : >[!theorem]"
+    "tm : >[!theorem]",
+    "du : \\frac{\\partial u}{\\partial x_i}",
+    "h1 : H^1(\\Omega)",
+    "h10 : H^1_0(\\Omega)",
+    "om : \\Omega",
+    "rn : \\mathbb{R}^n",
+    "r : \\mathbb{R}"
   ],
   "endSymbol": "$end$",
   "newlineSymbol": "$nl$",
