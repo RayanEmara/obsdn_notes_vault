@@ -8,5 +8,6 @@
   },
   "focusNewTab": false,
   "showLineNumber": true,
-  "attachmentFolderPath": "images"
+  "attachmentFolderPath": "images",
+  "livePreview": false
 }

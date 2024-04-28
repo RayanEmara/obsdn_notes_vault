@@ -92,7 +92,7 @@ Can we strengthen the assumptions on the hypotheses on our solution if we streng
 
 
 >[!theorem] Separability of $H^1$ (6.2.3) 
->$H^1(I)$ is a separable Hilbert space when endowed with he following scalar product.
+>$H^1(I)$ is a [[Separable set | separable]] Hilbert space when endowed with he following scalar product.
 >$$
 >(u,v)_{H^1} = \int_I (u'v' + u \ v)
 >$$
@@ -290,7 +290,7 @@ The former will be sometimes omitted.
 
 We can define a norm (6.2.13) therefore
 >[!theorem] $H^1$ separability in $\mathbb{R}^n$ (6.2.14)
-> $H^1$ is separable since we can:
+> $H^1$ is [[Separable set | separable]] since we can:
 > - Define a scalar product such as:
 >   $$
 >   (u,v)_{H^1}
@@ -415,7 +415,7 @@ u \in L^2(\Omega), \qquad D^{\alpha}u \in L^2(\Omega) \qquad \forall | \alpha | 
 >\right\} \qquad
 >\forall k \in \mathbb{N}
 >$$
->We take $H^k(\Omega)$ to be a separable Hilbert space with scalar product:
+>We take $H^k(\Omega)$ to be a [[Separable set | separable]] Hilbert space with scalar product:
 >$$
 >(u,v)_{H^k(\Omega)} = \int_{\Omega}{\left(u v + \sum_{1 \leq |\alpha| \leq k} D^{\alpha}u\  D^{\alpha}v\right)}
 >$$
@@ -527,3 +527,20 @@ We'll solve it this way
 >$$
 >u(x', \varphi(x')) 
 >$$
+
+>[!theorem] Theorem (6.5.3)
+>Let $s > \frac{1}{2}$, the trace operator is such that:
+>$$
+>\gamma_0 \colon H^s(\Omega) \to H^{s -\frac{1}{2}}(\partial\Omega)
+>$$
+>We essentially lose half a degree of derivative. 
+>>[!definition] Remark
+>>$\gamma_0 u$ is only surjective, not injective. We *can* get injectivity if we add more constraints but we can't conclude that with our current formulation (we get it in PDEs, using the lifting operator)
+
+Some examples follow.
+
+![[Pasted image 20240428205615.png]]
+
+>[!definition] Trace operator in the case of the Neumann boundary condition (6.5.7)
+>![[Pasted image 20240428210318.png]]
+

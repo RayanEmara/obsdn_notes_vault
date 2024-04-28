@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2c303b7a5db4f027",
+        "id": "57548693d000fe7c",
         "type": "tabs",
-        "dimension": 48.282442748091604,
         "children": [
           {
-            "id": "98be049b9db0f5ef",
+            "id": "5df383084d660238",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,27 +18,26 @@
                 "source": true
               }
             },
-            "group": "45b39848bf17ae9b"
+            "group": "8683b41166d891b8"
           }
         ]
       },
       {
-        "id": "3469c3dd6b27aedd",
+        "id": "999982eb5ff1384e",
         "type": "tabs",
-        "dimension": 51.717557251908396,
         "children": [
           {
-            "id": "beab3c4622eed16e",
+            "id": "d295f5d5ac7b5904",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             },
-            "group": "45b39848bf17ae9b"
+            "group": "8683b41166d891b8"
           }
         ]
       }
@@ -170,24 +168,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98be049b9db0f5ef",
+  "active": "5df383084d660238",
   "lastOpenFiles": [
+    "images/Pasted image 20240428210318.png",
+    "images/Pasted image 20240428205954.png",
+    "images/Pasted image 20240428205615.png",
+    "images/Pasted image 20240428205613.png",
     "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "images/Pasted image 20240428170128.png",
-    "Untitled.canvas",
+    "GENERAL/Separable set.md",
     "GENERAL/Dense sets.md",
-    "README.md",
-    "GENERAL",
     "Untitled.md",
+    "Untitled.canvas",
+    "README.md",
+    "images/Pasted image 20240428170128.png",
+    "GENERAL",
     "images/Pasted image 20240428153839.png",
     "images/Pasted image 20240428152727.png",
     "images/Pasted image 20240428152304.png",
     "images/Pasted image 20240428150406.png",
     "images/Pasted image 20240428145442.png",
     "images/Pasted image 20240428145134.png",
-    "images/Pasted image 20240428145121.png",
-    "images/Pasted image 20240428143529.png",
-    "images/Pasted image 20240428142515.png",
     "APDE/Banach spaces.md",
     "APDE/Initial.md",
     "APDE",

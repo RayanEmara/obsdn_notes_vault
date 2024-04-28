@@ -1,0 +1,1 @@
+A normed vector space $X$ is said to be **separable** if it admits a countable [[Dense sets | dense]] subset $Y \subseteq X$.
