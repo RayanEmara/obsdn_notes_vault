@@ -501,4 +501,15 @@ We'll solve it this way
 >$$
 >\gamma_0 u = \lim_{m \rightarrow 0} u_m\big\rvert_{\partial \Omega}
 >$$
->
+>This $\gamma_0 u$ is an approximation and in general this definition fails to actually define what happens at the boundary, or even define a way to evaluate *a type* of boundary condition. The book goes *much* more in depth.
+>>[!definition] Redefine the boundary points
+>> We can see any point $x_0 \in \partial \Omega$ as:
+>> $$x_0 = \begin{bmatrix} x_1^0\\ x_2^0 \\ .. \\ x_n^0\end{bmatrix}$$
+>> At this point there exists a veeery tiny $\delta > 0$ and a function $\varphi \in C^\infty(B_\delta(x_0))$ (locally smooth) such that:
+>> $$
+>> x \in \partial \Omega \iff x_n = \varphi(x') \quad \forall x' \in B_\delta(x_0')
+>> $$
+>> Where $x'$ are as below:
+>> 
+>> ![[Pasted image 20240428170128.png]]
+>> 
