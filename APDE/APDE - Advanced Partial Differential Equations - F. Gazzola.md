@@ -513,3 +513,17 @@ We'll solve it this way
 >> 
 >> ![[Pasted image 20240428170128.png]]
 >> 
+>> The relevant Sobolev space is 
+>> $$
+>> H^s(B_\delta (x_0'))
+>> $$
+>> Note that it's of dimension $n-1$
+>
+>We say that $\gamma_0 u \in H^s(\partial\Omega)$ if 
+>$$
+>u_0(x') = u(x' , \varphi(x')) \in H^s(B_\delta(x_0')) \quad \forall x_0 \in \partial \Omega
+>$$
+>The following is called the *restriction* of $u$ to the boundary:
+>$$
+>u(x', \varphi(x')) 
+>$$
