@@ -9,3 +9,5 @@ In order to run obsidian like me you'll need to:
 2. Using your favourite terminal, navigate to your preferred folder using`cd` and run the following command:
  `git clone https://github.com/RayanEmara/obsdn_notes_vault`
 3. You can now open the vault using Obsidian and get started.
+
+All text snippets can be found and edited [here](https://github.com/RayanEmara/obsdn_notes_vault/blob/master/.obsidian/plugins/text-snippets-obsidian/data.json), alternatively you can use the text-snippets GUI by going `Ctrl + P` > Settings > "Text Snippets".
