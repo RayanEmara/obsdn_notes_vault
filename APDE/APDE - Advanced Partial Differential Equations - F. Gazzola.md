@@ -579,4 +579,25 @@ In this section we will make use of [[Continuous embedding  | embeddings]] in or
 > $$
 > H^s(\Omega) \subset L^{\frac{2n}{n-2s}} \qquad \text{when } n > 2s
 > $$
-> 
+
+Here's a demonstration (example 6.6.5) of this theorem in action , assume the following:
+- $n \geq 3$
+- $\Omega$ unbounded
+- $\big\{ u_m\big\} \subset H^1(\Omega)$ such that $\big\| u_m \big\|_{H^1(\Omega)} \leq c < \infty$
+
+Thanks to theorem 1.4.13, we know that:
+$$
+\big\{ u_{m_k} \big\} \quad s.t. \quad u_{m_k}  \mathop{\longrightarrow}^{H^1(\Omega)}_{\text{weakly}} u \in H^1(\Omega)
+$$
+We can therefore conclude that the above sequence converges to $L^p \ \  \forall \ 2 \leq p \leq \frac{2n}{n-2s}$, formally:
+$$
+u_k , u \in L^p{\Omega} \ \ \text{and} \ \ u_k\mathop{\longrightarrow}^{L^p(\Omega)} u 
+$$
+
+### $H^s(\Omega)$ where $s < 0$
+These spaces are defined extending definition [[APDE - Advanced Partial Differential Equations - F. Gazzola#Non-integer $H k$ | 6.4.1]].
+>[!definition] Negative non-integer Sobolev spaces (6.7)
+>Let $s < 0$
+>$$H^s(\mathbb{R}^n) = \big\{ u \in \mathcal{S'}(\mathbb{R}^n) \ ; \ (1 + |\xi|^2)^{\frac{s}{2}} \hat{u}(\xi) \in L^2(\mathbb{R}^n) \big\}$$
+>Where $\mathcal{S'}$ is the complex space of [[Tempered distributions | tempered distributions]] (the dual for the space of fast decreasing functions).
+
