@@ -70,7 +70,7 @@ Keep in mind that $L^2$ contains discontinuous functions.
 > We define the $H^1$ space as the following
 > $H^1(I) = \{u\in L^2(I) ,\ u' \in L^2(I)$ in a weak sense$\}$ 
 
-$H^1$ is the simplest one dimensional Sobolev space. We are going to change the dimensionality of the space, the order of the derivative and the summability of the space. 
+$H^1$ is the simplest one dimensional [[Sobolev space | sobolev]] space. We are going to change the dimensionality of the space, the order of the derivative and the summability of the space. 
 Can we strengthen the assumptions on the hypotheses on our solution if we strengthen those on $f\in L^2$ ? Answer is yes but we'll get there.
 
 >[!example] Examples of weak derivatives

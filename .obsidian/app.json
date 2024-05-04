@@ -8,6 +8,7 @@
   },
   "focusNewTab": false,
   "showLineNumber": true,
-  "attachmentFolderPath": "images",
-  "livePreview": false
+  "attachmentFolderPath": "./images",
+  "livePreview": false,
+  "showUnsupportedFiles": false
 }
