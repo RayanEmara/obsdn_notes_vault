@@ -1,6 +1,6 @@
 ### Held by prof. F. Gazzola at Politecnico di Milano
 
-> [!INFO] Disclaimers
+> [!example] Disclaimers
 > Read me! :
 > - These notes were taken during AY 2023/2024 using older material, your mileage may vary. They're meant to accompany the lectures and in no way aim to substitute a professor yapping away at an iPad 30m away.
 > - Any reference of form $\left( x.x.x \right)$ where $x \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:

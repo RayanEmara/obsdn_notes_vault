@@ -1,6 +1,10 @@
 {
   "accentColor": "",
   "enabledCssSnippets": [
+    "custom line spacing",
+    "academic-pdf-export",
     "custom callouts"
-  ]
+  ],
+  "cssTheme": "",
+  "theme": "system"
 }

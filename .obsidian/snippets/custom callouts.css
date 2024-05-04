@@ -2,15 +2,40 @@
 
 .callout[data-callout="theorem"] {
 	--callout-color: 106, 134, 149;
-	--callout-icon: lucide-book-a;
+	--callout-icon: none;
 }
 
 .callout[data-callout="definition"] {
 	--callout-color: 106, 134, 149;
-	--callout-icon: lucide-book-a;
+	--callout-icon: none;
+
 }
 
 .callout[data-callout="example"] {
 	--callout-color: 106, 134, 149;
-	--callout-icon: lucide-book-a;
+	--callout-icon: none;
+
+}
+
+/* Setting code to look latex-y for pdf exports */
+@media print {
+	.callout[data-callout="theorem"] {
+		--callout-color: 106, 134, 149;
+		--callout-icon: none;
+		font-family: "Latin Modern Roman" !important;
+	}
+
+	.callout[data-callout="definition"] {
+		--callout-color: 106, 134, 149;
+		--callout-icon: none;
+		font-family: "Latin Modern Roman" !important;
+
+	}
+
+	.callout[data-callout="example"] {
+		--callout-color: 106, 134, 149;
+		--callout-icon: none;
+		font-family: "Latin Modern Roman" !important;
+
+	}
 }
