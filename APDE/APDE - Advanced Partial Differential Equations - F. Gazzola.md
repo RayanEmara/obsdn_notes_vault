@@ -1,18 +1,24 @@
-### Held by prof. F. Gazzola at Politecnico di Milano
+##### Held by prof. F. Gazzola at Politecnico di Milano
 
-> [!example] Disclaimers
-> Read me! :
-> - These notes were taken during AY 2023/2024 using older material, your mileage may vary. They're meant to accompany the lectures and in no way aim to substitute a professor yapping away at an iPad 30m away.
-> - Any reference of form $\left( x.x.x \right)$ where $x \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
-> **[Elements of Advanced Mathematical Analysis for Physics and Engineering](https://www.amazon.com/Elements-Advanced-Mathematical-Analysis-Engineering/dp/8874886454) 
-> By: A. Ferrero , F. Gazzola , M. Zanotti 
-> ISBN: 978-88-7488-645-6**. 
->  I'm using the September 2013 version.
-> 
-> - These notes are based on the work done by students Ravizza and Mescolini, you can access their notes by logging on the [AIM website](https://aim-mate.it/) and checking out **Portale appunti**. This would NOT have been possible if not for their notes..
-> - For any questions/mistakes you can reach me [here](mailto:notes@rayanemara.com?subject=APDE%20Notes%20-%20Problem%20problem%20).
->
->All rights go to their respective owners.
+
+ 
+These notes were taken during AY 2023/2024 using older material, your mileage may vary. They're meant to accompany the lectures and in no way aim to substitute a professor yapping away at an iPad 30m away.
+
+Any reference of form $\left( x.x.x \right)$ where $x \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
+ **[Elements of Advanced Mathematical Analysis for Physics and Engineering](https://www.amazon.com/Elements-Advanced-Mathematical-Analysis-Engineering/dp/8874886454)
+ I'm using the September 2013 version.
+ 
+ These notes are based on the work done by students Ravizza and Mescolini, you can access their notes by logging on the [AIM website](https://aim-mate.it/) and checking out **Portale appunti**. This would NOT have been possible without their notes..
+ 
+ For any questions/mistakes you can reach me [here](mailto:notes@rayanemara.com?subject=APDE%20Notes%20-%20Problem%20problem%20).
+
+All rights go to their respective owners.
+
+
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
+
 ## Sobolev spaces and initial derivation for discrete domains
 $C^*$ are banach spaces but not *Hilbert* spaces (i.e. we cannot use Lax-Milgram).
 

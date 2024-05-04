@@ -11,9 +11,9 @@ Auth: Nicklas Vraa
     @page { /* Page structure. */
         margin: 1.5cm !important;
     }
-    a:link, a:visited, a { /* Links. */
-        color: black !important;
-        text-decoration: none !important;
+    a:link, a:visited { /* Links. */
+        color: darkpurple !important;
+        text-decoration: underline !important;
     }
 
     /* Main body of text. ------------------------------------------------------------------ */
