@@ -554,4 +554,23 @@ Some examples follow.
 >![[Pasted image 20240504183110.png]]
 
 ## Embeddings theorems
-In this section 
+In this section we will make use of [[Continuous embedding  | embeddings]] in order to evaluate the regularity of $H^s(\Omega)$ elements.
+
+>[!theorem] Sobolev Theorem (6.6.1)
+> Let $\Omega = \mathbb{R}^n$ or an open set wiht *Lipschitz* boundary. Let $s \geq 0$, then the following [[Continuous embedding | continuous embeddings]] hold:
+> $$
+> H^s(\Omega) \subset \begin{cases} 
+> L^p(\Omega) \quad \forall \ 2 \leq p \leq \frac{2n}{n-2s} \quad \text{if } n >2s \\
+> L^p(\Omega) \quad \forall \ 2 \leq p \leq \infty \qquad  \ \text{if } n = 2s \\
+> C^0(\overline{\Omega}) \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \qquad \qquad \text{if } n < 2s 
+> 
+> \end{cases}
+> $$
+> So if we increase $s$ we increase the regularity but we also have to take into account $n$ (the number of dimensions). 
+> >Theorem 6.6.1 ensures the continuity of the elements of $H^1(\Omega)$ when $n = 1$, while if $n = 2$, the fact that a function belongs to $H^1(\Omega)$ is not any more sufficient to guarantee its continuity. In the case $n = 2$, in order to have continuity of a function $u$ we have to assume that $u \in H^s(\Omega)$ with $s > 1$. We deduce that, as the space dimension increases, the regularity of the functions of $H^s(\Omega)$ decreases.
+> 
+> If $\Omega \subseteq \mathbb{R}^n$ is bounded then all of the above embeddings are [[Compact embedding | compact ]] except for:
+> $$
+> H^s(\Omega) \subset L^{\frac{2n}{n-2s}} \qquad \text{when } n > 2s
+> $$
+> 
