@@ -601,3 +601,28 @@ These spaces are defined extending definition [[APDE - Advanced Partial Differen
 >$$H^s(\mathbb{R}^n) = \big\{ u \in \mathcal{S'}(\mathbb{R}^n) \ ; \ (1 + |\xi|^2)^{\frac{s}{2}} \hat{u}(\xi) \in L^2(\mathbb{R}^n) \big\}$$
 >Where $\mathcal{S'}$ is the complex space of [[Tempered distributions | tempered distributions]] (the dual for the space of fast decreasing functions).
 
+If we let $k$ be an integer then we can define the following duality:
+$$
+H^{-k}(\Omega) = \big[ H^k_0(\Omega) \big]'
+$$
+We can also define the following Hilbert triple:
+$$
+H^k_0(\Omega) \subset L^2(\Omega) \subset H^{-k}(\Omega)
+$$
+At this point there's a lot of boilerplate that can honestly be studied far better in the book anyway, I won't bother writing it down since it's really just stuff that is gonna be referenced later. I'll include references to the book whenever needed.
+
+## Weak solutions of partial differential equations
+Let $\Omega$ be an open, bounded subset of $\mathbb{R}^n$  and let its boundary $\partial \Omega \in C^1$. Take $\alpha \in \mathbb{R}$ , $f \in L^2(\Omega)$. 
+We define the Homogeneous Dirichlet Problem (7.1) as:
+$$
+\begin{cases}
+-\Delta u +  \alpha u &= f \qquad &&in  \ \Omega \\
+u &=0 &&on\ \partial \Omega
+\end{cases}
+$$
+If $f \in C^0 (\Omega)$ and $u \in C^2 (\Omega) \ \cap \ C^0 (\overline{\Omega})$ the equation is satisfied in the classical sense, meaning $u$ is a classical solution.
+
+A **weak solution** on the other hand satisfies (7.1.1) $u \in H^1_0(\Omega)$ and:
+$$
+\int_{\Omega} \nabla u \nabla v + \alpha \int_{\Omega} uv = \int_{\Omega} fv \quad \forall v \in H^1_0(\Omega)
+$$
