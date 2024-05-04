@@ -5,6 +5,6 @@
     "academic-pdf-export",
     "custom callouts"
   ],
-  "cssTheme": "",
+  "cssTheme": "Minimal",
   "theme": "system"
 }

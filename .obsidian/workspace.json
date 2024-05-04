@@ -13,11 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "source",
                 "source": true
               }
-            }
+            },
+            "group": "72058d3661c8f32c"
           }
         ]
       },
@@ -35,7 +36,8 @@
                 "mode": "preview",
                 "source": true
               }
-            }
+            },
+            "group": "72058d3661c8f32c"
           }
         ]
       }
@@ -103,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md"
               }
             }
           }
@@ -165,12 +167,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3904cd02859b0055",
+  "active": "58de5a0f3e0c5f3e",
   "lastOpenFiles": [
-    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "README.md",
-    "example.md",
     "exports/example.pdf",
+    "README.md",
+    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "example.md",
     "Demo.md",
     "GENERAL/Sobolev space.md",
     "GENERAL/Separable set.md",
