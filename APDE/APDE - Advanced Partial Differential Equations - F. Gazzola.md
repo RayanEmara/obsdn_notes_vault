@@ -1,7 +1,42 @@
-##### Held by prof. F. Gazzola at Politecnico di Milano
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+# Table of contents 
+ ```table-of-contents
+title:
+style: nestedList # TOC style (nestedList|inlineFirstLevel)
+minLevel: 2 # Include headings from the specified level
+maxLevel: 2 # Include headings up to the specified level
+includeLinks: false # Make headings clickable
+debugInConsole: false # Print debug info in Obsidian console
+```
 
 
- 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
+
+## Disclaimers and preface
+
 These notes were taken during AY 2023/2024 using older material, your mileage may vary. They're meant to accompany the lectures and in no way aim to substitute a professor yapping away at an iPad 30m away.
 
 Any reference of form $\left( x.x.x \right)$ where $x \in \mathbb{N}$ is a reference to a a Theorem/Definition/etc... in the professors own book:
@@ -18,6 +53,8 @@ All rights go to their respective owners.
 <div style="page-break-after: always; visibility: hidden">
 \pagebreak
 </div>
+
+
 
 ## Sobolev spaces and initial derivation for discrete domains
 $C^*$ are banach spaces but not *Hilbert* spaces (i.e. we cannot use Lax-Milgram).
@@ -626,3 +663,17 @@ A **weak solution** on the other hand satisfies (7.1.1) $u \in H^1_0(\Omega)$ an
 $$
 \int_{\Omega} \nabla u \nabla v + \alpha \int_{\Omega} uv = \int_{\Omega} fv \quad \forall v \in H^1_0(\Omega)
 $$
+If $u$ weak solution is $C^2 (\overline{\Omega})$ then you can easily conclude that it is also a classical solution.
+
+>[!example] Important counter example
+>If $n > 1$ then:
+>$$
+>\Delta u \in C^0 (\Omega) \ \centernot\Longrightarrow \  u \in C^2 (\Omega)
+>$$
+>In higher dimensional spaces it's wise to avoid formulating your problems using such regular spaces, prefer instead Sobolev spaces
+
+>[!example] Remark (7.1.2)
+>If $u$ is a classical solution of (7.1) then necessarily $f \in C^0 (\overline{\Omega})$. Therefore if $f$ is $L^2(\Omega)$ we cannot expect a weak solution to also be classical.
+
+>[!theorem] Theorem (7.1.3)
+>

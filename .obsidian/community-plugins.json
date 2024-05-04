@@ -1,5 +1,6 @@
 [
   "obsidian-pandoc",
   "obsidian-git",
-  "text-snippets-obsidian"
+  "text-snippets-obsidian",
+  "automatic-table-of-contents"
 ]

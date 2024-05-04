@@ -9,11 +9,11 @@ Auth: Nicklas Vraa
 
     /* Document-wide. ---------------------------------------------------------------------- */
     @page { /* Page structure. */
-        margin: 1.5cm !important;
+        margin: 1.2cm !important;
     }
     a:link, a:visited { /* Links. */
-        color: darkpurple !important;
-        text-decoration: underline !important;
+        color: darkblue !important;
+        /* text-decoration: underline !important; */
     }
 
     /* Main body of text. ------------------------------------------------------------------ */
