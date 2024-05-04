@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "GENERAL/Continuous embedding.md",
                 "mode": "source",
                 "source": true
               }
@@ -32,7 +32,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "GENERAL/Continuous embedding.md",
                 "mode": "preview",
                 "source": true
               }
@@ -89,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "08e8b49cd03c8f34",
@@ -106,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "GENERAL/Continuous embedding.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "GENERAL/Continuous embedding.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md"
+                "file": "GENERAL/Continuous embedding.md"
               }
             }
           }
@@ -170,12 +169,16 @@
   },
   "active": "5df383084d660238",
   "lastOpenFiles": [
+    "GENERAL/Compact embedding.md",
+    "GENERAL/Continuous embedding.md",
+    "GENERAL/Separable set.md",
+    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
+    "images/Pasted image 20240504183110.png",
     "images/Pasted image 20240428210318.png",
     "images/Pasted image 20240428205954.png",
     "images/Pasted image 20240428205615.png",
     "images/Pasted image 20240428205613.png",
-    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "GENERAL/Separable set.md",
     "GENERAL/Dense sets.md",
     "Untitled.md",
     "Untitled.canvas",
@@ -186,8 +189,6 @@
     "images/Pasted image 20240428152727.png",
     "images/Pasted image 20240428152304.png",
     "images/Pasted image 20240428150406.png",
-    "images/Pasted image 20240428145442.png",
-    "images/Pasted image 20240428145134.png",
     "APDE/Banach spaces.md",
     "APDE/Initial.md",
     "APDE",
@@ -195,7 +196,6 @@
     "Law of Inertia.md",
     "images",
     "New folder",
-    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pandoc.md",
     "exports/~$DE - Advanced Partial Differential Equations - F. Gazzola.docx",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.docx",

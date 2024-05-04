@@ -544,3 +544,14 @@ Some examples follow.
 >[!definition] Trace operator in the case of the Neumann boundary condition (6.5.7)
 >![[Pasted image 20240428210318.png]]
 
+>[!definition] $H^s_0(\Omega)$
+>$$
+>H^s_0(\Omega) = \overline{\mathcal{D}(\Omega)}^{H^s(\Omega)}
+>$$
+
+
+>[!theorem] Theorem (6.5.8)
+>![[Pasted image 20240504183110.png]]
+
+## Embeddings theorems
+In this section 
