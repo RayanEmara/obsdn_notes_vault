@@ -7,6 +7,7 @@ If you're here for the notes, go to the [exports folder](https://github.com/Raya
 In order to run obsidian like me you'll need to:
 1. [Install Obsidian](https://obsidian.md/download) for your system.
 2. Using your favourite terminal, navigate to your preferred folder using`cd` and run the following command:
+
  `git clone https://github.com/RayanEmara/obsdn_notes_vault`
 3. You can now open the vault using Obsidian and get started.
 
@@ -14,5 +15,4 @@ All text snippets can be found and edited [here](https://github.com/RayanEmara/o
 
 ## Custom export
 Exports are now closer to LaTeX thanks to [NicklasVraa's Obsidian academic export](https://github.com/NicklasVraa/Obsidian-academic-export?tab=readme-ov-file) css snippet.
-
 You will need to download Latin Modern Roman 10 from [here](https://www.fontsquirrel.com/fonts/latin-modern-roman)
