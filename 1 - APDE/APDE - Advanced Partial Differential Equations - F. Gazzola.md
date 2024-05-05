@@ -25,7 +25,7 @@ $$
 title:
 style: nestedList # TOC style (nestedList|inlineFirstLevel)
 minLevel: 2 # Include headings from the specified level
-maxLevel: 2 # Include headings up to the specified level
+maxLevel: 4 # Include headings up to the specified level
 includeLinks: false # Make headings clickable
 debugInConsole: false # Print debug info in Obsidian console
 ```
@@ -649,6 +649,7 @@ $$
 At this point there's a lot of boilerplate that can honestly be studied far better in the book anyway, I won't bother writing it down since it's really just stuff that is gonna be referenced later. I'll include references to the book whenever needed.
 
 ## Weak solutions of partial differential equations
+### Homogeneous Dirichlet problem
 Let $\Omega$ be an open, bounded subset of $\mathbb{R}^n$  and let its boundary $\partial \Omega \in C^1$. Take $\alpha \in \mathbb{R}$ , $f \in L^2(\Omega)$. 
 We define the Homogeneous Dirichlet Problem (7.1) as:
 $$
@@ -676,4 +677,104 @@ If $u$ weak solution is $C^2 (\overline{\Omega})$ then you can easily conclude t
 >If $u$ is a classical solution of (7.1) then necessarily $f \in C^0 (\overline{\Omega})$. Therefore if $f$ is $L^2(\Omega)$ we cannot expect a weak solution to also be classical.
 
 >[!theorem] Theorem (7.1.3)
->
+>Let $\alpha \geq 0$ and $f \in L^2(\Omega)$ then there exists a *unique* solution $u \in H^1_0(\Omega)$ of 7.1 (the Homogeneous Dirichlet problem). 
+>Moreover the unique solution is also the unique minimizer of $J(v)$:
+>$$
+>J(v) = \frac{1}{2} \int_{\Omega}\big(|\nabla v |^2 + \alpha v^2 \big) - \int_{\Omega} fv \quad v \in H^1_0(\Omega)
+>$$
+>The intuition for the "minimum" being unique is that this is basically a parabola.
+>>[!theorem] Proof
+>>We endow the Hilbert space $H^1_0(\Omega)$ with the following scalar product (6.2.18):
+>>$$
+>>(u,v)=\int_\Omega\nabla u\nabla v\quad\forall u,v\in H_0^1(\Omega).
+>>$$
+>>Given the assumption $a \geq 0$, the bilinera form:
+>>$$
+>>a(u,v)=\int_\Omega(\nabla u\nabla v+\alpha uv)\quad\forall u,v\in H_0^1(\Omega)
+>>$$
+>>is coercive over $H^1_0(\Omega)$.
+>>Moreover the linear form $v \to \int_{\Omega}fv$ is continuous over $H^1_0(\Omega)$.
+>>Then the assertion follows from the Lax-Milgram theorem.
+
+It's interesting to note that what we wrote above doesn't necessarily break for $\alpha <0$, in fact, it *can* work. By the Poincarè inequality there exists a constant $\lambda_1 > 0$ such that:
+$$
+\lambda_1 \|u \|^2_{L^2(\Omega)} \leq \|\nabla u\|^2_{L^2(\Omega)} \quad \forall u \in H^1_0(\Omega)
+$$
+Now....
+$$
+\begin{align}
+\int_{\Omega}(|\nabla u|^{2}+\alpha u^{2}) &=\int_{\Omega}|\nabla u|^{2}+\alpha\int_{\Omega}u^{2} \\
+\text{(using Poincarè)}&\geq \int_{\Omega}|\nabla u|^{2}-\frac{|\alpha|}{\lambda_1}\int_{\Omega}|\nabla u|^{2} \\
+&=\frac{\lambda_{1}-|\alpha|}{\lambda_{1}}\int_{\Omega}|\nabla u|^{2}
+
+\end{align}
+$$
+
+In fact if $\alpha < 0$:
+$$
+\alpha\lambda_{1}\|u\|_{L^{2}(\Omega)}^{2}\geq\alpha\|\nabla u\|_{L^{2}(\Omega)}^{2}=>\alpha\|u\|_{L^{2}(\Omega)}^{2}\geq-\frac{|\alpha|}{\lambda_{1}}\|\nabla u\|_{L^{2}(\Omega)}^{2}
+$$
+Meaning $\alpha$ just needs to be bigger than $-\lambda_1$ to retain coercivity.
+
+
+>[!example] Exercise - Alternative characterization of poincarè constant (7.1.5) 
+> Let $\Omega \subset \mathbb{R}^n$ be an open, bounded set with $\partial \Omega \in C^1$. Find $\lambda \in \mathbb{R}$ such that $u = 0$ is not the only solution to the HDP:
+> $$
+> \begin{cases}-\Delta u=\lambda u&\mathrm{~in~}\Omega\\u=0&\mathrm{~on~}\partial\Omega\end{cases}
+> $$
+> Generally speaking $u= 0$ is always a solution to Eigenvalue problems, let's assume $u \neq 0$ as a sort of 3rd constraint to our problem:
+> $$
+> \int_{\Omega}|\nabla u|^{2}=\lambda\int_{\Omega}u^{2} \Longrightarrow \lambda>0
+> $$
+> Note that if $\lambda = 0$ then $u=0$ is the only solution.
+> The spectrum of $-\Delta$, which contains the values of $\lambda$ for which the problem has a non trivial solution:
+> $$
+> \sigma (-\Delta) \subset (0 , +\infty)
+> $$
+> In fact thanks to Theorem 1.8.10 we can order the eigenvalues of $-\Delta$ as a sequence of strictly increasing values.
+> $$
+> \sigma(-\Delta)=\{0<\lambda_{1}<\lambda_{2}\leq\lambda_{3}\cdots\leq\lambda_{n}\leq\cdots\}
+> $$
+> Therefore we conclude that 
+> $$
+> \lambda_{1}=\inf_{u\in H_{0}^{\prime}(\Omega)\setminus\{0\}}\frac{\|\nabla u\|_{2}^{2}}{\|u\|_{2}^{2}}
+> $$
+
+There's a small tangent on Frèchet derivatives, there's no mention of it in the book so I'll avoid it, you can find references to it at page 17 of Ravizza's notes.
+### Non Homogeneous Dirichlet problem
+Let $\Omega \subset \mathbb{R}^n$ be a bounded open set of class $C^1$, we look for a function $u \colon \overline{\Omega} \to \mathbb{R}$ satisfying:
+$$
+\begin{cases}
+-\Delta u +  \alpha u &= f \qquad &&in  \ \Omega \\
+u &=g &&on\ \partial \Omega
+\end{cases}
+$$
+with $f$ defined over $H^{-1} (\Omega)$, $g$ on $\ H^{1/2}(\partial\Omega)$ and $\alpha \in \mathbb{R}$. If $g \in H^{1/2}(\partial\Omega)$ we can use Theorem 6.5.3 to infer that:
+$$
+\exists \ u_0 \in H^1(\Omega) \ s.t. \ \gamma_0 u_0 = g
+$$
+We then define the following set which will aid in later constructions:
+$$
+K=\{v\in H^{1}(\Omega); v-u_{0}\in H_{0}^{1}(\Omega)\}
+$$
+>[!definition] Classical solution for NHDP (7.1.7)
+>A classical solution for the NHDP is a function $u \in C^2 (\overline{\Omega})$ satisfying the NHDP.
+
+>[!definition] Weak solution for the NHDP (7.1.7)
+>A weak solution for the NHDP is a function $u \in K$ such that:
+>$$
+>\int_{\Omega}(\nabla u\nabla v+\alpha uv)=<f,v>\quad\forall v\in H_{0}^{1}(\Omega)
+>$$
+>Where $<f,v>$ is equal to $\int_{\Omega}fv$
+>The same reasoning as HDP applies, therefore any classical solution is automatically also a weak solution, conversely any weak solution $u \in C^2 (\overline{\Omega})$ is also a classical solution.
+
+We'll now analyse the existence of weak solutions
+>[!theorem] Dirichlet Principle (7.1.8)
+>Let $\alpha > -\lambda_1$ (where the eigenvalue is to be meant as the smallest eigenvalue under homogeneous Dirichlet conditions), $f \in H^{-1}(\Omega)$, $g \in H^{\frac{1}{2}}(\partial\Omega)$.
+>Then the NHDP admits a unique *weak* solution $\overline{u} \in K$.
+>Moreover $\overline{u}$ is a weak solution if and only if it minimizes the Dirichlet *energy* over $K$
+>$$
+>J(u)=\frac{1}{2}\int_{\Omega}(|\nabla u|^{2}+\alpha u^{2}) - <f,u>
+>$$
+>>[!theorem] Proof
+>>The proof was given by the prof but it is way too long, it's far better to study it from the book, if need be you can also make use of Ravizza p.20 

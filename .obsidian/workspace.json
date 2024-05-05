@@ -4,40 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "ba4d0c069aee3afb",
+        "id": "942bcc5d4dc82403",
         "type": "tabs",
         "children": [
           {
-            "id": "d7e3df0d4143a67b",
+            "id": "62173f28ed7df3f8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "6415f9fc2b53e73a"
+            "group": "2a6973de606950c3"
           }
         ]
       },
       {
-        "id": "3aed736baf60ccb8",
+        "id": "e79d03168fdbbdbb",
         "type": "tabs",
         "children": [
           {
-            "id": "a057c226d4b3ac7a",
+            "id": "0ef2c0bef4ce85df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "mode": "preview",
                 "source": true
               }
             },
-            "group": "6415f9fc2b53e73a"
+            "group": "2a6973de606950c3"
           }
         ]
       }
@@ -89,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "08e8b49cd03c8f34",
@@ -105,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md"
+                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md"
               }
             }
           }
@@ -167,7 +168,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d7e3df0d4143a67b",
+  "active": "62173f28ed7df3f8",
   "lastOpenFiles": [
     "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",

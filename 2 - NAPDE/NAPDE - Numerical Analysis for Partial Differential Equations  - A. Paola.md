@@ -26,7 +26,7 @@ title:
 style: nestedList # TOC style (nestedList|inlineFirstLevel)
 minLevel: 2 # Include headings from the specified level
 maxLevel: 2 # Include headings up to the specified level
-includeLinks: false # Make headings clickable
+includeLinks: true # Make headings clickable
 debugInConsole: false # Print debug info in Obsidian console
 ```
 
