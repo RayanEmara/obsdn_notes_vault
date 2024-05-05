@@ -1,6 +1,47 @@
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+# Table of contents 
+ ```table-of-contents
+title:
+style: nestedList # TOC style (nestedList|inlineFirstLevel)
+minLevel: 2 # Include headings from the specified level
+maxLevel: 2 # Include headings up to the specified level
+includeLinks: false # Make headings clickable
+debugInConsole: false # Print debug info in Obsidian console
+```
+
+
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
+
 ## Disclaimer and preface
 These notes were taken during AY 2023-2024, the lecturer is prof. Antonietti Paola.
 For any questions or errors you can reach out to me [here](mailto:notes@rayanemara.com?subject=NAPDE%20Notes%20-%20Problem%20problem%20).
+
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
 
 # Part 1
 ## Boundary-value problems
