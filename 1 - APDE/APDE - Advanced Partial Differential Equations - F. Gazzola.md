@@ -21,6 +21,8 @@ $$
 $$
 $$
 # Table of contents 
+
+
  ```table-of-contents
 title:
 style: nestedList # TOC style (nestedList|inlineFirstLevel)
@@ -820,7 +822,7 @@ The previous identity holds true for every $\nu\in H^1(\Omega)$, since $C^1(\ove
 
 We now want to prove the existence and uniqueness of a weak solution
 
->[!theorem] Existence and uniqueness of a NHNP weak solution
+>[!theorem] Existence and uniqueness of a NHNP weak solution (7.1.12)
 >Let $f \in L^{2}(\Omega),g\in H^{-1/2}(\partial\Omega)$ and $\alpha>0.$Then there exists a unique weak solution $u \in H^l( \Omega )$ Moreover, $u$ can be obtained as the solution of the following minimum problem
 >$$
 >\min_{v\in H^{1}(\Omega)}\left\{\frac{1}{2}\int_{\Omega}(|\nabla v|^{2}+\alpha v^{2})-\int_{\Omega}fv-\langle g,\gamma_{0}v\rangle\right\}.
@@ -828,4 +830,78 @@ We now want to prove the existence and uniqueness of a weak solution
 >>[!theorem] Proof
 >>You can prove this by applying the Lax-Milgram theorem 1.7.4
 
-Just like for homogeneous we want to explore what happens when we relax the $a > 0$ constraint 
+Just like for homogeneous we want to explore what happens when we relax the $a > 0$ constraint.
+Let's set $a=0$, the problem becomes
+$$
+\left\{\begin{array}{ll}-\Delta u=f&\quad\text{in} \Omega\\\frac{\partial u}{\partial\nu}=g&\quad\text{on} \partial\Omega\end{array}\right.
+$$
+Assume that the problem admits a solution $u \in C^2 (\Omega) \cap C^1 (\overline{\Omega})$, then by the divergence theorem it holds:
+$$
+\int_{\Omega}f=-\int_{\Omega}\Delta u=-\int_{\Omega}div(\nabla u)=-\int_{\Omega}\frac{\partial u}{\partial \nu}=-\int_{\Omega\Omega}g=-\langle g,1\rangle
+$$
+If $\exists$ a solution $u$ to this problem then the following holds:
+$$
+\int_{\Omega} f = - \int_{\partial \Omega}g
+$$
+But this same exact relation is satisfied by $\hat{u} = u + k$ where $k$ is a constant. More on this can be found in Theorem 3.6.7. (btw I think the book got the second property wrong, it's supposed to be an equal !)
+Moreover if $\int_{\Omega} f \neq - \int_{\partial \Omega}g$ then there are **no** solutions.
+
+Alternatively one could study the variational version of the problem 
+$$
+\left\{\begin{array}{ll}-\Delta u=\lambda u&\quad\text{in} \Omega\\[1ex]\frac{\partial u}{\partial\nu}=0&\quad\text{on} \partial\Omega.\end{array}\right.
+$$
+if we multiply by $u$ and integrate by parts as we're so used to do by now we get:
+$$
+\int_{\Omega}|\nabla u|^{2}=\lambda\int_{\Omega}u^{2}
+$$
+Therefore if $\lambda = 0$ we get $\nabla u= 0$ implying that $u$ is a constant. 
+
+>[!theorem] Existence theorem for NHNP
+>Assume that $f \in L^2(\Omega)$ and $g \in H^{-\frac{1}{2}} (\partial\Omega)$
+>- If $\alpha > 0$ then $\exists !$ a weak solution $\overline{u} \in H^1(\Omega)$, moreover $\overline{u}$ is the unique minimizer of the energy function mentioned in the previous theorem.
+>- If $\alpha <0$ and $- \alpha \notin \sigma_N (-\Delta) \Longrightarrow$
+>>[!DANGER]
+> >This isn't well defined look it up better p.23 of Ravizza 
+> 
+
+We have the same conditions for existence and uniqueness of Neumann and Dirichlet solutions.
+- Dirichlet problems: $\alpha > -\lambda_1$
+- Neumann problems: $\alpha > 0$
+## Stokes Equations
+Here $u$ will be a **field**, $p$ will be the pressure. 
+These two will be our unknown variables, while $f$ will be a given *force* 
+$$
+\begin{cases}-\eta \Delta u+\nabla p=f&\quad\mathrm{in~}\Omega \subset R^{n}\\\nabla\cdot u=0&\quad\mathrm{in~}\Omega \subset R^{n}\\u=0&\quad\mathrm{on~}\partial\Omega\end{cases}
+$$
+We'll assume the fluid to be incompressible, with no velocity at the boundary.
+We mean $u \in L^2(\Omega)$
+$$
+\mathbf{u}=\left(\begin{matrix}{\mathbf{u}_{1}}\\
+..
+\\{\mathbf{u}_{2}}\\\end{matrix}\right) \ \land \ u_i \in L^2(\Omega) \quad \forall i 
+$$
+alternatively 
+$$
+u \in [L^2(\Omega)]^n
+$$
+Here's some more notation to familiar yourself:
+- $E\left(\Omega\right) = \{ v\in L^{2}\left(\Omega\right) : \text{div}  (v) \in L^{2}\left(\Omega\right)$
+- $u\in H^{1}(\Omega):\quad\frac{\partial u}{\partial x_{i}}\quad\forall i,j\in1,\ldots,m$
+- $\nabla u =\left(\frac{\partial u_{i}}{\partial x_{j}}\right)\quad n\times n\quad\mathrm{matrix}$
+- $\nabla u:\nabla v=\sum_{i,j=1}^{n}\frac{\partial u_i}{\partial x_{j}}\frac{\partial v_{i}}{\partial x_{j}}$
+- $H_{0}^{*}(\Omega)=\overline{{{\mathcal D}(\Omega)}}^{H^{1}(\Omega)}$
+
+In Hilbert spaces:
+- $H^{1}(\Omega)\quad(u,v)_{H^{1}}=\int_{\Omega}(\nabla u;\nabla v+uv)$
+- $H_{0}^{1}(\Omega)\quad(u,v)_{H_{0}^{1}}=\int_{\Omega}\nabla u:\nabla v$
+- $E(\Omega)\quad(u,v)_{E(\Omega)}=\int_{\Omega}u\cdot v+\int_{\Omega}(\nabla\cdot u)(\nabla\cdot v)$
+- $V(\Omega)=\{u\in{H}_{0}^{1}(\Omega):\nabla\cdot u=0\quad\mathrm{in~}\Omega\} = \overline{\{u\in\mathcal{D}(\Omega):\nabla\cdot u=0\}}^{H^{1}(\Omega)}$
+
+$V(\Omega)$
+- Is a closed subspace of $H^1_0(\Omega)$, because it it's basically the same with an additional constraint
+- It's a Hilbert space with product:
+  $$
+  (u,v)_{V}=(u,v)_{H_{0}^{1}(\Omega)}=\int_{\Omega}\nabla u:\nabla v\quad\forall u,v\in V
+  $$
+
+### Helmholtz-Weyl decomposition
