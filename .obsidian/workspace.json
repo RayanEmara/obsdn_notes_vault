@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
                 "mode": "source",
                 "source": true
               }
@@ -32,7 +32,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
                 "mode": "preview",
                 "source": true
               }
@@ -89,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "08e8b49cd03c8f34",
@@ -106,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md"
+                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md"
               }
             }
           }
@@ -168,41 +167,41 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d7e3df0d4143a67b",
+  "active": "b50433c224626434",
   "lastOpenFiles": [
-    "APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+    "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
     "exports/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.pdf",
-    "NAPDE",
+    "2 - NAPDE",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
-    "GENERAL/Tempered distributions.md",
-    "GENERAL/Schwartz functions.md",
-    "GENERAL/Dense sets.md",
+    "0 - GENERAL/Tempered distributions.md",
+    "0 - GENERAL/Schwartz functions.md",
+    "0 - GENERAL/Dense sets.md",
     "2024-05-04.md",
-    "GENERAL/Sobolev space.md",
-    "GENERAL/Separable set.md",
-    "GENERAL/Continuous embedding.md",
-    "GENERAL/Compact embedding.md",
+    "0 - GENERAL/Sobolev space.md",
+    "0 - GENERAL/Separable set.md",
+    "0 - GENERAL/Continuous embedding.md",
+    "0 - GENERAL/Compact embedding.md",
     "README.md",
     "example.md",
-    "APDE/images/Pasted image 20240427182436.png",
-    "APDE/images/Pasted image 20240427174140.png",
-    "APDE/images/Pasted image 20240427163554.png",
-    "APDE/images/Pasted image 20240427162932.png",
-    "APDE/images/Pasted image 20240427162829.png",
-    "APDE/images/Pasted image 20240427162531.png",
-    "APDE/images/Pasted image 20240427161347.png",
-    "APDE/images/Pasted image 20240504222612.png",
-    "APDE/images/Pasted image 20240504183110.png",
-    "APDE/images/Pasted image 20240428210318.png",
-    "APDE/images",
+    "1 - APDE/images/Pasted image 20240427182436.png",
+    "1 - APDE/images/Pasted image 20240427174140.png",
+    "1 - APDE/images/Pasted image 20240427163554.png",
+    "1 - APDE/images/Pasted image 20240427162932.png",
+    "1 - APDE/images/Pasted image 20240427162829.png",
+    "1 - APDE/images/Pasted image 20240427162531.png",
+    "1 - APDE/images/Pasted image 20240427161347.png",
+    "1 - APDE/images/Pasted image 20240504222612.png",
+    "1 - APDE/images/Pasted image 20240504183110.png",
+    "1 - APDE/images/Pasted image 20240428210318.png",
+    "1 - APDE/images",
     "exports/example.pdf",
     "Demo.md",
     "Untitled.canvas",
-    "GENERAL",
+    "0 - GENERAL",
     "APDE/Banach spaces.md",
     "APDE/Initial.md",
-    "APDE",
+    "1 - APDE",
     "Isaac Newton.md",
     "Law of Inertia.md",
     "images",
