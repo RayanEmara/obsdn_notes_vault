@@ -89,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "08e8b49cd03c8f34",
@@ -170,12 +169,12 @@
   },
   "active": "62173f28ed7df3f8",
   "lastOpenFiles": [
+    "0 - GENERAL/Tempered distributions.md",
     "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
     "exports/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.pdf",
     "2 - NAPDE",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
-    "0 - GENERAL/Tempered distributions.md",
     "0 - GENERAL/Schwartz functions.md",
     "0 - GENERAL/Dense sets.md",
     "2024-05-04.md",

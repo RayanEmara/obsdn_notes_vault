@@ -778,3 +778,54 @@ We'll now analyse the existence of weak solutions
 >$$
 >>[!theorem] Proof
 >>The proof was given by the prof but it is way too long, it's far better to study it from the book, if need be you can also make use of Ravizza p.20 
+
+### Non Homogeneous Neumann problem
+Let $\Omega \subset \mathbb{R}^n$ be a bounded open set of class $C^1$, we look for a function $u $ satisfying:
+$$
+\begin{cases}-\Delta u+\alpha u&=f&&\Omega\\\frac{\partial u}{\partial\nu}&=g&&\partial\Omega\end{cases}
+$$
+
+with $f \in L^2(\Omega)$, $g \in H^{\frac{1}{2}}(\partial\Omega)$ and $(\alpha >0) \in \mathbb{R}$.
+
+>[!definition] Classical solution for the NHNP (7.1.11)
+>We define a classical solution one where the boundary conditions are to be meant $f \in C^0, g \in C^0$
+>$$
+>u\in C^{2}(\Omega)\cap C^{1}(\bar{\Omega})
+>$$
+
+>[!definition] Weak solution for the NHNP (7.1.11)
+>Recalling that the trace operator "takes" half an order in terms of Sobolev regularity, take $g \in H^{\frac{1}{2}} (\partial\Omega)$. A weak solution is $u \in H^1(\Omega)$ such that:
+>$$
+>\int_{\Omega}(\nabla u\cdot\nabla v+\alpha uv)=\int_{\Omega}fv+\langle g,\gamma_{0}v\rangle \quad \forall v \in H^1(\Omega)
+>$$
+Where $\langle.,.\rangle$ denotes the duality between $H^{-\frac{1}{2}} (\partial\Omega)$ and $H^{\frac{1}{2}} (\partial\Omega)$ by way of theorem 6.5.3 (it's really important and mentioned a lot, make sure you understand it)
+
+Let's now work on the regularity conditions, when is a regular weak solution also a classical one ? In order to do this let's assume $u \in C^2 (\overline{\Omega})$ is a weak solution for the NHNP, using the Gauss-Green formula (really we're just integrating by parts) we infer that 
+$$
+\int_{\Omega}(-\Delta u+\alpha u)v+\int_{\partial\Omega}\frac{\partial u}{\partial\nu}v=\langle g,v\rangle+\int_{\Omega}fv\quad\forall v\in C^1(\overline{\Omega}).
+$$
+If we take $v \in \mathcal{D}(\Omega)$, meaning it has compact support
+$$
+\int_{\Omega}(-\Delta u+\alpha u)v=\int_{\Omega}fv\quad\forall v\in\mathcal{D}(\Omega)
+$$
+Which, as a consequence of 2.4.22, implies that
+$$
+-\Delta u+\alpha u=f \quad \mathrm{a.e. in}\  \Omega 
+$$
+Inserting this equation into the one we got from the Gauss-Green formula we get 
+$$
+\int_{\partial\Omega}\frac{\partial u}{\partial\nu}v=\langle g,v\rangle\quad\forall v\in C^1(\overline{\Omega}).
+$$
+The previous identity holds true for every $\nu\in H^1(\Omega)$, since $C^1(\overline{\Omega})$ is dense in $H^{1}(\Omega)$ and $\gamma_0:H^{1}(\Omega)\to H^{1/2}(\partial\Omega)$ is a continuous surjective function. Hence we mav conclude that $\frac{\partial u}{\partial\nu}=g$ on $\partial\Omega$
+
+We now want to prove the existence and uniqueness of a weak solution
+
+>[!theorem] Existence and uniqueness of a NHNP weak solution
+>Let $f \in L^{2}(\Omega),g\in H^{-1/2}(\partial\Omega)$ and $\alpha>0.$Then there exists a unique weak solution $u \in H^l( \Omega )$ Moreover, $u$ can be obtained as the solution of the following minimum problem
+>$$
+>\min_{v\in H^{1}(\Omega)}\left\{\frac{1}{2}\int_{\Omega}(|\nabla v|^{2}+\alpha v^{2})-\int_{\Omega}fv-\langle g,\gamma_{0}v\rangle\right\}.
+>$$
+>>[!theorem] Proof
+>>You can prove this by applying the Lax-Milgram theorem 1.7.4
+
+Just like for homogeneous we want to explore what happens when we relax the $a > 0$ constraint 
