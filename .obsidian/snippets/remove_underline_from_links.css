@@ -1,0 +1,6 @@
+.theme-light, .theme-dark {
+  --link-decoration: none !important;
+  --link-decoration-hover: none !important;
+  /* --link-external-decoration: underline; 
+  --link-external-decoration-hover: underline; */
+}

@@ -13,7 +13,7 @@ Auth: Nicklas Vraa
     }
     a:link, a:visited { /* Links. */
         color: darkblue !important;
-        /* text-decoration: underline !important; */
+        text-decoration: none !important;
     }
 
     /* Main body of text. ------------------------------------------------------------------ */
