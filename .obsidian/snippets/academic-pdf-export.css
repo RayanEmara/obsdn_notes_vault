@@ -54,6 +54,12 @@ Auth: Nicklas Vraa
         margin-top: 0px !important;
         counter-reset: H2;
     }
+    h2 {
+        font-size: 16pt !important;
+    }
+    h3 {
+        font-size: 14pt !important;
+    }
     h6 { /* Subtitle. */
         font-family: "Latin Modern Roman Caps" !important;
         text-align: center !important;

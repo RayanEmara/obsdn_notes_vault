@@ -21,14 +21,23 @@ $$
 $$
 $$
 $$
-```table-of-contents
-title: Table of contents 
-style: nestedList # TOC style (nestedList|inlineFirstLevel)
-minLevel: 1 # Include headings from the specified level
-maxLevel: 3 # Include headings up to the specified level
-includeLinks: true # Make headings clickable
-debugInConsole: false # Print debug info in Obsidian console
-```
+# Table of contents
+- [[#Disclaimers and preface|Disclaimers and preface]]
+- [[#Sobolev spaces and initial derivation for discrete domains|Sobolev spaces and initial derivation for discrete domains]]
+	- [[#Sobolev spaces and initial derivation for discrete domains#Derivation in higher dimensions|Derivation in higher dimensions]]
+	- [[#Sobolev spaces and initial derivation for discrete domains#Higher order Sobolev spaces|Higher order Sobolev spaces]]
+	- [[#Sobolev spaces and initial derivation for discrete domains#Non-integer Sobolev spaces|Non-integer Sobolev spaces]]
+	- [[#Sobolev spaces and initial derivation for discrete domains#The trace operator|The trace operator]]
+	- [[#Sobolev spaces and initial derivation for discrete domains#Embedding theorems|Embedding theorems]]
+	- [[#Sobolev spaces and initial derivation for discrete domains#Negative order Sobolev spaces|Negative order Sobolev spaces]]
+- [[#Weak solutions of partial differential equations|Weak solutions of partial differential equations]]
+	- [[#Weak solutions of partial differential equations#Homogeneous Dirichlet problem|Homogeneous Dirichlet problem]]
+	- [[#Weak solutions of partial differential equations#Non Homogeneous Dirichlet problem|Non Homogeneous Dirichlet problem]]
+	- [[#Weak solutions of partial differential equations#Non Homogeneous Neumann problem|Non Homogeneous Neumann problem]]
+	- [[#Weak solutions of partial differential equations#Stokes Equations|Stokes Equations]]
+	- [[#Weak solutions of partial differential equations#Helmholtz-Weyl decomposition|Helmholtz-Weyl decomposition]]
+	- [[#Weak solutions of partial differential equations#Strong form of Stokes problem|Strong form of Stokes problem]]
+
 <div style="page-break-after: always; visibility: hidden">
 \pagebreak
 </div>
@@ -864,7 +873,7 @@ Therefore if $\lambda = 0$ we get $\nabla u= 0$ implying that $u$ is a constant.
 We have the same conditions for existence and uniqueness of Neumann and Dirichlet solutions.
 - Dirichlet problems: $\alpha > -\lambda_1$
 - Neumann problems: $\alpha > 0$
-### Stokes Equations
+## Stokes Equations
 Here $u$ will be a **field**, $p$ will be the pressure. 
 These two will be our unknown variables, while $f$ will be a given *force* 
 $$

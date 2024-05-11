@@ -3,9 +3,9 @@
   "enabledCssSnippets": [
     "custom line spacing",
     "custom callouts",
-    "remove_underline_from_links",
-    "academic-pdf-export"
+    "academic-pdf-export",
+    "remove_underline_from_links"
   ],
-  "cssTheme": "",
+  "cssTheme": "Obsidian Nord",
   "theme": "system"
 }

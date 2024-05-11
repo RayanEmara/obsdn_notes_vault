@@ -6,6 +6,7 @@
       {
         "id": "942bcc5d4dc82403",
         "type": "tabs",
+        "dimension": 51.20056497175142,
         "children": [
           {
             "id": "62173f28ed7df3f8",
@@ -25,6 +26,7 @@
       {
         "id": "e79d03168fdbbdbb",
         "type": "tabs",
+        "dimension": 48.79943502824859,
         "children": [
           {
             "id": "0ef2c0bef4ce85df",
@@ -168,7 +170,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0ef2c0bef4ce85df",
+  "active": "62173f28ed7df3f8",
   "lastOpenFiles": [
     "1 - APDE/images/Pasted image 20240511162707.png",
     "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
