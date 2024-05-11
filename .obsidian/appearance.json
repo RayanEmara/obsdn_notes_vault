@@ -4,9 +4,8 @@
     "custom line spacing",
     "custom callouts",
     "remove_underline_from_links",
-    "academic-pdf-export - Copy",
     "academic-pdf-export"
   ],
-  "cssTheme": "Obsidian Nord",
+  "cssTheme": "",
   "theme": "system"
 }

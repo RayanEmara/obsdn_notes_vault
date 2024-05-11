@@ -1,38 +1,34 @@
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-# Table of contents 
 
-
- ```table-of-contents
-title:
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+```table-of-contents
+title: Table of contents 
 style: nestedList # TOC style (nestedList|inlineFirstLevel)
-minLevel: 2 # Include headings from the specified level
-maxLevel: 4 # Include headings up to the specified level
-includeLinks: false # Make headings clickable
+minLevel: 1 # Include headings from the specified level
+maxLevel: 3 # Include headings up to the specified level
+includeLinks: true # Make headings clickable
 debugInConsole: false # Print debug info in Obsidian console
 ```
-
-
 <div style="page-break-after: always; visibility: hidden">
 \pagebreak
 </div>
@@ -281,7 +277,7 @@ Implies that $F$ has $-1$ derivative in $L^2$.
 >[!example] Dirac delta
 >![[Pasted image 20240427193930.png]]
 
-## The $\mathbb{R}^n$ case
+### Derivation in higher dimensions
 We'll take a domain $\Omega$ in $\mathbb{R}^n$ to be an open set, for example $\partial\Omega$.
 >[!example] 
 >$$
@@ -425,7 +421,7 @@ u_n\mathop{\longrightarrow}^{L^p} u
 >>[!definition] Remark 
 >>The functions inside $H^1(\Omega)$ are defined up to a negligible set.
 
-## The $H^k$ spaces
+### Higher order Sobolev spaces
 We basically take 6.2.11 and apply it a bunch of times to define higher order weak derivatives.
 
 Note that in the image below the prof *formally* sets $H^0 = L^2$ (6.3.4)
@@ -489,7 +485,7 @@ u \in L^2(\Omega), \qquad D^{\alpha}u \in L^2(\Omega) \qquad \forall | \alpha | 
 >>[!definition] Remark
 >>This only works on $\mathbb{R}^n$, not on bounded domains (Duh!)
 
-## Non-integer $H^k$
+### Non-integer Sobolev spaces
 
 As previously mentioned, we'll take $s\geq 0$.
 $$
@@ -505,7 +501,7 @@ We can extend this construction to a general domain $\Omega$.
 >![[Pasted image 20240428145442.png]]
 >![[Pasted image 20240428150406.png]]
 
-## $H^s_0$ spaces and Trace operators
+### The trace operator
 >[!definition] Definition (6.5.1)
 >For every $s \geq 0$:
 >$$
@@ -598,7 +594,7 @@ Some examples follow.
 >[!theorem] Theorem (6.5.8)
 >![[Pasted image 20240504183110.png]]
 
-## Embeddings theorems
+### Embedding theorems
 In this section we will make use of [[Continuous embedding  | embeddings]] in order to evaluate the regularity of $H^s(\Omega)$ elements.
 
 >[!theorem] Sobolev Theorem (6.6.1)
@@ -633,7 +629,7 @@ $$
 u_k , u \in L^p{\Omega} \ \ \text{and} \ \ u_k\mathop{\longrightarrow}^{L^p(\Omega)} u 
 $$
 
-### $H^s(\Omega)$ where $s < 0$
+### Negative order Sobolev spaces
 These spaces are defined extending definition [[APDE - Advanced Partial Differential Equations - F. Gazzola#Non-integer $H k$ | 6.4.1]].
 >[!definition] Negative non-integer Sobolev spaces (6.7)
 >Let $s < 0$
@@ -651,6 +647,7 @@ $$
 At this point there's a lot of boilerplate that can honestly be studied far better in the book anyway, I won't bother writing it down since it's really just stuff that is gonna be referenced later. I'll include references to the book whenever needed.
 
 ## Weak solutions of partial differential equations
+In this section we aim to derive existence and uniqueness results for weak PDE solutions.
 ### Homogeneous Dirichlet problem
 Let $\Omega$ be an open, bounded subset of $\mathbb{R}^n$  and let its boundary $\partial \Omega \in C^1$. Take $\alpha \in \mathbb{R}$ , $f \in L^2(\Omega)$. 
 We define the Homogeneous Dirichlet Problem (7.1) as:
@@ -867,7 +864,7 @@ Therefore if $\lambda = 0$ we get $\nabla u= 0$ implying that $u$ is a constant.
 We have the same conditions for existence and uniqueness of Neumann and Dirichlet solutions.
 - Dirichlet problems: $\alpha > -\lambda_1$
 - Neumann problems: $\alpha > 0$
-## Stokes Equations
+### Stokes Equations
 Here $u$ will be a **field**, $p$ will be the pressure. 
 These two will be our unknown variables, while $f$ will be a given *force* 
 $$
@@ -905,3 +902,35 @@ $V(\Omega)$
   $$
 
 ### Helmholtz-Weyl decomposition
+
+Let $\Omega$ be an open bounded (conneted) set of $\mathbb{R}^n$ with boundary $\partial\Omega \in C^2$.
+Capital bold letters $(\mathbf{L}^2,\mathbf{H}^1,...)$ denote spaces of vector valued functions (with values in $\mathbb{R}^n)$, while italic small letters $(L^2,H^1,...)$ denote spaces of scalar functions: for brevity, we set $L^2:=$ $L^2(\Omega),....$ and we will precise the set only when it is different from $\Omega$.
+We'll denote the divergence of some field $u$ with $\nabla \cdot u$.
+Keep in mind that $\nabla \cdot f=0$ is meant in the weak sense since $f \in L^2$ (we can't directly compute it).
+Recall that $\mathbf{E}$ is defined as:
+$$
+\mathbf{E}:=\{u\in(L^2(\Omega))^n ; \mathrm{div}u\in L^2(\Omega)\} ,
+$$
+where div$u\in L^2(\Omega)$ if and only if there exists $w\in L^2(\Omega)$ such that
+$$\int_{\Omega}w\varphi=-\int_{\Omega}u\cdot\nabla\varphi\quad\forall\varphi\in\mathcal{D}(\Omega).$$
+
+Consider the following spaces:
+$$
+\begin{align}
+\mathbf{G}_{1}&:=\{f\in\mathbf{L}^{2}; \nabla\cdot f=0, \gamma_{\nu}f=0\} ,\\ \mathbf{G}_{2}&:=\{f\in\mathbf{L}^{2}; \nabla\cdot f=0, \exists g\in H^{1}, f=\nabla g\} ,\\\mathbf{G}_{3}&:=\{f\in\mathbf{L}^{2}; \exists g\in H_{0}^{1}, f=\nabla g\} .
+\end{align}
+$$
+$f \in L^2(\Omega)$ therefore it's in a subspace of $\mathbf{E}(\Omega)$,$f$ is a vector and $g$ a scalar.
+
+In $n=1$ this is what these spaces become:
+- $\mathbf{G}_1$ : functions in $L^2(\Omega)$ with derivative equal to zero that vanish at the boundary (it's just the element $0$)
+- $\mathbf{G}$ : functions in $L^2(\Omega)$ with derivative equal to $0$, that are constant and have a potential ($\mathbb{R}$)
+- $\mathbf{G}_3$ : functions in $L^2(\Omega)$ which have the potential in $H^1_0(\Omega)$ and are the derivative of a function that vanishes at the boundary $$\mathbf{G}_3 =\biggr\{ f\in L^{2},\int_{\Omega}f=0\biggr\}$$
+
+>[!theorem] Helmholtz - Weyl theorem (7.1.16)
+>The spaces $\mathbf{G} _i$ ( i= 1, 2, 3) are mutually orthogonal in $\mathbf{L}^2$ and $\mathbf{L}^2=\mathbf{G}_1\oplus\mathbf{G}_2\oplus\mathbf{G}_3$ (this means that every $f\in\mathbf{L}^2$ can be uniquely written as the sum of three functions $f_i\in\mathbf{G}_i$ for $i=1,2,3$.
+>>[!theorem] Proof
+>>In the book
+
+### Strong form of Stokes problem
+$\left\{\begin{array}{ll}-\eta\Delta u+\nabla p=f&\quad\text{in}\quad\Omega\\\nabla\cdot u=0&\quad\text{in}\quad\Omega ,\end{array}\right.$
