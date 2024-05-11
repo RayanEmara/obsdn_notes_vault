@@ -2,9 +2,9 @@
   "accentColor": "#3b99a0",
   "enabledCssSnippets": [
     "custom line spacing",
-    "custom callouts",
     "academic-pdf-export",
-    "remove_underline_from_links"
+    "remove_underline_from_links",
+    "custom callouts"
   ],
   "cssTheme": "Obsidian Nord",
   "theme": "system"

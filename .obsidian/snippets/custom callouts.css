@@ -3,18 +3,20 @@
 .callout[data-callout="theorem"] {
 	--callout-color: 106, 134, 149;
 	--callout-icon: none;
+	--callout-title-color: 0, 0, 0 !important;
+
 }
 
 .callout[data-callout="definition"] {
 	--callout-color: 106, 134, 149;
 	--callout-icon: none;
-
+	--callout-title-color: 0, 0, 0;
 }
 
 .callout[data-callout="example"] {
 	--callout-color: 106, 134, 149;
 	--callout-icon: none;
-
+	--callout-title-color: 0, 0, 0;
 }
 
 /* Setting code to look latex-y for pdf exports */
@@ -22,7 +24,7 @@
 	.callout[data-callout="theorem"] {
 		--callout-color: 106, 134, 149 ;
 		--callout-icon: none ;
-		--callout-title-color: 51, 51, 51 ;
+		--callout-title-color: 0,0,0 !important;
 		--callout-content-background: 0, 0, 0 ;
 		font-family: "Latin Modern Roman" !important;
 	}
@@ -30,7 +32,7 @@
 	.callout[data-callout="definition"] {
 		--callout-color: 106, 134, 149;
 		--callout-icon: none;
-		--callout-title-color: 51, 51, 51 ;
+		--callout-title-color: 0,0,0 !important;
 		--callout-content-background: 0, 0, 0 ;
 		font-family: "Latin Modern Roman" !important;
 
@@ -39,7 +41,7 @@
 	.callout[data-callout="example"] {
 		--callout-color: 106, 134, 149;
 		--callout-icon: none;
-		--callout-title-color: 51, 51, 51 ;
+		--callout-title-color: 0,0,0 !important;
 		--callout-content-background: 0, 0, 0 ;
 		font-family: "Latin Modern Roman" !important;
 

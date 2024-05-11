@@ -1,4 +1,4 @@
-
+	
 $$
 $$
 $$
@@ -34,9 +34,11 @@ $$
 	- [[#Weak solutions of partial differential equations#Homogeneous Dirichlet problem|Homogeneous Dirichlet problem]]
 	- [[#Weak solutions of partial differential equations#Non Homogeneous Dirichlet problem|Non Homogeneous Dirichlet problem]]
 	- [[#Weak solutions of partial differential equations#Non Homogeneous Neumann problem|Non Homogeneous Neumann problem]]
-	- [[#Weak solutions of partial differential equations#Stokes Equations|Stokes Equations]]
-	- [[#Weak solutions of partial differential equations#Helmholtz-Weyl decomposition|Helmholtz-Weyl decomposition]]
-	- [[#Weak solutions of partial differential equations#Strong form of Stokes problem|Strong form of Stokes problem]]
+- [[#Stokes Equations|Stokes Equations]]
+	- [[#Stokes Equations#Helmholtz-Weyl decomposition|Helmholtz-Weyl decomposition]]
+	- [[#Stokes Equations#Strong form of Stokes problem|Strong form of Stokes problem]]
+	- [[#Stokes Equations#Eigenvalue problem (Stokes)|Eigenvalue problem (Stokes)]]
+
 
 <div style="page-break-after: always; visibility: hidden">
 \pagebreak
@@ -873,6 +875,8 @@ Therefore if $\lambda = 0$ we get $\nabla u= 0$ implying that $u$ is a constant.
 We have the same conditions for existence and uniqueness of Neumann and Dirichlet solutions.
 - Dirichlet problems: $\alpha > -\lambda_1$
 - Neumann problems: $\alpha > 0$
+
+
 ## Stokes Equations
 Here $u$ will be a **field**, $p$ will be the pressure. 
 These two will be our unknown variables, while $f$ will be a given *force* 
@@ -942,4 +946,96 @@ In $n=1$ this is what these spaces become:
 >>In the book
 
 ### Strong form of Stokes problem
-$\left\{\begin{array}{ll}-\eta\Delta u+\nabla p=f&\quad\text{in}\quad\Omega\\\nabla\cdot u=0&\quad\text{in}\quad\Omega ,\end{array}\right.$
+Let $f \in V'$ dual space of $V$, 
+$V \subset H^1_0(\Omega)\subset V'$ ($V'$ is larger than $H^{-1}$)
+$$\left\{\begin{align}-\eta\Delta u+\nabla p=f&\quad\text{in}\quad\Omega\\\nabla\cdot u=0&\quad\text{in}\quad\Omega \\u=0& \quad \text{in} \quad\partial \Omega\end{align}\right.$$
+where $u=0$ is called the **non-slip boundary condition**.
+As usual we multiply both sides by a test function $v \in V$ and applying (6.7.6 - 6.16) we get:
+$$
+\eta\int_{\Omega}\nabla u:\nabla v+\int_{\Omega}\nabla p\cdot v=\int_{\Omega}fv
+$$
+where $\nabla p\in\mathbb{G}_2\oplus\mathbf{G}_3\mathrm{~and~}\mathbf{V}\subset\mathbf{G}_1$ therefore
+$$
+\int_{\Omega}\nabla p\cdot v=0\quad\forall v\in\mathbf{V}
+$$
+from which we derive 
+$$
+\eta\int_\Omega\nabla u:\nabla v=\int_\Omega fv\quad\forall v\in\mathrm{V}
+$$ 
+where $\nabla u:\nabla v$ is the "Euclidean scalar product" of the Jacobian matrices of $u$ and $v$.
+
+Next, given that $\forall f \in \mathbf{L}^2$ the right hand side of the equation represents a linear and continuous function over $\mathbf{V}$, we infer (using Lax-Milgram 1.7.4):
+$$
+\forall f\in\mathbf{L}^{2}\quad\exists!u\in\mathbf{V}\quad\mathrm{s.t.}\quad\eta\int_{\Omega}\nabla u:\nabla v=\int_{\Omega}fv\quad\forall v\in\mathbf{V}
+$$
+
+This is just a uniqueness result for the weak solution, can we get a strong solution now ?  We'll need to make the weak solution more regular!
+
+We're going to use the following  result of Elliptic regularity 
+$$
+\mathrm{~if~}\Delta u\in H^{k}(\Omega)\mathrm{~and~}\gamma_{0}u\in H^{k+3/2}(\Omega)\ \Longrightarrow \ u \in H^{k+2}(\Omega)
+$$
+thus we rewrite the existence condition as 
+$$
+\forall f\in\mathbf{L}^{2}\quad\exists!u\in\mathbf{H}^{2}\cap\mathbf{V}\quad\mathrm{s.t.}\quad\int_{\Omega}(\eta\Delta u+f)v=0\quad\forall v\in\mathbf{G}_{1} .
+$$
+where we used the density of $\mathbf{V}$ in $\mathbf{G}_1$ to replace the condition on $v$.
+
+```tikz
+\begin{document}
+
+\begin{tikzpicture}[>=stealth, line cap=round, line join=round]
+
+    \draw[->] (0,0,0) -- (3,0,0) node[below]{\(G_1\)};
+
+    \draw[->] (0,0,0) -- (0,3,0) node[left]{\(G_2\)};
+
+    \draw[->] (0,0,0) -- (0,0,3) node[above]{\(G_3\)};
+
+\end{tikzpicture}
+
+\end{document}
+```
+
+In view of 7.1.16, we infer that $(\eta\Delta u+f)\in(\mathbf{G}_2\oplus\mathbf{G}_3)$. You can intuitively get to this conclusion given that you're multiplying something by $v \in \mathbf{G}_1$ and getting zero.
+With this information we can say that
+$$
+\exists p\in H^{1}(\Omega)\quad\ \mathrm{~s.t.~} \quad-(\eta\Delta u+f)=\nabla p
+$$
+we have essentially proven theorem 7.1.19 which guarantees a unique $(u,p)$ solution to our Stokes problem in the sense of traces.
+
+>[!theorem] Corollary - projection (7.1.20)
+>For every $f \in L^2$, there exists a unique $v \in \mathbf{H}^2 \cap \mathbf{V}$ such that 
+>$$
+>P_1(\Delta v) = P_1f
+>$$
+>in particular if $P_1f=0$ then $v= 0$.
+
+In conclusion 
+$$
+\forall f \in L^2(\Omega) \quad \exists! u \in V \cap \mathbf{H}^2 (\Omega) \ , \ \exists!p\in H^1 (\Omega) \mathrm{~with~} \int_{\Omega} p = p_0  \ \mathrm{~satisfying~the~Stokes~problem~}
+$$
+
+### Eigenvalue problem (Stokes)
+
+The Eigenvalue problem associated with the Stokes equation is:
+$$
+\begin{cases}-\eta\Delta u+\nabla p=\lambda u&\Omega\\\nabla\cdot u=0&\Omega\\u=0&\partial\Omega\end{cases}
+$$
+where $u \in V \subset \mathbf{G}_1$ , $\eta \Delta u \in\mathbf{G}_1 \oplus \mathbf{G}_2$ and $\nabla p \in \mathbf{G}_2$
+
+>[!theorem] Mètivier Theorem (7.1.21)
+>The eigenvalue problem associated with the stokes equation admits a sequence of positive eigenvalues $\{ \lambda_m \}$ which diverges to infinity. Each eigenvalue has finite multiplicity.
+>More over, the eigenfunctions can be chosen so that they form an orthogonal basis in $\mathbf{G}_1$ and $\mathbf{V}$
+
+### Semi-linear elliptic equations
+
+
+Let $\Omega$ be bounded with $\partial \Omega \in C^1$, consider the original Dirichlet problem:
+$$
+\begin{cases}-\Delta u&=-\alpha u+f(x)\\u&=0\\\end{cases}
+$$
+we take $f$ to be independent of the position, we then obtain:
+$$
+\begin{cases}-\Delta u&=F(u)&&\Omega\\u&=0&&\partial\Omega\end{cases}
+$$
