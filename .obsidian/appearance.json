@@ -3,7 +3,6 @@
   "enabledCssSnippets": [
     "custom line spacing",
     "academic-pdf-export",
-    "remove_underline_from_links",
     "custom callouts"
   ],
   "cssTheme": "Obsidian Nord",

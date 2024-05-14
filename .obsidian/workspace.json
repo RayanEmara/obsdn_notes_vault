@@ -1,45 +1,41 @@
 {
   "main": {
-    "id": "5ff44685733a67cb",
+    "id": "4a954a10122171e7",
     "type": "split",
     "children": [
       {
-        "id": "942bcc5d4dc82403",
+        "id": "c8c01f803d33bb08",
         "type": "tabs",
-        "dimension": 51.20056497175142,
         "children": [
           {
-            "id": "62173f28ed7df3f8",
+            "id": "b43191c5c2f3a90e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "Error propagation for logarithims.md",
                 "mode": "source",
                 "source": true
               }
-            },
-            "group": "2a6973de606950c3"
+            }
           }
         ]
       },
       {
-        "id": "e79d03168fdbbdbb",
+        "id": "d86da678c776b2a0",
         "type": "tabs",
-        "dimension": 48.79943502824859,
         "children": [
           {
-            "id": "0ef2c0bef4ce85df",
+            "id": "04327a6b507a9bbc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "Error propagation for logarithims.md",
                 "mode": "preview",
                 "source": true
               }
-            },
-            "group": "2a6973de606950c3"
+            }
           }
         ]
       }
@@ -47,15 +43,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "3a4d718bb3fdca66",
+    "id": "87423c4ac5579bba",
     "type": "split",
     "children": [
       {
-        "id": "f12cf6fb7ccf3c12",
+        "id": "0ba51bf5ff52ddb9",
         "type": "tabs",
         "children": [
           {
-            "id": "b50433c224626434",
+            "id": "096bf3d7e1918287",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -65,7 +61,7 @@
             }
           },
           {
-            "id": "b2ff7fdb87781f78",
+            "id": "b8b346e79b7dfff0",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -80,35 +76,36 @@
             }
           },
           {
-            "id": "de7fcce5fbdf002a",
+            "id": "e8d3bd3a7992a1a3",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "right": {
-    "id": "08e8b49cd03c8f34",
+    "id": "375b9835fcdfdfbe",
     "type": "split",
     "children": [
       {
-        "id": "554e0721c61717f1",
+        "id": "03977d61d37f5265",
         "type": "tabs",
         "children": [
           {
-            "id": "2040c3df91c92b60",
+            "id": "e705fa6276a16777",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "Error propagation for logarithims.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,19 +117,19 @@
             }
           },
           {
-            "id": "e815eeef91141d95",
+            "id": "3ee8e86981443786",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+                "file": "Error propagation for logarithims.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "8cdaa820ddac5cbb",
+            "id": "e977c09005af5a89",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -143,21 +140,20 @@
             }
           },
           {
-            "id": "003217001a50990e",
+            "id": "7529de35c91aaa7e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md"
+                "file": "Error propagation for logarithims.md"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -170,51 +166,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "62173f28ed7df3f8",
+  "active": "b43191c5c2f3a90e",
   "lastOpenFiles": [
-    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pdf",
-    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola-1715444652152.pdf",
-    "1 - APDE/images/Pasted image 20240511191803.png",
-    "Untitled.md",
-    "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "Excalidraw/Drawing 2024-05-11 18.48.58.excalidraw.md",
-    "Excalidraw",
-    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola-1715444545402.pdf",
-    "exports/APDE - Advanced Partial Differential Equa2222tions - F. Gazzola.pdf",
-    "1 - APDE/images/Pasted image 20240511162707.png",
-    "1 - APDE/images/Pasted image 20240506003818.png",
-    "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
-    "0 - GENERAL/Tempered distributions.md",
-    "exports/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.pdf",
-    "2 - NAPDE",
-    "0 - GENERAL/Schwartz functions.md",
-    "0 - GENERAL/Dense sets.md",
-    "2024-05-04.md",
-    "0 - GENERAL/Sobolev space.md",
-    "0 - GENERAL/Separable set.md",
-    "0 - GENERAL/Continuous embedding.md",
-    "0 - GENERAL/Compact embedding.md",
-    "README.md",
-    "example.md",
-    "1 - APDE/images/Pasted image 20240427182436.png",
-    "1 - APDE/images/Pasted image 20240427174140.png",
-    "1 - APDE/images/Pasted image 20240427163554.png",
-    "1 - APDE/images/Pasted image 20240427162932.png",
-    "1 - APDE/images/Pasted image 20240427162829.png",
-    "1 - APDE/images/Pasted image 20240427162531.png",
-    "1 - APDE/images/Pasted image 20240427161347.png",
-    "1 - APDE/images",
-    "exports/example.pdf",
-    "Demo.md",
-    "Untitled.canvas",
-    "0 - GENERAL",
-    "APDE/Banach spaces.md",
-    "APDE/Initial.md",
-    "Isaac Newton.md",
-    "Law of Inertia.md",
-    "exports/APDE - Advanced Partial Differential Equations - F. Gazzola.pandoc.md",
-    "2024-04-27.md",
-    "weak derivative.md",
-    "APDE Notes.md"
+    "exports/Error propagation for logarithims-1715691946390.pdf",
+    "Error propagation for logarithims.md"
   ]
 }
