@@ -1,0 +1,269 @@
+:root {
+    --warm-dark0_x: 40, 44, 52; /* #282C34 */
+    --warm-dark0: rgb(var(--warm-dark0_x));
+    --warm-dark1_x: 50, 54, 62; /* #323842 */
+    --warm-dark1: rgb(var(--warm-dark1_x));
+    --warm-dark2_x: 60, 64, 72; /* #3C4048 */
+    --warm-dark2: rgb(var(--warm-dark2_x));
+    --warm-dark3_x: 70, 74, 82; /* #464C56 */
+    --warm-dark3: rgb(var(--warm-dark3_x));
+
+    --warm-light0_x: 235, 237, 239; /* #EBEDEF */
+    --warm-light0: rgb(var(--warm-light0_x));
+    --warm-light1_x: 227, 229, 231; /* #E3E5E7 */
+    --warm-light1: rgb(var(--warm-light1_x));
+    --warm-light2_x: 219, 221, 223; /* #DBDDDF */
+    --warm-light2: rgb(var(--warm-light2_x));
+    --warm-light3_x: 211, 213, 215; /* #D3D5D7 */
+    --warm-light3: rgb(var(--warm-light3_x));
+
+    --warm-frost0_x: 138, 180, 184; /* #8AB4B8 */
+    --warm-frost0: rgb(var(--warm-frost0_x));
+    --warm-frost1_x: 121, 151, 156; /* #79979C */
+    --warm-frost1: rgb(var(--warm-frost1_x));
+    --warm-frost2_x: 103, 123, 128; /* #677B80 */
+    --warm-frost2: rgb(var(--warm-frost2_x));
+    --warm-frost3_x: 85, 94, 97; /* #555E61 */
+    --warm-frost3: rgb(var(--warm-frost3_x));
+
+    --warm-red_x: 191, 97, 106; /* #BF616A */
+    --warm-red: rgb(var(--warm-red_x));
+    --warm-orange_x: 233, 144, 88; /* #E99058 */
+    --warm-orange: rgb(var(--warm-orange_x));
+    --warm-yellow_x: 235, 203, 139; /* #EBCB8B */
+    --warm-yellow: rgb(var(--warm-yellow_x));
+    --warm-green_x: 163, 190, 140; /* #A3BE8C */
+    --warm-green: rgb(var(--warm-green_x));
+    --warm-purple_x: 180, 142, 173; /* #B48EAD */
+    --warm-purple: rgb(var(--warm-purple_x));
+}
+
+body {
+    --accent-h: 20; /* --orange #E99058 */
+    --accent-s: 75%;
+    --accent-l: 60%;
+
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --link-external-decoration: none;
+    --link-external-decoration-hover: none;
+
+    --tag-decoration: none;
+    --tag-decoration-hover: underline;
+    --tag-padding-x: 0.5em;
+    --tag-padding-y: 0.2em;
+    --tag-radius: 0.5em;
+
+    --tab-font-weight: 500;
+    --bold-weight: 500;
+
+    --checkbox-radius: 0;
+
+    --embed-border-left: 6px double var(--interactive-accent);
+}
+
+.theme-dark {
+    --color-red-rgb: var(--warm-red_x);
+    --color-red: var(--warm-red);
+    --color-purple-rgb: var(--warm-purple_x);
+    --color-purple: var(--warm-purple);
+    --color-green-rgb: var(--warm-green_x);
+    --color-green: var(--warm-green);
+    --color-cyan-rgb: var(--warm-frost1_x);
+    --color-cyan: var(--warm-frost1);
+    --color-blue-rgb: var(--warm-frost3_x);
+    --color-blue: var(--warm-frost3);
+    --color-yellow-rgb: var(--warm-yellow_x);
+    --color-yellow: var(--warm-yellow);
+    --color-orange-rgb: var(--warm-orange_x);
+    --color-orange: var(--warm-orange);
+
+    --background-primary: var(--warm-dark0);
+    --background-primary-alt: var(--warm-dark0);
+    --background-secondary: var(--warm-dark1);
+    --background-secondary-alt: var(--warm-dark2);
+    --background-modifier-border: var(--warm-dark2);
+
+    --cursor-line-background: rgba(var(--warm-red_x), 0.2);
+
+    --text-normal: var(--warm-light0);
+    --text-faint: var(--warm-light1);
+    --text-muted: var(--warm-light2);
+
+    --link-url: var(--warm-purple);
+
+    --h1-color: var(--warm-red);
+    --h2-color: var(--warm-yellow);
+    --h3-color: var(--warm-green);
+    --h4-color: var(--warm-purple);
+    --h5-color: var(--warm-frost0);
+    --h6-color: var(--warm-frost2);
+
+    --text-highlight-bg: var(--warm-frost1);
+    --text-highlight-fg: var(--warm-dark0);
+
+    --text-accent: var(--warm-orange);
+    --text-accent-hover: var(--warm-frost2);
+
+    --tag-color: var(--warm-frost0);
+    --tag-background: var(--warm-dark2);
+    --tag-background-hover: var(--warm-dark1);
+
+    --titlebar-text-color-focused: var(--warm-red);
+
+    --inline-title-color: var(--warm-yellow);
+
+    --bold-color: var(--warm-yellow);
+    --italic-color: var(--warm-yellow);
+
+    --checkbox-color: var(--warm-frost0);
+    --checkbox-color-hover: var(--warm-frost0);
+    --checkbox-border-color: var(--warm-frost0);
+    --checkbox-border-color-hover: var(--warm-frost0);
+    --checklist-done-color: rgba(var(--warm-light2_x), 0.5);
+
+    --table-header-background: hsl(220, 16%, 16%);
+    --table-header-background-hover: var(--warm-dark3);
+    --table-row-even-background: hsl(220, 16%, 20%);
+    --table-row-odd-background: hsl(220, 16%, 24%);
+    --table-row-background-hover: var(--warm-dark3);
+
+    --text-selection: rgba(var(--warm-red_x), 0.6);
+    --flashing-background: rgba(var(--warm-red_x), 0.3);
+
+    --code-normal: var(--warm-frost1);
+    --code-background: var(--warm-dark1);
+
+    --mermaid-note: var(--warm-frost3);
+    --mermaid-loopline: var(--warm-frost1);
+    --mermaid-exclude: var(--warm-dark3);
+    --mermaid-seqnum: var(--warm-dark0);
+
+    --icon-color-hover: var(--warm-red);
+    --icon-color-focused: var(--warm-frost2);
+
+    --nav-item-color-hover: var(--warm-red);
+    --nav-item-color-active: var(--warm-frost2);
+    --nav-file-tag: rgba(var(--warm-yellow_x), 0.9);
+
+    --graph-line: var(--warm-dark3);
+    --graph-node: var(--warm-light3);
+    --graph-node-tag: var(--warm-red);
+    --graph-node-attachment: var(--warm-green);
+
+    --calendar-hover: var(--warm-red);
+    --calendar-background-hover: var(--warm-dark3);
+    --calendar-week: var(--warm-yellow);
+    --calendar-today: var(--warm-yellow);
+
+    --dataview-key: var(--text-faint);
+    --dataview-key-background: rgba(var(--warm-frost2_x), 0.3);
+    --dataview-value: var(--text-faint);
+    --dataview-value-background: rgba(var(--warm-red_x), 0.3);
+
+    --tab-text-color-focused-active: var(--warm-frost2);
+    --tab-text-color-focused-active-current: var(--warm-red);
+}
+
+.theme-light {
+    --color-red-rgb: var(--warm-red_x);
+    --color-red: var(--warm-red);
+    --color-purple-rgb: var(--warm-purple_x);
+    --color-purple: var(--warm-purple);
+    --color-green-rgb: var(--warm-green_x);
+    --color-green: var(--warm-green);
+    --color-cyan-rgb: var(--warm-frost1_x);
+    --color-cyan: var(--warm-frost1);
+    --color-blue-rgb: var(--warm-frost3_x);
+    --color-blue: var(--warm-frost3);
+    --color-yellow-rgb: var(--warm-yellow_x);
+    --color-yellow: var(--warm-yellow);
+    --color-orange-rgb: var(--warm-orange_x);
+    --color-orange: var(--warm-orange);
+
+    --background-primary: var(--warm-light3);
+    --background-primary-alt: var(--warm-light3);
+    --background-secondary: var(--warm-light2);
+    --background-secondary-alt: var(--warm-light1);
+    --background-modifier-border: var(--warm-light2);
+
+    --cursor-line-background: rgba(var(--warm-red_x), 0.2);
+
+    --text-normal: var(--warm-dark0);
+    --text-faint: var(--warm-dark1);
+    --text-muted: var(--warm-dark2);
+
+    --link-url: var(--warm-purple);
+
+    --h1-color: var(--warm-red);
+    --h2-color: var(--warm-yellow);
+    --h3-color: var(--warm-green);
+    --h4-color: var(--warm-purple);
+    --h5-color: var(--warm-frost0);
+    --h6-color: var(--warm-frost2);
+
+    --text-highlight-bg: var(--warm-frost1);
+    --text-highlight-fg: var(--warm-light0);
+
+    --text-accent: var(--warm-orange);
+    --text-accent-hover: var(--warm-frost2);
+
+    --tag-color: var(--warm-frost0);
+    --tag-background: var(--warm-light2);
+    --tag-background-hover: var(--warm-light1);
+
+    --titlebar-text-color-focused: var(--warm-red);
+
+    --inline-title-color: var(--warm-yellow);
+
+    --bold-color: var(--warm-yellow);
+    --italic-color: var(--warm-yellow);
+
+    --checkbox-color: var(--warm-frost0);
+    --checkbox-color-hover: var(--warm-frost0);
+    --checkbox-border-color: var(--warm-frost0);
+    --checkbox-border-color-hover: var(--warm-frost0);
+    --checklist-done-color: rgba(var(--warm-dark1_x), 0.5);
+
+    --table-header-background: hsl(220, 16%, 80%);
+    --table-header-background-hover: var(--warm-light3);
+    --table-row-even-background: hsl(220, 16%, 90%);
+    --table-row-odd-background: hsl(220, 16%, 95%);
+    --table-row-background-hover: var(--warm-light3);
+
+    --text-selection: rgba(var(--warm-red_x), 0.3);
+    --flashing-background: rgba(var(--warm-red_x), 0.15);
+
+    --code-normal: var(--warm-frost1);
+    --code-background: var(--warm-light1);
+
+    --mermaid-note: var(--warm-frost3);
+    --mermaid-loopline: var(--warm-frost1);
+    --mermaid-exclude: var(--warm-light3);
+    --mermaid-seqnum: var(--warm-light2);
+
+    --icon-color-hover: var(--warm-red);
+    --icon-color-focused: var(--warm-frost2);
+
+    --nav-item-color-hover: var(--warm-red);
+    --nav-item-color-active: var(--warm-frost2);
+    --nav-file-tag: rgba(var(--warm-yellow_x), 0.9);
+
+    --graph-line: var(--warm-light2);
+    --graph-node: var(--warm-dark0);
+    --graph-node-tag: var(--warm-red);
+    --graph-node-attachment: var(--warm-green);
+
+    --calendar-hover: var(--warm-red);
+    --calendar-background-hover: var(--warm-light2);
+    --calendar-week: var(--warm-yellow);
+    --calendar-today: var(--warm-yellow);
+
+    --dataview-key: var(--text-faint);
+    --dataview-key-background: rgba(var(--warm-frost2_x), 0.3);
+    --dataview-value: var(--text-faint);
+    --dataview-value-background: rgba(var(--warm-red_x), 0.3);
+
+    --tab-text-color-focused-active: var(--warm-frost2);
+    --tab-text-color-focused-active-current: var(--warm-red);
+}

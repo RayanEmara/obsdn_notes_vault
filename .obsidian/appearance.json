@@ -1,10 +1,12 @@
 {
-  "accentColor": "#3b99a0",
+  "accentColor": "#a31f1f",
   "enabledCssSnippets": [
     "custom line spacing",
     "academic-pdf-export",
-    "custom callouts"
+    "custom callouts",
+    "remove_underline_from_links",
+    "live_preview_number_headings"
   ],
-  "cssTheme": "Obsidian Nord",
+  "cssTheme": "Minimal",
   "theme": "system"
 }

@@ -10,5 +10,6 @@
   "showLineNumber": false,
   "attachmentFolderPath": "./images",
   "livePreview": false,
-  "showUnsupportedFiles": false
+  "showUnsupportedFiles": false,
+  "newFileLocation": "current"
 }
