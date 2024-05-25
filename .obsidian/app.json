@@ -11,5 +11,7 @@
   "attachmentFolderPath": "./images",
   "livePreview": false,
   "showUnsupportedFiles": false,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "useMarkdownLinks": true,
+  "promptDelete": false
 }

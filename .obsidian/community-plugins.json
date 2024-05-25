@@ -1,7 +1,7 @@
 [
-  "obsidian-pandoc",
   "text-snippets-obsidian",
   "obsidian-plugin-toc",
   "better-export-pdf",
-  "obsidian-tikzjax"
+  "obsidian-tikzjax",
+  "obsidian-pandoc"
 ]

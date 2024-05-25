@@ -1,4 +1,4 @@
-# Machine Learning 
+	# Machine Learning 
 ###### Held by Prof. D. Loiacono at Politecnico di Milano 2023/2024
 ~~Notes by Rayan Emara~~
 $$
@@ -296,3 +296,64 @@ we then use the posterior distribution to
 > - Predict the outcome of future coin flips by averaging over the posterior distribution of $p$
 > - Quantify our uncertainty about the coin bias $p$ using summary statistics of the posterior distribution, such as the mean, median, or credible intervals 
 > - U se the posterior distribution to calculate the expected loss under different decisions and choose the decision with the lowest expected loss.
+
+The general formula is:
+$$
+p({w}|\mathcal{D})=\frac{p(\mathcal{D}|{w})p({w})}{p(\mathcal{D})}
+$$
+where $p(w)$ is the prior probability over the parameter or what we know before observing the data, $p(\mathcal{D}|w)$ is the **likelihood** or the probability of observing the data $(\mathcal{D})$ given some value of the parameters $(w)$.
+We're essentially computing a probabilistic mean so we have to normalize the product on the numerator, that's where $p(\mathcal{D})$ comes
+$$
+p(\mathcal{D})=\int p(\mathcal{D}|{w})p({w})\mathrm{d}w
+$$
+We usually model the prior distribution using a Gaussian likelihood 
+$$
+p({w})=\mathcal{N}\left({w}|{w}_0,\mathbf{S}_0\right)
+$$
+this means that the posterior distribution result from the Bayes theorem is still a Gaussian distribution (known property of Gaussian distributions)
+$$
+p(\mathbf{w}|\mathbf{t},\mathbf{\Phi},\sigma^2)\propto\mathcal{N}\left(\mathbf{w}|\mathbf{w}_0,\mathbf{S}_0\right)\mathcal{N}\left(\mathbf{t}|\mathbf{\Phi}\mathbf{w},\sigma^2\mathbf{I}\right)
+$$
+$$
+\begin{aligned}&p(\mathbf{w}|\mathbf{t},\mathbf{\Phi},\sigma^{2})=\mathcal{N}\left(\mathbf{w}|\mathbf{w}_{N},\mathbf{S}_{N}\right)\\&\mathbf{w}_{N}=\mathbf{S}_{N}\left(\mathbf{S}_{0}^{-1}\mathbf{w}_{0}+\frac{\mathbf{\Phi}^{T}\mathbf{t}}{\sigma^{2}}\right)\\&\mathbf{S}_{N}^{-1}=\mathbf{S}_{0}^{-1}+\frac{\mathbf{\Phi}^{T}\mathbf{\Phi}}{\sigma^{2}}\end{aligned}
+$$
+Note that:
+- The posterior acts as prior for the next iteration in the case of sequential data.
+- If the prior has infinite variance $w_N$ converges to the **maximum likelihood** estimator
+- If $\mathcal{S} \to \infty$ it converges to **ordinary least squares** instead.
+
+MISSING SOME STUFF HERE p.6 of Salvatore Buono study the part where OLS and ML
+
+## Linear classification
+
+Given a dataset $\mathcal{D}$ we want to learn an approximation function $f(x)$ that maps input $x$ to a discrete class $C_k$ where $K = 1,\dots,k$.
+$$
+\mathcal{D} = \langle x,C_k \rangle \quad \longrightarrow \quad C_k=f(x)$$
+
+We need to predict discrete class labels, more specifically the (linear) decision boundaries that divide the different class labels.
+This type of classification is linear despite employing non-linear activation functions, the name comes from the linear decision boundaries
+![](Pasted%20image%2020240523173549.png)
+
+There are 3 main approaches:
+- **Discriminant function:** we model a parametric *function* that directly maps the input to a class.
+- **Probabilistic discriminative approach:** where we model $p(C_k|x)$ with respect to certain parameters and learn them from the training dataset (logistic regression).
+- **Probabilistic generative approach (Bayesian):** where we model $p(C_k|x)$ and the prior $p(C_k)$ and infer the posterior distribution using Bayes' theorem
+
+In linear classification we'll use **generalized linear models**:
+$$
+f(\mathbf{x},\mathbf{w})=f\left(w_0+\sum_{j=1}^{D-1}w_jx_j\right)=f(\mathbf{x}^T\mathbf{w}+w_0)
+$$
+where $f(\cdot)$ is **not** linear in $\mathbf{w}$ because its output is a discrete value or alternatively a probability value. The $f(\cdot)$ effectively partitions the input space into **decision boundaries** (**decision surfaces** in higher dimensions) which are linear functions of $\mathbf{x}$ and $\mathbf{w}$ as they satisfy 
+$$
+\mathbf{x}^{T}\mathbf{w}+w_{0}=\mathrm{const}
+$$
+
+The most common choice for encoding for the general $k-$classes problem is **1-of-k** (or 1 hot encoding) encoding where $t \in B^k$ with $B$ representing the set of $0$ and $1$.
+With this encoding $t$ and $f(\cdot)$ represent the density probability over the classes.
+In the case of two-class problems we might opt for the natural $t\in B^0$, $t\in \{-1,1\}$ is sometimes used for some algorithms.
+
+The discriminant linear function for a two-class problem would be
+$$
+f(\mathbf{x},\mathbf{w})=\begin{cases}C_1,&\text{if }\mathbf{x}^T\mathbf{w}+w_0\ge0\\C_2,&\text{otherwise}\end{cases}
+$$
+![](Pasted%20image%2020240523175958.png)

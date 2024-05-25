@@ -3,10 +3,12 @@
   "enabledCssSnippets": [
     "custom line spacing",
     "academic-pdf-export",
+    "live_preview_number_headings",
+    "UI-tweaks (1)",
+    "academic-pdf-export ",
     "custom callouts",
-    "remove_underline_from_links",
-    "live_preview_number_headings"
+    "remove_underline_from_links"
   ],
-  "cssTheme": "Minimal",
-  "theme": "system"
+  "cssTheme": "",
+  "theme": "moonstone"
 }

@@ -12,7 +12,7 @@
   "isTimestamp": false,
   "enabledCss": false,
   "prevConfig": {
-    "pageSize": "A4",
+    "pageSize": "Letter",
     "marginType": "1",
     "showTitle": false,
     "open": true,
@@ -22,8 +22,8 @@
     "marginBottom": "10",
     "marginLeft": "10",
     "marginRight": "10",
-    "displayHeader": false,
-    "displayFooter": false,
+    "displayHeader": true,
+    "displayFooter": true,
     "cssSnippet": "0"
   }
 }

@@ -22,28 +22,31 @@
 /* Setting code to look latex-y for pdf exports */
 @media print {
 	.callout[data-callout="theorem"] {
-		--callout-color: 106, 134, 149 ;
-		--callout-icon: none ;
-		--callout-title-color: 0,0,0 !important;
-		--callout-content-background: 0, 0, 0 ;
-		font-family: "Latin Modern Roman" !important;
+		--callout-color: 1, 1, 1!important;
+		--callout-icon: lucide-x !important;
+		--callout-icon-color: 17,17,71!important;
+		--callout-title-color: 17,17,71 !important;
+		--callout-content-background: 0, 0, 0 !important;
+		font-family: "CMU Serif" !important;
 	}
 
 	.callout[data-callout="definition"] {
-		--callout-color: 106, 134, 149;
-		--callout-icon: none;
-		--callout-title-color: 0,0,0 !important;
-		--callout-content-background: 0, 0, 0 ;
-		font-family: "Latin Modern Roman" !important;
+		--callout-color: 1, 1, 1!important;
+		--callout-icon: lucide-x !important;
+		--callout-icon-color: 17,17,71!important;
+		--callout-title-color: 17,17,71 !important;
+		--callout-content-background: 0, 0, 0 !important;
+		font-family: "CMU Serif" !important;
 
 	}
 
 	.callout[data-callout="example"] {
-		--callout-color: 106, 134, 149;
-		--callout-icon: none;
-		--callout-title-color: 0,0,0 !important;
-		--callout-content-background: 0, 0, 0 ;
-		font-family: "Latin Modern Roman" !important;
+		--callout-color: 1, 1, 1!important;
+		--callout-icon: lucide-x !important;
+		--callout-icon-color: 17,17,71!important;
+		--callout-title-color: 17,17,71 !important;
+		--callout-content-background: 0, 0, 0 !important;
+		font-family: "CMU Serif" !important;
 
 	}
 }
