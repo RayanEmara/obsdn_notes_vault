@@ -3,5 +3,6 @@
   "obsidian-plugin-toc",
   "better-export-pdf",
   "obsidian-tikzjax",
-  "obsidian-pandoc"
+  "obsidian-pandoc",
+  "obsidian-contextual-typography"
 ]

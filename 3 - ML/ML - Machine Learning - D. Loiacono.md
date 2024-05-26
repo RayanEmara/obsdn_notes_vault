@@ -1,4 +1,4 @@
-	# Machine Learning 
+
 ###### Held by Prof. D. Loiacono at Politecnico di Milano 2023/2024
 ~~Notes by Rayan Emara~~
 $$
@@ -40,6 +40,12 @@ $$
 - [[#Least squares|Least squares]]
 - [[#Multiple outputs|Multiple outputs]]
 - [[#Regularization|Regularization]]
+	- [[#Regularization#Ridge regression (L2 regularization)|Ridge regression (L2 regularization)]]
+	- [[#Regularization#Lasso regression (L1 regularization)|Lasso regression (L1 regularization)]]
+- [[#Least squares and Maximum likelihood|Least squares and Maximum likelihood]]
+- [[#Bayesian Linear Regression|Bayesian Linear Regression]]
+- [[#Linear classification|Linear classification]]
+	- [[#Linear classification#Least Squares for Classification|Least Squares for Classification]]
 
 
 <div style="page-break-after: always; visibility: hidden">
@@ -357,3 +363,154 @@ $$
 f(\mathbf{x},\mathbf{w})=\begin{cases}C_1,&\text{if }\mathbf{x}^T\mathbf{w}+w_0\ge0\\C_2,&\text{otherwise}\end{cases}
 $$
 ![](Pasted%20image%2020240523175958.png)
+
+where the the decision surface has the following properties:
+- It's equal to 
+  $$\mathbf{y}(\cdot)=\mathbf{x}^{T}\mathbf{w}+w_{0}=0$$
+- It's orthogonal to $\mathbf{w}$
+- The distance between the decision surface and the origin is 
+$$
+  -\frac{w_{0}}{\|\mathbf{w}\|_{2}}
+$$
+- And the distance between the **ds** and $x$ is
+$$
+  \frac{y(\mathbf{x})}{\|\mathbf{w}\|_2}
+$$
+
+But what if we have multiple classes ? We generally denote the number of classes with $K$. 
+We have two main approaches
+- **One-versus-the-rest**: where we use $K-1$ binary classifiers where each classifier $i$ discriminates between $C_i$ and not $C_i$.
+- **One-versus-one**: where we use $\frac{K(K-1)}{2}$ binary classifiers to discriminate between $C_i$ and $C_j$
+
+
+|   One-versus-the-rest| One-versus-one  |
+| --- | --- |
+|  ![[Pasted image 20240525161955.png]]    |   ![[Pasted image 20240525162010.png]]   |
+
+
+These approaches are not a good idea if one region is mapped to more than one class, in that case we might elect to use $K$ linear discriminant functions:
+$$
+y_k(\mathbf{x})=\mathbf{x}^T\mathbf{w}_k+w_{k0},\mathrm{~where~}k=1,\ldots,K
+$$
+where we're basically mapping $\mathbf{x}$ to $C_k$ if $y_{k}>y_{j}\quad\forall j\neq k$.
+This approach presents no ambiguity for classes belonging to the same regions.
+>[!theorem] 
+>Let $\mathbf{x}_A,\mathbf{x}_b\in\mathcal{R}_k$
+>Thus $y_{k}(\mathbf{x}_{A})>y_{j}(\mathbf{x}_{A})$ and $y_{k}(\mathbf{x}_{B})>y_{j}(\mathbf{x}_{B})$, therefore $\forall \alpha$ such that $0 <\alpha<1$:
+>$$
+>y_{k}(\alpha\mathbf{x}_{A}+(1-\alpha)\mathbf{x}_{B})>y_{j}(\alpha\mathbf{x}_{A}+(1-\alpha)\mathbf{x}_{B})
+>$$
+
+![[Pasted image 20240525163837.png]]
+
+Keep in mind that all of these models are applied to the problem input space, we can extend these models by using basis functions $\varphi(\mathbf{x})$, this has the effect of potentially admitting decision boundaries that are linear in the **feature space** and non linear in the input space.
+![[Pasted image 20240525203558.png]]
+
+### Least Squares for Classification
+
+We consider a $K$-class problem with a 1-of-K encoding where each class is modeled with a linear function
+$$
+y_k(\mathbf{x})=\mathbf{x}^T\mathbf{w}_k+w_{k0},\mathrm{~where~}k=1,\ldots,K
+$$
+or
+$$
+\mathbf{y}(\mathbf{x})=\tilde{\mathbf{W}}^T\tilde{\mathbf{x}}
+$$
+where $\tilde{\mathbf{W}}$ has size $(D+1)\cdot K$ and the $k$-th column of $\tilde{\mathbf{W}}$ is $\widetilde{\mathbf{w}_{k}}=\left(w_{k0},\mathbf{w}_{k}^{T}\right)^{T}$.
+The main problem with this approach is its sensibility to outliers, as the error for these elements will move the decision boundaries far more than other elements.
+![[Pasted image 20240525203623.png]]
+### Perceptron 
+The perceptron is an **online** (computes and updates one sample at a time), **linear** discriminant model. The algorithm tries to find the decision boundary by minimizing the distance of misclassified points to the decision boundary:
+- Correct classifications get $0$ error
+- Misclassified points $x_n$ get error $w^T\phi(x_n)t_n$
+
+The algorithm effectively optimizes this function to be minimal:
+$$
+L_P(\mathbf{w})=-\sum_{n\in\mathcal{M}}\mathbf{w}^T\phi\left(\mathbf{x}_n\right)t_n
+$$
+the optimization (minimization) can be performed by using stochastic gradient descent, note how correctly classified samples do not contribute to the loss. We can update one sample at a time using the following where the learning rate $\alpha$ is usually set to $1$
+$$
+\mathbf w^{(k+1)}=\mathbf w^{(k)}-\alpha\nabla L_P(\mathbf w)=\mathbf w^{(k)}+\alpha\phi(\mathbf x_n)t_n
+$$
+
+```
+k = 0
+repeat
+	k = k+1
+	n = k mod N
+	if model_output != target then
+		w(k+1) = w(k) + phi(x_n)*target
+	end if
+until convergence		 
+```
+where the dataset $\mathcal{D} = \{x_i,t_i\}$ $\forall i = 1,\dots,N$.
+
+|   ![[Pasted image 20240525205428.png]]  |   ![[Pasted image 20240525205438.png]]  | ![[Pasted image 20240525205453.png]]| ![[Pasted image 20240525205509.png]]|
+| --- | --- | --- | --- |
+|   1  |  2   | 3| 4|
+
+$$
+$$
+it's important to note that while a single iteration will reduce the error for the single misclassified sample, this does **not** guarantee that the entire loss is reduced after each update.
+>[!theorem] Perceptron convergence theorem 
+>If the training dataset is linearly separable in the feature space $\varphi$, then the perceptron learning algorithm is guaranteed to find an **exact solution** in a finite number of step.
+>There's no guarantee on the number of steps or the uniqueness of the solution.
+
+### Logistic regression (two-class)
+
+In this scheme we aim to model the conditional probability $p(C_k|\phi)$ directly 
+$$
+p\left(C_{1}\mid\phi\right)=\frac{1}{1+\exp\left(-\mathbf{w}^{T}\phi\right)}=\sigma\left(\mathbf{w}^{T}\phi\right)\quad  
+$$
+$$
+p\left(C_{2}\mid\phi\right)=1-p\left(C_{1}\mid\phi\right)
+$$
+where $\sigma(a)$ is known as the sigmoidal function.
+![[Pasted image 20240525210754.png]]
+Given a dataset $\mathcal{D} = \{\mathbf{x}_i , t_i\}$ where $i=1,\dots,N$ and $t_i \in \{0,1\}$ we model the likelihood of a single sample using a **Bernoulli** distribution, using the logistic regression model for conditioned class probability 
+$$
+p(t_n| \mathbf{x}_n , \mathbf{w} ) = y_n^{t_n}(1-y_n)^{1-{t_n}} \quad \mathrm{~where~} \quad y_n=p(t_n = 1| \mathbf{x}_n , \mathbf{w} ) = \sigma(\mathbf{w}^T \phi_n) 
+$$
+we use maximum likelihood to maximize the probability of correctly classifying the samples: 
+$$
+p(\mathbf{t} | \mathbf{X},\mathbf{w}) = \prod_{n=1}^N y_n^{t_n}(1-y_n)^{1-t_n} \quad , \quad y_n = \sigma(\mathbf{w}^T\phi_n)
+$$
+where 
+- $y_n$ is the value predicted 
+- $t_n$ is the real value (sometimes referred to as target or reals)
+
+At this point we can opt to use the negative log-likelihood as a loss function to minimize (this is also known as the **cross-entropy error function**)
+$$
+\begin{align}
+L(\mathbf{w}) &= -\ln\biggr(p(\mathbf{t}| \mathbf{X},\mathbf{w})\biggr) \\
+&= - \sum_{n=1}^N\biggr( t_n\ln(y_n) \ + \ (1-t_n)\ln(1-y_n) \biggr) \\ 
+&= +\sum_{n=1}^{N}L_n
+\end{align}$$
+The gradient for this loss function can then be derived as follows:
+$$
+\begin{align}
+\frac{\partial L_n}{\partial y_n} &= -\left(- \frac{t_n}{y_n} - 
+\frac{(1-t_n)}{1-y_n}  
+\right )= \frac{y_n - t_n}{y_n(1-y_n)} \quad \\ &\mathrm{~where~} \frac{\partial y_n}{\partial \mathbf{w}} = y_n(1-y_n)\phi_n
+\\
+\frac{\partial L_n}{\partial \mathbf{w}} &= \frac{\partial L_n \partial y_n}{\partial y_n \partial \mathbf{w}} = (y_n - t_n) \phi_n \Longrightarrow \nabla L(\mathbf{w}) = \sum_{n=1}^{N} (y_n - t_n)\phi_n
+\end{align}
+$$
+Note that it has the same form as the sum of squared errors (SSE) for linear regression.
+Unfortunately there's no closed form to be derived. You can optimize it using gradient-based techniques.
+### Logistic regression (multi-class)
+
+In the multi-class we represent the posterior probabilities using a **softmax** transformation of linear functions of feature variables:
+$$
+p(C_k | \phi) = y_k(\phi) = \frac{ \exp(\mathbf{w}_k^T \phi)}{\sum_j \exp(\mathbf{w}_j^T \phi)}
+$$
+Take a moment to understand what's happening here, 
+- $\mathbf{w_k}$ is the weight vector for class $C_k$​. It is a column vector of the same dimension as the feature vector $\phi$
+- $\phi$ is the feature vector of an input sample. It is also a column vector
+
+The dot product $\mathbf{w}_k^T \phi$ represents a linear combination of the input features $\phi$, where each feature $\phi_i$ is weighed by its corresponding weight $w_k^i$. We can think of this geometrically as a projection, we're measuring how close the feature space is to the weight space (what we're trying to learn and consequentially predict the feature space from).
+This score is also known as the **logit** score for $K$.
+At this point we're ready to compute the likelihood assuming a 1-of-$K$ encoding 
+$$
+p(\mathbf{T}|\mathbf{\Phi},\mathbf{w}_{1},\ldots,\mathbf{w}_{K})=\prod_{n=1}^{N}\underbrace{\left(\prod_{k=1}^{K}p(C_{k}|\phi_{n})^{t_{nk}}\right)}_{\substack{\text{One term corresponding} \\ \text{to correct class}}}=\prod_{n=1}^{N}\left(\prod_{k=1}^{K}y_{nk}^{t_{nk}}\right)
+$$

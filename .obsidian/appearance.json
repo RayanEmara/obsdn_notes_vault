@@ -5,10 +5,11 @@
     "academic-pdf-export",
     "live_preview_number_headings",
     "UI-tweaks (1)",
-    "academic-pdf-export ",
+    "S - Images Adjustments",
     "custom callouts",
+    "academic-pdf-export ",
     "remove_underline_from_links"
   ],
   "cssTheme": "",
-  "theme": "moonstone"
+  "theme": "obsidian"
 }

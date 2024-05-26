@@ -12,6 +12,6 @@
   "livePreview": false,
   "showUnsupportedFiles": false,
   "newFileLocation": "current",
-  "useMarkdownLinks": true,
+  "useMarkdownLinks": false,
   "promptDelete": false
 }
