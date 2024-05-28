@@ -75,6 +75,9 @@ Auth: Nicklas Vraa
         counter-increment: H4;
         content: counter(H2) "." counter(H3) "." counter(H4) ". \0000a0";
     }
+    h5 { /* Title. */
+        font-size: 12pt !important;
+    }
 
     /* Credits. ---------------------------------------------------- */
 
@@ -123,7 +126,7 @@ Auth: Nicklas Vraa
         font-family: "CMU Serif" !important;
         text-align: center !important;
         margin-bottom: 16px !important;
-        font-size: 8pt !important;
+        font-size: 10pt !important;
     }
 
     /* Tables. ----------------------------------------------------------------------------- */
@@ -263,6 +266,9 @@ Auth: Nicklas Vraa
         counter-increment: H4;
         content: counter(H2) "." counter(H3) "." counter(H4) ". \0000a0";
     }
+    h5 { /* Title. */
+        font-size: 12pt !important;
+    }
 
     /* Credits. ---------------------------------------------------- */
 
@@ -292,11 +298,11 @@ Auth: Nicklas Vraa
     }
     mjx-math {
         font-size: 90% !important;
-        color: #d6d6d6 !important;
+        /* color:   #fff !important; */
     }
     math-block {
         page-break-before: avoid !important;
-        color: #383838 !important;
+        /* color: #d6d6d6 !important; */
     }
 
     /* Figures. ---------------------------------------------------------------------------- */
@@ -311,7 +317,7 @@ Auth: Nicklas Vraa
         font-family: "CMU Serif" !important;
         text-align: center !important;
         margin-bottom: 16px !important;
-        font-size: 8pt !important;
+        font-size: 10pt !important;
     }
 
     /* Tables. ----------------------------------------------------------------------------- */

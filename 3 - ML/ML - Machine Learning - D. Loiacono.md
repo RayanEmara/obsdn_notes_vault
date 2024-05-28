@@ -1,3 +1,4 @@
+f
 
 ###### Held by Prof. D. Loiacono at Politecnico di Milano 2023/2024
 ~~Notes by Rayan Emara~~
@@ -56,6 +57,7 @@ $$
 
 These notes were taken during AY 2023/2024 using older material, your mileage may vary. They're meant to accompany the lectures and in no way aim to substitute a professor yapping away at an iPad 30m away.
 
+These notes are in part based on material by **Salvatore Buono**
  
  For any questions/mistakes you can reach me [here](mailto:notes@rayanemara.com?subject=ML2324%20Notes%20-%20Problem%20problem%20).
 
@@ -514,3 +516,187 @@ At this point we're ready to compute the likelihood assuming a 1-of-$K$ encoding
 $$
 p(\mathbf{T}|\mathbf{\Phi},\mathbf{w}_{1},\ldots,\mathbf{w}_{K})=\prod_{n=1}^{N}\underbrace{\left(\prod_{k=1}^{K}p(C_{k}|\phi_{n})^{t_{nk}}\right)}_{\substack{\text{One term corresponding} \\ \text{to correct class}}}=\prod_{n=1}^{N}\left(\prod_{k=1}^{K}y_{nk}^{t_{nk}}\right)
 $$
+which we can minimize using the cross-entropy error function for which we can then compute the gradient for each weight
+$$
+L(\mathbf{w}_{1},\ldots,\mathbf{w}_{K})=-\ln p(\mathbf{T}|\mathbf{\Phi},\mathbf{w}_{1},\ldots,\mathbf{w}_{K})=-\sum_{n=1}^{N}\left(\sum_{k=1}^{K}t_{nk}\ln g_{nk}\right)
+$$
+$$
+\nabla L_{\mathbf{w}_j}(\mathbf{w}_1,\ldots,\mathbf{w}_K)=\sum_{n=1}^N(y_{nj}-t_{nj})\boldsymbol{\phi}_n
+$$
+
+There's no closed form solution due to the non-linearity, the error function is convex and can be optimized by standard gradient-based optimization techniques.
+
+One might think that a step function would better represent a sample belonging to a single class. The step function, however, is non-differentiable making it unsuitable for gradient-based optimization, instead it would require an alternative optimization technique such as a combinatorial or evolutionary algorithm.
+
+## Model evaluation and selection 
+
+### Bias-variance decomposition
+
+Let $t_i = f(x_i) + \epsilon_i$ be our data points assuming $\mathbb{E}[\varepsilon]=0$ and $Var[\varepsilon]=\sigma^{2}$, we'll denote our model with $\hat{t_i} = y(x_i)$ learned from *dataset* $\mathcal{D}=\{x_i,t_i\}$. Finally we'll take $\mathbb{E}\left[\left(t-y(\mathbf{x})\right)^2\right]$ to be our performance measure. We can decompose the **expected square error** as 
+$$
+\begin{aligned}
+\mathbb{E}[(t-y(\mathbf{x}))^2]& =\mathbb{E}[t^2+y(\mathbf{x})^2-2ty(\mathbf{x})] \\
+&=\mathbb{E}[t^2]+\mathbb{E}[y(\mathbf{x})^2]-\mathbb{E}[2ty(\mathbf{x})] \\
+&=\mathbb{E}[t^2]\pm\mathbb{E}[t]^2+\mathbb{E}[y(\mathbf{x})^2]\pm\mathbb{E}[y(\mathbf{x})]^2-2f(\mathbf{x})\mathbb{E}[y(\mathbf{x})] \\
+&=Var[t]+\mathbb{E}[t]^2+Var[y(\mathbf{x})]+\mathbb{E}[y(\mathbf{x})]^2-2f(\mathbf{x})\mathbb{E}[y(\mathbf{x})] \\
+&=Var[t]+Var[y(\mathbf{x})]+(f(\mathbf{x})-\mathbb{E}[y(\mathbf{x})])^2 \\
+&=\underbrace{Var[t]}_{\sigma^2}+\underbrace{Var[y(\mathbf{x})]}_{\text{Variance}}+\underbrace{\mathbb{E}[f(\mathbf{x})-y(\mathbf{x})]^2}_{\text{Bias}^2}
+\end{aligned}
+$$
+![[Pasted image 20240527210421.png]]
+
+In essence the model **variance** measures the inherent difference between models learned from different datasets. For the more experienced ML student it can be thought of as the over/under of how underfit or overfit your model is. It naturally decreases with simpler models which will require fewer samples to saturate, consequentially it will also decrease given more samples.
+$$
+\mathrm{variance}=\int\mathbb{E}\left[(y(\mathbf{x})-\overline{y}(\mathbf{x}))^{2}\right]p(\mathbf{x})\mathrm{d}\mathbf{x}
+$$
+where 
+$$
+\overline{y}(\mathbf{x})=\mathbb{E}[y(\mathbf{x})]
+$$
+
+the model **bias** on the other hand measures the difference between the ground truth and what you can expect your model to learn, you can sort of assimilate this definition to that of *estimator bias*, where, given the estimator analytical form, we can compute the expected value and compare it to the analytical form of what we're trying to estimate. Think of the mean estimator for the beta distribution and how you have to correct it to get the actual mean.
+Bias happens when one of our learning hypotheses is wrong, it decreases with more complex models, you can think of it as a sort of measure of how correct your assumptions are (trying to fit a linear regressor on data from a quadratic function)
+$$
+\mathrm{bias}^2=\int\left(f(\mathbf{x})-\overline{y}(\mathbf{x})\right)^2p(\mathbf{x})\mathrm{d}\mathbf{x}
+$$
+
+![[Pasted image 20240527212112.png]]
+
+Finally **data noise** $(\sigma^2)$ is the variance of data itself and is *irreducible*.
+
+The professor proposes a case-study on $K$-NN, if we analyse the **MSE** we get
+$$
+\mathbb{E}[(t^*-y(\mathbf{x}^*))^2]=\sigma^2+\frac{\sigma^2}{K}+\left(f(\mathbf{x}^*)-\frac{1}{K}\sum_{i=1}^Kf(\mathbf{x}_i)\right)^2
+$$
+where the data noise $\sigma^2$ is the *irreducible* error we talked about earlier, the model **variance** is $\frac{\sigma^2}{K}$ decreases as $K$ increases and finally the **bias** increases as $K$ increases. This last part, while not as intuitive, is a direct effect of the inherent smoothness of high $K$ value models. This smoothing effect means that the model gives more weight to a larger number of neighbours, effectively averaging their labels. While this reduces the model's variance, it also makes the model less sensitive to the nuances in the data. The larger the $K$, the more the model averages out the local variations, leading to a higher bias because it oversimplifies the true patterns in the data. Another reason for it is what we previously discussed as a possible reason for high bias in our models i.e. a wrong hypothesis, $K$-NN relies on the assumption that nearby points in the feature space are likely to belong to the same class. When $K$ is small, the model focuses on very local structures, capturing the fine details of the data. As $K$ increases, the model starts considering neighbours that are further away, which may belong to different classes. This causes the model to generalize more, thus missing local patterns and increasing bias.
+
+Keep in mind that not all bias is bad, this is where regularization kicks in. We add bias as a way to avoid overfitting our model on unseen data.
+
+![[Pasted image 20240528202857.png]] <figcaption>45 of 45 features correlated to output</figcaption> 
+
+![[Pasted image 20240528202925.png]] <figcaption>2 of 45 features correlated to output</figcaption> 
+
+Generally speaking Lass regularization outperforms Ridge when few features are related to the output.
+
+### Model selection and assessment in practice
+
+Given $\mathcal{D} = \{\mathbf{x}_i , t_i\}$ with $i=1,\dots,N$ we can select the best model based on the loss function $L$ computed on $\mathcal{D}$, this is called the **training error** and is not a good measure of the **prediction error** which is the real world performance of our model on unseen data
+- Regression
+$$
+  L_{true}=\int\int\left(t-y(\mathbf{x})\right)^{2}p(\mathbf{x},t)\mathrm{d}\mathbf{x}\mathrm{d}t
+$$
+- Classification
+$$
+  L_{true}=\int\int I\left(t\neq y(\mathbf{x})\right)p(\mathbf{x},t)\mathrm{d}\mathbf{x}\mathrm{d}t
+$$
+
+Unfortunately we usually don't have a good model for $p(\mathbf{x},t)$ therefore we introduce the concept of a subset of $\mathcal{D}$ reserved for testing our model on unseen data, a **test set** on which we compute the **test error**
+- Regression
+$$
+  L_{test}=\frac{1}{N_{test}}\sum_{n=1}^{N_{test}}(t_{n}-y(\mathbf{x}_{n}))^{2}
+$$
+- Classification
+$$
+  L_{test}=\frac{1}{N_{test}}\sum_{n=1}^{N_{test}}(I(t_{n}\neq y(\mathbf{x}_{n})))
+$$
+
+
+|  ![[Pasted image 20240528203954.png]]   |  ![[Pasted image 20240528204005.png]]   |
+| --- | --- |
+
+<figcaption>The test set error as an estimator for prediction error</figcaption> 
+
+Generally speaking, train-test error analysis can help us identify
+- **High-bias**: where the training and test error are close but higher than expected.
+- **High-variance**
+
+##### Validation set
+
+In order to avoid over-fitting the test set we introduce the validation set, the steps are as follows:
+- Use **training data** to learn model parameters
+- For each model learned use **validation data** to compute the validation error
+- We select the model with the lowest **validation error** and finally use **test data** to estimate the prediction error
+
+This, of course can lead to unreliable model selection whenever the validation data is not plentiful enough, on the other hand we might end up over-fitting the validation set and not choose the best model.
+In order to avoid validation over-fitting we can opt to use one of the following schemes to "shuffle" the validation/training partitions
+
+##### Leave-One-Out cross validation (LOO)
+
+For each sample $\{\mathbf{x}_{i},t_{i}\}\in\mathcal{D}$ we train the model once on $\mathcal{D} \ \setminus \{\mathbf{x}_{i},t_{i}\}\in\mathcal{D}$ and then compute the error of the resulting model on $\{\mathbf{x}_{i},t_{i}\}\in\mathcal{D}$
+The prediction error can then be estimated as the average of all the error computed using a single sample
+$$
+L_{LOO}=\frac{1}{N}\sum_{i=1}^{N}(t_{i}-y_{\mathcal{D}_{i}}(\mathbf{x}_{i}))^{2}
+$$
+where $t_{\mathcal{D}_i}$ is the model trained on $\mathcal{D} \ \setminus \{\mathbf{x}_{i},t_{i}\}\in\mathcal{D}$ 
+
+This scheme provides an **almost unbiased** estimate of the prediction error, it is however extremely expensive especially on larger datasets
+
+##### K-Fold cross validation
+
+We randomly split the training data $\mathcal{D}$ into $k$ folds: $\mathcal{D_1},\dots, \mathcal{D_k}$.
+For each fold $\mathcal{D_i}$ we train model on $\mathcal{D} - \{\mathcal{D_i}\}$ and then compute the error on $\mathcal{D_i}$
+$$
+L_{\mathcal D_i}=\frac{k}{N}\sum_{(\mathbf{x}_n,t_n)\in\mathcal D_i}(t_n-y_{\mathcal D\setminus\mathcal D_i}(\mathbf{x}_n))^2
+$$
+
+finally we estimate the prediction error as the average error computed 
+$$
+L_{k-fold}=\frac{1}{k}\sum_{i=1}^{k}L_{D_{i}}
+$$ 
+$L_{k-fold}$ provides a **slightly biased** estimate of the prediction error but it is much cheaper with low $k$ values (around 10)
+Other metrics can also be used to evaluate models based on their complexity:
+
+- Mallows's 
+  $$C_{p}:~C_{p}=\frac{1}{N}(RSS+2M\hat{\sigma}^{2})$$
+- Akaike Information Criteria: $$AIC=-2lnL+2M$$
+- Bayesian Information Criteria: $$BIC= - 2\ln L+M\ln( N)$$
+- Adjusted R2: $$AdjustedR^2=1-\frac{RSS/(N-M-1)}{TSS/(N-1)}$$
+
+where $M$ is the number of parameters, $N$ is the number of samples, $\hat{\sigma}^2$ is the estimate of noise variance, $RSS$ is the residual sum of squares and finally $TSS$ is the total sum of squares.
+AIC and BIC are generally used when maximizing the log-likelihood while BIC will generally penalize more than AIC model complexity.
+
+#### Dealing with model complexity
+
+A common pitfall is to think that using more features is always better, in fact one might argue that trying to fit
+$$
+y=w_{0}+w_{1}x+w_{2}x^{2}
+$$
+is better than 
+$$
+y=w_{0}+w_{1}x
+$$
+since we can always set $w_2=0$ but this actually increases the probability of over fitting the data and implies larger model variance since we might not have enough data to infer that $w_2 \approx0$. With this in mind we aim to reduce the model variance in one (or more) of three common ways:
+- **Feature selection**: we should design the feature space by selecting the most effective subset of all the possible features
+- **Dimensionality reduction**: The input space can be mapped to lower dimensional space
+- **Regularization**: Shrink parameter values towards $0$
+
+##### Feature selection
+
+One approach for **feature selection** might be to brute force all possible feature combinations but this is obviously overly expensive in terms of compute. We generally can elect to use one of 3 common practices:
+- **Filtering** where features are ranked on some evaluation metrics (e.g. correlation, variance etc..) and select the top $k$, this can be very fast but fails to capture any subset of mutually dependent features (it might make our model worse !)
+- **Embedded**: we select (read turn off) features as we train using Lasso or Decision trees, this naturally captures feature relationships and is guaranteed not to make our model worse but can be very computationally expensive
+- **Wrapper**: a search algorithm is used to find a subset of features that are evaluated by training a model with them and assessing its performance, can be implemented in one of two ways
+- - Forward selection: starting from an empty model and adding features one at a time
+- - Backwards elimination: where we start with all the features and remove them one at a time.
+
+##### Dimensionality reduction
+
+The main difference between feature selection and dimensionality reduction is that the latter uses **all** the features and maps them (through combinations) into a lower-dimensionality space, there are a lot of ways to implement this but we'll focus on two main ones.
+
+**Principal component analysis** aims to find an orthonormal base of input which accounts for most of the variance
+1. We standardize the data in order to allow each feature to contribute equally
+2. Compute the covariance matrix on the standardized data in order to capture how much each pair of features vary together
+$$
+   S=\frac{1}{N-1}\sum_{n=1}^{N}(x_{n}-\bar{x})(x_{n}-\bar{x})^{T}
+$$
+3.  Compute the eigenvalues and eigenvectors for $S$, then the eigenvector with the largest eigenvalue will be the first principal component (**PC**) and so on. 
+   The $k$-th largest eigen value will have a proportion of variance captured:
+$$
+   \frac{\lambda_k}{\sum_i \lambda_i}
+$$
+
+At this point we've built a new **covariance-ordered** orthonormal basis for the feature space where ALL the features are taken into account, allowing us to select the first $k$ PCs to build a reduced dimensional representation of the data.
+One can think of this approach as a way to build a basis of linearly independent vectors that represent a certain space.
+![[Pasted image 20240528220635.png]]
+
+<figcaption>In Fig.1 we find the highest variance and set it as PC, in Fig.2 we then find the second dimension</figcaption> 
