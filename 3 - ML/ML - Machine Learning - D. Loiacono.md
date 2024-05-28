@@ -1,4 +1,4 @@
-f
+
 
 ###### Held by Prof. D. Loiacono at Politecnico di Milano 2023/2024
 ~~Notes by Rayan Emara~~
@@ -28,25 +28,16 @@ $$
 
 - [[#Disclaimers and preface|Disclaimers and preface]]
 - [[#Overview of supervised learning|Overview of supervised learning]]
-	- [[#Overview of supervised learning#What kind of problem are we trying to solve ?|What kind of problem are we trying to solve ?]]
-	- [[#Overview of supervised learning#The elements of a supervised learning algorithim|The elements of a supervised learning algorithim]]
 - [[#A supervised learning taxonomy|A supervised learning taxonomy]]
-	- [[#A supervised learning taxonomy#Parametric vs Non-parametric|Parametric vs Non-parametric]]
-	- [[#A supervised learning taxonomy#Frequentist vs Bayesian|Frequentist vs Bayesian]]
-	- [[#A supervised learning taxonomy#Direct, discriminative or generative|Direct, discriminative or generative]]
 - [[#Linear regression|Linear regression]]
-	- [[#Linear regression#The model|The model]]
-	- [[#Linear regression#Loss function and optimization|Loss function and optimization]]
 - [[#Linear models and basis functions|Linear models and basis functions]]
 - [[#Least squares|Least squares]]
 - [[#Multiple outputs|Multiple outputs]]
 - [[#Regularization|Regularization]]
-	- [[#Regularization#Ridge regression (L2 regularization)|Ridge regression (L2 regularization)]]
-	- [[#Regularization#Lasso regression (L1 regularization)|Lasso regression (L1 regularization)]]
 - [[#Least squares and Maximum likelihood|Least squares and Maximum likelihood]]
 - [[#Bayesian Linear Regression|Bayesian Linear Regression]]
 - [[#Linear classification|Linear classification]]
-	- [[#Linear classification#Least Squares for Classification|Least Squares for Classification]]
+- [[#Model evaluation and selection|Model evaluation and selection]]
 
 
 <div style="page-break-after: always; visibility: hidden">
