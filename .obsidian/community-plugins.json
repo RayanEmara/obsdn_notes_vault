@@ -1,8 +1,7 @@
 [
-  "text-snippets-obsidian",
-  "obsidian-plugin-toc",
+  "obsidian-columns",
   "better-export-pdf",
-  "obsidian-tikzjax",
-  "obsidian-pandoc",
-  "obsidian-contextual-typography"
+  "obsidian-plugin-toc",
+  "text-snippets-obsidian",
+  "obsidian-tikzjax"
 ]

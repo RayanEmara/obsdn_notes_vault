@@ -134,7 +134,7 @@ Auth: Nicklas Vraa
         page-break-inside: avoid !important;
     }
     table {
-        font-family: Times !important;
+        font-family: "CMU Serif" !important;
         font-size: 10pt !important;
         text-align: center !important;
         margin: 10px auto 5px !important;
@@ -142,7 +142,7 @@ Auth: Nicklas Vraa
         border-bottom: 1px solid #292929 !important;
     }
     th { /* Table headers. */
-        color: black !important;
+        /* color: black !important; */
         font-weight: normal !important;
         border: none !important;
         border-bottom: 1px solid darkgray !important;
@@ -325,7 +325,7 @@ Auth: Nicklas Vraa
         page-break-inside: avoid !important;
     }
     table {
-        font-family: Times !important;
+        font-family: "CMU Serif" !important;
         font-size: 10pt !important;
         text-align: center !important;
         margin: 10px auto 5px !important;
@@ -333,7 +333,7 @@ Auth: Nicklas Vraa
         border-bottom: 1px solid #292929 !important;
     }
     th { /* Table headers. */
-        color: black !important;
+        /* color: black !important; */
         font-weight: normal !important;
         border: none !important;
         border-bottom: 1px solid darkgray !important;

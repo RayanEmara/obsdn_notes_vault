@@ -1,5 +1,5 @@
 {
-  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\ndef : >[!definition]\nex : >[!example]\ntm : >[!theorem]\ndu : \\frac{\\partial u}{\\partial x_i}\nh1 : H^1(\\Omega)\nh10 : H^1_0(\\Omega)\nom : \\Omega\nrn : \\mathbb{R}^n\nr : \\mathbb{R}\nal : \\alpha\nfi : \\varphi\nnat : \\mathbb{N}\nhk : H^k(\\Omega)\nl2 : L^2(\\Omega)\nhs : H^s(\\Omega)\nhs0 : H^s_0(\\Omega)\ntrace : \\gamma_0 u\ncinf : C^\\infty\ncas : \\begin{cases} $nl$ $end$  $nl$  \\end{cases}\nalfa : \\alpha\nq : \\quad\nqq : \\qquad\nc0 : C^0\nc1 : C^1\nc2 : C^2\ninom : (\\Omega)\ninomc : (\\overline{\\Omega})\nindom : (\\partial\\Omega)\nst : such that\nhhalf : H^{\\frac{1}{2}}\nbl2 : \\mathbf{L}^2\nbl1 : \\mathbf{L}^1\nbh1 : \\mathbf{H}^1\nbh2 : \\mathbf{H}^2\nbh : \\mathbf{H}^\nbl : \\mathbf{L}^\nn : \\nabla\nd : \\cdot\nb : \\mathbf{$end$}\nc : \\mathcal{$end$}\nrm : \\mathrm{~$end$~}\nfig : $nl$<figcaption>$end$</figcaption> ",
+  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\ndef : >[!definition]\nex : >[!example]\ntm : >[!theorem]\ndu : \\frac{\\partial u}{\\partial x_i}\nh1 : H^1(\\Omega)\nh10 : H^1_0(\\Omega)\nom : \\Omega\nrn : \\mathbb{R}^n\nr : \\mathbb{R}\nal : \\alpha\nfi : \\varphi\nnat : \\mathbb{N}\nhk : H^k(\\Omega)\nl2 : L^2(\\Omega)\nhs : H^s(\\Omega)\nhs0 : H^s_0(\\Omega)\ntrace : \\gamma_0 u\ncinf : C^\\infty\ncas : \\begin{cases} $nl$ $end$  $nl$  \\end{cases}\nalfa : \\alpha\nq : \\quad\nqq : \\qquad\nc0 : C^0\nc1 : C^1\nc2 : C^2\ninom : (\\Omega)\ninomc : (\\overline{\\Omega})\nindom : (\\partial\\Omega)\nst : such that\nhhalf : H^{\\frac{1}{2}}\nbl2 : \\mathbf{L}^2\nbl1 : \\mathbf{L}^1\nbh1 : \\mathbf{H}^1\nbh2 : \\mathbf{H}^2\nbh : \\mathbf{H}^\nbl : \\mathbf{L}^\nn : \\nabla\nd : \\cdot\nb : \\mathbf{$end$}\nc : \\mathcal{$end$}\nrm : \\mathrm{~$end$~}\nfig : $nl$<figcaption>$end$</figcaption> \ncol : >[!col]\nnorm : \\| $end$ \\|\ninprod : \\left( $end$ \\right)",
   "snippets": [
     "snippets : It is an obsidian plugin, that replaces your selected text.",
     "def : >[!definition]",
@@ -43,7 +43,10 @@
     "b : \\mathbf{$end$}",
     "c : \\mathcal{$end$}",
     "rm : \\mathrm{~$end$~}",
-    "fig : $nl$<figcaption>$end$</figcaption> "
+    "fig : $nl$<figcaption>$end$</figcaption> ",
+    "col : >[!col]",
+    "norm : \\| $end$ \\|",
+    "inprod : \\left( $end$ \\right)"
   ],
   "endSymbol": "$end$",
   "newlineSymbol": "$nl$",

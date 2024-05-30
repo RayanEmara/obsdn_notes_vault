@@ -1,31 +1,51 @@
 
-
+# Machine Learning
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+![[1_hjwwddUe8J3gbWfZtLmfHA.jpg]]
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
 ###### Held by Prof. D. Loiacono at Politecnico di Milano 2023/2024
 ~~Notes by Rayan Emara~~
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-$$
-# Table of contents
 
+
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
+
+# Table of contents
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
+$$
 - [[#Disclaimers and preface|Disclaimers and preface]]
 - [[#Overview of supervised learning|Overview of supervised learning]]
 - [[#A supervised learning taxonomy|A supervised learning taxonomy]]
@@ -38,7 +58,6 @@ $$
 - [[#Bayesian Linear Regression|Bayesian Linear Regression]]
 - [[#Linear classification|Linear classification]]
 - [[#Model evaluation and selection|Model evaluation and selection]]
-
 
 <div style="page-break-after: always; visibility: hidden">
 \pagebreak
@@ -592,8 +611,11 @@ $$
 $$
 
 
-|  ![[Pasted image 20240528203954.png]]   |  ![[Pasted image 20240528204005.png]]   |
-| --- | --- |
+>[!col]
+>![[Pasted image 20240528203954.png|250]]
+>
+>![[Pasted image 20240528204005.png|250]]
+>
 
 <figcaption>The test set error as an estimator for prediction error</figcaption> 
 
@@ -646,7 +668,7 @@ Other metrics can also be used to evaluate models based on their complexity:
 where $M$ is the number of parameters, $N$ is the number of samples, $\hat{\sigma}^2$ is the estimate of noise variance, $RSS$ is the residual sum of squares and finally $TSS$ is the total sum of squares.
 AIC and BIC are generally used when maximizing the log-likelihood while BIC will generally penalize more than AIC model complexity.
 
-#### Dealing with model complexity
+### Dealing with model complexity
 
 A common pitfall is to think that using more features is always better, in fact one might argue that trying to fit
 $$
@@ -691,3 +713,212 @@ One can think of this approach as a way to build a basis of linearly independent
 ![[Pasted image 20240528220635.png]]
 
 <figcaption>In Fig.1 we find the highest variance and set it as PC, in Fig.2 we then find the second dimension</figcaption> 
+
+So far our m.o. has been to trade lower variance for higher bias (which, up to some extent, is a good thing), but is it possible to reduce model variance without increasing bias ? 
+
+### Ensemble models
+
+We can achieve lower variance without increasing by learning several models and combining them, the following is a set of methods for implementing ensemble learning
+
+##### Bagging (Bootstrap aggregating)
+
+Assume we have $N$ datasets from which we learn $N$ models $y_1, y_2 , \dots,y_N$, we can define a new aggregate model by taking the sample mean
+$$
+y_{\mathrm{AGG}} = \frac{1}{N}\sum_{i=1}^{N} y_i
+$$
+if the datasets are **independent** the model variance of the aggregate model $y_{\mathrm{AGG}}$ will $\frac{1}{N}$ of the $i$-th model, we can prove this by taking random variable $\bar{x}=\frac{1}{N}\sum_{N}x$ for which the variance will be as follows.
+$$
+Var(\bar{x})=\frac{1}{\mathrm{N}^{2}}\sum_{N}Var(x)=\frac{1}{N}Var(x)
+$$
+
+In practice, we generally don't have $N$ independent datasets, therefore we can implement **bagging** where we generate $N$ datasets applying **random sampling with replacement**, we then train a model on each dataset generated. At this point we can compute the prediction by sampling all the trained models and combining the output using **majority voting** for classification models and **averaging** for regression models.
+This scheme *can* reduce variance even if the sampled datasets are not independent, it's unlikely to help if the model is robust to changes in the training data (high model bias), so it won't help with bad model architectures, it can however help when dealing with cases of overfitting or unstable learners
+
+##### Boosting 
+
+The key idea behind boosting is to **iteratively** train a series of weak learners, with each iteration focusing on the samples that were misclassified by the previous iteration, the main boosting algorithm is called **AdaBoost** 
+
+
+1. Weigh all training samples equally
+2. Train the model the said training set
+3. Compute the model error on the training set
+4. Increase weights on misclassified samples 
+5. Re-compute the errors on weighted training set 
+6. Increase weights again on misclassified cases
+7. Repeat steps 5 and 6
+The final model will be a **weighted prediction of each model**
+
+![[Pasted image 20240529131907.png|500]]
+
+<figcaption>Boosting a classifier</figcaption> 
+
+The main differences from bagging are that boosting trains models **sequentially**, uses random subsets of data with replacement, whereas boosting adjusts the focus on misclassified instances, bagging primarily reduces variance, whereas boosting reduces **both** bias and variance, bagging averages or votes on the predictions, while boosting uses a **weighted combination** of predictions.
+
+In conclusion 
+
+
+| **Scenario** | **Bagging**     |**Boosting**     |
+| --- | --- |  --- |
+|**Reduces variance**  | Yes     | Yes but not as main effect |
+|**Reduces bias** | No | Yes, without overfitting |
+|**Works well with stable models** | No | Might help|
+|**Performs well with noisy data**| Yes | No|
+|**Training type**| Can be parallelized| Inherently sequential|
+|**Helpfulness**| Will generally help but performance boost might be tiny| Can break or make the model|
+
+## Kernel models
+
+We often want to capture **non linear** patterns in data, that's just how real-world phenomena work, these might include non linear regression models where relationship between input and output is non linear or even non linear classification where the classes may not be separable by a linear boundary
+$$
+$$
+![[Pasted image 20240529162341.png|450]]
+
+**Kernel methods** allows to make linear models work in non linear input spaces by mapping data to higher dimensions where it exhibits linear patterns, let's look at a quick example.
+
+
+>[!example]
+>This binary classification problem has no linear separation boundary (in 1D) 
+ >![[image-removebg-preview (1).png|250]]
+ >We can however map the input space to a feature space with two features such that
+ >$$x \to \{x,x^2\}$$
+ >![[image-removebg-preview.png|250]]
+ 
+##### Kernel functions
+The **kernel function** is defined as the scalar product between the feature vectors of two data samples
+$$
+k(x,x')=\phi(\mathbf{x})^T\phi(\mathbf{x}')
+$$
+it is symmetric, they can be interpreted as a similarity measure between $\mathbf{x}$ and $\mathbf{x'}$ . Finally, a couple of further classifications of kernels can be made
+- **Stationary kernels**:
+  $$k(\mathbf{x},\mathbf{x}^{\prime})=k(\mathbf{x}-\mathbf{x}^{\prime})$$
+- **Homogeneous kernels**: also known as radial basis functions
+  $$k(\mathbf{x},\mathbf{x}^{\prime})=k(||\mathbf{x}-\mathbf{x}^{\prime}||)$$
+
+Kernel functions are used to *rework* the representation linear models to replace all the terms featuring $\phi{(\mathbf{x})}$ with terms that only involve $k(\mathbf{x},\cdot)$ in other words we can sample a linear model only on the basis of the similarities between data samples which are computed using the kernel function.
+This scheme is sometimes referred to as **kernel trick**. The following will be applications of the kernel trick.
+
+##### Kernel ridge regression
+
+Recall the ridge regression loss function
+$$
+L(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}\left(\mathbf{w}^{T}\phi(\mathbf{x}_{n})-t_{n}\right)^{2}+\frac{\lambda}{2}\mathbf{w}^{T}\mathbf{w}=\frac{1}{2}(\mathbf{t}-\mathbf{\Phi}\mathbf{w})^{T}(\mathbf{t}-\mathbf{\Phi}\mathbf{w})+\frac{\lambda}{2}\mathbf{w}^{T}\mathbf{w}
+$$
+
+We traditionally try to solve by setting the gradient of $L$ with respect to $\mathbf{w}$ to zero
+$$
+\frac{\partial L(\mathbf{w})}{\partial\mathbf{w}}=\lambda\mathbf{w}-\mathbf{\Phi}^T\left(\mathbf{t}-\mathbf{\Phi}\mathbf{w}\right)=0
+$$
+in this, instead, we perform a substitution on the weights vector
+$$
+\mathbf{w}=\mathbf{\Phi}^T\lambda^{-1}\left(\mathbf{t}-\mathbf{\Phi}\mathbf{w}\right)=\mathbf{\Phi}^T\mathbf{a}
+$$
+$$
+\begin{aligned}
+&\frac{\partial L(\mathbf{w})}{\partial\mathbf{w}}=\lambda\mathbf{w}-\mathbf{\Phi}^T\left(\mathbf{t}-\mathbf{\Phi}\mathbf{w}\right)=0 \\
+&\mathbf{\Phi}^{T}\left(\lambda\mathbf{a}-\left(\mathbf{t}-\mathbf{\Phi}\mathbf{\Phi}^{T}\mathbf{a}\right)\right)=0 \\
+&\mathbf{\Phi}\mathbf{\Phi}^T\mathrm{a}+\lambda\mathrm{a}=\mathrm{t} \\
+&\mathbf{a}=(\mathbf{K}+\lambda\mathbf{I})^{-1}\mathbf{t}
+\end{aligned}
+$$
+
+
+
+>[!col]
+>where $\mathrm{K}=\mathbf{\Phi}\mathbf{\Phi}^T$ is called the **Gram matrix**, it is a matrix where each element is the inner product between feature vectors (recall the definition of $k(\cdot , \cdot)$) which represents the similarities between each pair of samples in the training data
+>
+>$$\left.K=\left[\begin{array}{lll}k(\mathbf{x}_1,\mathbf{x}_1)&\ldots&k(\mathbf{x}_1,\mathbf{x}_N)\\\vdots&\ddots&\vdots\\k(\mathbf{x}_N,\mathbf{x}_1)&\ldots&k(\mathbf{x}_N,\mathbf{x}_N)\end{array}\right.\right]$$
+
+This $\mathbf{w}$-sub representation is called the dual representation.
+We can now sample the model using this dual representation thanks to:
+$$
+y(\mathbf{x})=\mathbf{w}^T\phi(\mathbf{x})=\mathbf{a}^T\boldsymbol{\Phi}\phi(\mathbf{x})=\mathbf{k}(\mathbf{x})^T(K+\lambda\mathbf{I}_N)^{-1}\mathbf{t}
+$$
+where $\mathbf{w}=\mathbf{\Phi}^{T}\mathbf{a}$ , $\mathbf{a}=(\mathbf{K}+\lambda\mathbf{I})^{-1}\mathbf{t}$ and finally $k_{n}(\mathbf{x})=k(\mathbf{x}_{n},\mathbf{x}) \forall\mathbf{x}_{n}\in D$.
+
+The benefits of this (dual) representation can be:
+- That it is computationally convenient when the number of features grows quickly since we're inverting $(\mathbf{K}+\lambda\mathbf{I})$ which is an $N\times N$ matrix, therefore grows with the number of samples rather than the features.
+- It does not require us to compute $\mathbf{\phi}$, which can be difficult to do for complex data types such as text, graphs, sets etc.... It's generally much cheaper to compute the similarity between samples than $\mathbf{\phi}$.
+
+>[!theorem] Mercer's theorem
+>Any continuous, symmetric, positive semi-definite kernel function $k(x, y)$ can be expressed as a dot product in a high-dimensional space.
+
+>[!theorem] Theorem on N-S conditions for kernel functions
+>One thing to consider is that for a function $k(x,x')$ to be a kernel it (necessary and sufficient) the gram matrix $K$ must be positive semi-definite for all possible choices of the set $x_n$.
+>This means that for any non zero real vector $\mathbf{x}$ the following holds true
+>$$
+>\mathbf{x}^{T}K\mathbf{x}>0
+>$$
+
+>[!col]
+>![[Pasted image 20240529232146.png]]
+>![[Pasted image 20240529232201.png]]
+>
+>![[Pasted image 20240529232214.png]]
+>![[Pasted image 20240529232235.png]]
+>
+>![[Pasted image 20240529233330.png]]
+>![[Pasted image 20240529233346.png]]
+
+
+<figcaption>Some examples of quadratic and trigonometric kernel functions</figcaption> 
+
+##### Kernel design
+
+Generally speaking it is preferred to design **from existing** valid kernel functions by applying a set of rules that are guaranteed to result in a new **valid** kernel, like the following
+1. $k( \mathbf{x} , \mathbf{x} ^{\prime }) = ck_{1}( \mathbf{x} , \mathbf{x} ^{\prime })$,where $c>0$ is a constant
+2. $k( \mathbf{x} , \mathbf{x} ^{\prime }) = f( \mathbf{x} ) k_{1}( \mathbf{x} , \mathbf{x} ^{\prime }) f( \mathbf{x} ^{\prime })$,where $f(\cdot)$ is any function
+3. $k( \mathbf{x} , \mathbf{x} ^{\prime }) = q( k_{1}( \mathbf{x} , \mathbf{x} ^{\prime }) )$, where q(·) is a polynomial with non-negative coefficients
+4. $k( \mathbf{x} , \mathbf{x} ^{\prime }) = exp( k_{1}( \mathbf{x} , \mathbf{x} ^{\prime }) )$
+5. $k(\mathbf{x},\mathbf{x}^{\prime})=k_{1}(\mathbf{x},\mathbf{x}^{\prime})+k_{2}(\mathbf{x},\mathbf{x}^{\prime})$
+6. $k(\mathbf{x},\mathbf{x}^{\prime})=k_{1}(\mathbf{x},\mathbf{x}^{\prime})k_{2}(\mathbf{x},\mathbf{x}^{\prime})$
+7. $k(\mathbf{x},\mathbf{x}^{\prime})=k_{3}(\phi(\mathbf{x}),\phi(\mathbf{x}^{\prime})),$ where $\phi(\mathbf{x})$ maps $\mathbf{x}$ to $\mathbb{R}^{M}$ and $k_{3}(\cdot;\cdot)$ is a valid kernel in $\mathbb{R}^{M}$
+8. $k(\mathbf{x},\mathbf{x}^{\prime})=\mathbf{x}^{T}\mathbf{A} \mathbf{x}^{\prime}$ where $\mathbf{A}$ is a symmetric semidefinite matrix
+9. $k(\mathbf{x},\mathbf{x}^{\prime})=k_{a}(\mathbf{x}_{a},\mathbf{x}_{a}^{\prime})+k_{b}(\mathbf{x}_{b},\mathbf{x}_{b}^{\prime})$ (Where $\mathbf{x}=\{\mathbf{x}_{a}\}\bigcup\{\mathbf{x}_{b}\}$ are two subsets no necessarily
+disjoints of variables and $k_a,k_b$ are valid kernels)
+10. $k(\mathbf{x},\mathbf{x}^{\prime})=k_{a}(\mathbf{x}_{a},\mathbf{x}_{a}^{\prime})k_{b}(\mathbf{x}_{b},\mathbf{x}_{b}^{\prime})$ (Where $\mathbf{x}=\{\mathbf{x}_{a}\}\bigcup\{\mathbf{x}_{b}\}$ are two subsets no necessarily
+disjoints of variables and $k_a,k_b$ are valid kernels)
+
+##### Gaussian process
+
+A **Gaussian process** is defined as a distribution probability over a function $y(x)$ such that the set of values $y(x_)$ for an arbitrary $\{x_i\}$ jointly have a gaussian distribution, meaning that, given any input the target will be a gaussian distribution and not a deterministic point. 
+Gaussian processes are kernel methods that can be applied to solve regression problems, they can be written as a special case of Linear regression over an infinite number of features 
+We will now apply this concept to rework a linear regression model.
+
+Let's start from the same assumptions we used in [[#Bayesian Linear Regression|Bayesian linear regression]] 
+$$
+y(\mathbf{x},\mathbf{w})=\mathbf{w}^{T}\phi(\mathbf{x})
+$$
+$$
+p(\mathbf{w})=\mathcal{N}\left(\mathbf{w}|0,\tau^{2}\mathbf{I}\right)
+$$
+
+we now compute the prior distribution of the outputs of the regression function:
+$$
+\mathrm{y}=\Phi\mathrm{w} \Longrightarrow p(\mathbf{y})=\mathcal{N}\left(\mathbf{y}|\boldsymbol{\mu},\mathbf{S}\right)
+$$
+where
+$$
+\mu=\mathbb{E}[\mathrm{y}]=\Phi\mathbb{E}[\mathrm{w}]=0
+$$
+$$
+\mathbf{S}=\mathrm{cov}[\mathbf{y}]=\mathbb{E}[\mathbf{y}\mathbf{y}^T]=\mathbf{\Phi}\mathbb{E}[\mathrm{w}\mathbf{w}^T]\mathbf{\Phi}^T=\tau^2\mathbf{\Phi}\mathbf{\Phi}^T=\mathbf{K}
+$$
+
+where $\mathbf{K}$ is the Gram matrix 
+$$
+K_{nm}=k(\mathbf{x}_{n},\mathbf{x}_{m})=\tau^{2}\phi(\mathbf{x}_{n})^{T}\phi(\mathbf{x}_{m})
+$$
+![[Pasted image 20240530155828.png]]
+
+<figcaption>The two families of kernels typically used with Gaussian processes</figcaption> 
+
+For more on this checkout the exercise sessions.
+
+##### A summary on kernel functions
+
+Kernel functions allow us to transform the input data into a higher dimensional space without having to compute the coordinates of the data in that space explicitly. This follows from the idea that a higher dimensional space might allow for linear decision boundaries whereas lower dimensional feature spaces might not allow that.
+One of the biggest advantages of kernel functions is that they allow us to compute the inner product in the high-dimensional feature space directly from the original input space, avoiding the computational cost of explicitly performing the transformation $\phi$. This is known as the "kernel trick."
+
+## Support vector machines
+
+The main computational burden in kernel methods lies in the need to calculate the kernel matrix (also known as the Gram matrix). For a training set with nnn samples, this matrix is n×nn \times nn×n in size, where each entry K(xi,xj)K(x_i, x_j)K(xi​,xj​) represents the kernel function evaluated on a pair of samples xix_ixi​ and xjx_jxj​.
