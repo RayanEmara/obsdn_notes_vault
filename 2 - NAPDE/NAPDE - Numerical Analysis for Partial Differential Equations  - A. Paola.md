@@ -35,7 +35,8 @@ $$
 \pagebreak
 </div>
 
-# Table of contents
+## Table of contents
+
 $$
 $$
 $$
@@ -49,7 +50,7 @@ $$
 $$
 $$
 
-- [[#Disclaimers and preface|Disclaimers and preface]]
+
 
 
 <div style="page-break-after: always; visibility: hidden">
@@ -71,7 +72,6 @@ All rights go to their respective owners.
 \pagebreak
 </div>
 
-# Part 1
 ## Boundary-value problems
 
 In general, these types of problems are written as: ”Some operator applied to some function u set to some value”.
@@ -454,9 +454,9 @@ recall that
 >    \draw[thick] (v2) -- (v3);
 >    
 >    % Draw the points
->    \fill[black] (v1) circle (4pt);
->    \fill[black] (v2) circle (4pt);
->    \fill[black] (v3) circle (4pt);
+>    \fill[black] (v1) circle (2pt);
+>    \fill[black] (v2) circle (2pt);
+>    \fill[black] (v3) circle (2pt);
 >    
 >    % Add axis names
 >    \node[below] at (2.5,-0.1) {\( \xi \)};
@@ -468,3 +468,155 @@ recall that
 >```tikz
 
 The idea is to compute the integrals for the stiffness matrix once on the reference element and map them to each triangle afterwards, saving a lot of compute.
+We'll call the reference triangle $\hat{K}$.
+Let's now define the space of piece-wise linear polynomials (hat/basis/shape functions)$\mathcal{P}^1(K)$, we can write any function in $\mathcal{P}^1(K)$ in the form of 
+$$
+C_1 + C_2\xi + C_3 \eta
+$$
+
+in order to force the hat functions $\hat{\phi_i}$ to be equal to 1 only on their respective node $\hat{V_i}$ we'll impose
+$$
+\begin{cases} 
+ \hat{\phi}_1(\xi,\eta) = 1 - \xi . \eta \\    
+ \hat{\phi}_2(\xi,\eta) = \xi \\
+ \hat{\phi}_3(\xi,\eta) = \eta \\
+\end{cases}
+$$
+
+<figcaption>vertices are enumerated in anti clock-wise order for stability reasons</figcaption> 
+
+At this point we can map these hat functions into our mesh (triangulation) for any triangle $K$, in order to do this we can employ a linear transformation that can be represented by a matrix 
+$$
+\begin{aligned}F_{k}:\hat{K}&\to K\\\begin{bmatrix}\xi\\\eta\end{bmatrix}&\to\begin{bmatrix}x\\y\end{bmatrix}=B_K\begin{bmatrix}\xi\\\eta\end{bmatrix}+b_K\end{aligned}
+$$
+
+where the $B_K$ and $b_K$ all depend on the physical vertices, in this specific example we have
+- 
+  $$
+B_k \in \mathbb{R}^{2\times2} \qquad B_k \begin{bmatrix} {x_2 - x_1}&{x_3-x_1} \\ {y_2 - y_1}&{y_3-y_1} \end{bmatrix}
+$$
+- 
+  $$
+ b_k \in \mathbb{R}^2 \qquad b_k = \begin{bmatrix}{x_1}\\{y_1} \end{bmatrix} 
+ $$
+
+We'll have to invert this map later on, this is the reason why this construction won't work easily for quadrilaterals as they'd need a bilinear map in place of a linear one and those are harder to invert. We then compute the derivatives of the hat functions as follows.
+
+$$
+\begin{aligned}&\widehat{\phi}_{1}\left(\xi,\eta\right)=1-\xi-\eta&&\widehat{\nabla}\widehat{\phi}_{1}=\left(-1,1\right)\\&\widehat{\phi}_{2}\left(\xi,\eta\right)=\xi&&\widehat{\nabla}\widehat{\phi}_{2}=\left(1,0\right)\\&\widehat{\phi}_{3}\left(\xi,\eta\right)=\eta&&\widehat{\nabla}\widehat{\phi}_{3}=\left(0,1\right)\end{aligned}
+$$
+
+it can be shown that you can write a map from the reference gradients to the physical gradients as follows
+
+$$
+\begin{aligned}&\nabla\phi_{i}-B_{K}^{-T}\widehat{\nabla\phi}_{i}\\&\widehat{\nabla\phi}_{i}=B_{K}^{T}\nabla\phi_{i}\end{aligned}
+$$
+
+>[!theorem] 
+>If $A$ is **spd** then 
+>$$
+> K_2(A)= \frac{\lambda_{\mathrm{max}(A)}}{\lambda_{\mathrm{min}(A)}}
+>$$
+>
+>conversely if the bilinear form $a(\cdot, \cdot)$ is symmetric and coercive then $A$ is spd.
+>>[!theorem] Proof
+>>To be written down !
+
+>[!definition] $A$-norm
+>Let $A$  be spd, we define the $A$-norm of $\mathbf{v}$ as
+>$$
+>\begin{aligned}
+\|\mathbf{v}\|_{A}& :=(A\mathbf{v},\mathbf{v})^{1/2} \\
+&=\left(\sum_{i,j}a_{ij} v_i v_j\right)^{1/2}
+\end{aligned}
+>$$
+>
+
+We can prove that $\exists C_1 , C_2 >0 \colon \ \forall \lambda_h$ eigenvalue of $A$:
+$$
+\alpha C_1 h^d\leq\lambda_h\leq M C_2 h^{d-2}\quad d=1,2,3
+$$
+which we can fold to get
+$$
+\frac{\lambda_{\max}(A)}{\lambda_{\min}(A)}\leq\frac{MC_2}{\alpha C_1}h^{-2}
+$$
+in other words the estimate for the conditioning becomes
+$$
+K_{2}(A)=\mathcal{O}(h^{-2})
+$$
+which means that if we use the conjugate gradient method to solve $A \mathbf{u} = \mathbf{f}$ then
+$$
+\|\mathbf{u}^{(k)}-\mathbf{u}\|_A\leq2\left(\frac{\sqrt{K_2(A)}-1}{\sqrt{K_2(A)}+1}\right)^k\|\mathbf{u}^{(0)}-\mathbf{u}\|_A
+$$
+
+### Implementation of the Finite Element Method 
+
+Consider the following homogeneous **Poisson** problem in $d=2$ and $r=1$ (linear two-dimensional case).
+$$
+\begin{cases} 
+ -\Delta u &= f && \mathrm{~in~} \Omega \\
+ u &=0 && \mathrm{~in~} \Gamma_D   \equiv \partial \Omega
+  \end{cases}
+$$
+
+The weak formulation for this problem becomes finding $u \in V = H^1_0$ such that
+$$
+\int_\Omega\nabla u\cdot\nabla\nu=\int_\Omega f\nu\quad\forall\nu\in V
+$$
+
+alternatively noted as 
+$$
+a(u,v) = F(v) \quad \forall v \in V
+$$
+
+on domain $\Omega$ we define the infrastructure we need to implement **fem** which is:
+
+
+>[!col]
+>- Triangulation of elements $K$ with vertices $v_j$
+>- A $N_h$ dimensional space $V_h$ of continuous linear functions within each $K$
+>- On each vertex a shape/basis/hat function 
+>  $$
+>  \phi_i \in V_h , \quad \phi_i(v_j) = \delta_{i,j} \quad \forall \ 1 \leq i, \ j \leq N_h
+>  $$
+>
+>![[Pasted image 20240605143504.png]]
+
+We can then write our solution $u_h$ as a linear combination of the basis $V_h$
+$$
+u_h(x)=\sum_{j=1}^{N_h}u_j\phi_j(x)
+$$
+
+we can now write the problem as 
+$$
+\sum_{j=1}^{N_h}u_j\int_\Omega\nabla\phi_j\cdot\nabla\phi_i=\int_\Omega f\phi_i\quad\forall i=1,\ldots,N_h
+$$
+which is also known as the **finite element formulation**.
+The above can also be rewritten in an **algebraic form** recalling what we said about the stiffness matrix
+$$
+A \mathbf{u}= \mathbf{F}
+$$
+where
+$$
+A_{i,j}=a(\phi_{j},\phi_{i})=\int_{\Omega}\nabla\phi_{j}\cdot\nabla\phi_{i}\quad\forall i,j=1,\ldots,N_{h}
+$$
+$$
+F_{i}=F(\phi_{i})=\int_{\Omega}f\phi_{i}\quad\forall i=1,\ldots,N_{h}
+$$
+$$
+u = \begin{bmatrix} 
+   {u_1}\\{u_2}\\ {\vdots} \\ {u_{N_h}}
+  \end{bmatrix}
+$$
+
+But remember, we're not *actually* going to compute this system on our physical system of coordinates. The only thing we really want to compute is the mapping from the reference system into our physical one.
+
+![[Pasted image 20240605151229.png|400]]
+as previously mentioned the affine mapping from $(\xi,\eta)$ onto $(x,y)$ is 
+
+$$
+\begin{gathered}\begin{pmatrix}x\\y\end{pmatrix}=B_k\begin{pmatrix}\xi\\\eta\end{pmatrix}+\boldsymbol{b}_K\\B_K=\begin{pmatrix}x_2-x_1&x_3-x_1\\y_2-y_1&y_3-y_1\end{pmatrix}\quad b_K=\begin{pmatrix}x_1\\y_1\end{pmatrix}\end{gathered}
+$$
+
+## Discontinuous Galerkin Methods for dffusion problems
+

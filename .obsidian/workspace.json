@@ -6,40 +6,40 @@
       {
         "id": "9f345a64eb820d32",
         "type": "tabs",
-        "dimension": 50.120192307692314,
+        "dimension": 50,
         "children": [
           {
-            "id": "4f0e72680d40d814",
+            "id": "10f48d3a240cbc20",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "6974d5817f8b31e0"
+            "group": "6c4100935d2252b8"
           }
         ]
       },
       {
-        "id": "c99bd591243b7fb1",
+        "id": "3c428b771cc0c9aa",
         "type": "tabs",
-        "dimension": 49.87980769230769,
+        "dimension": 50,
         "children": [
           {
-            "id": "d5bd0ee278e2609c",
+            "id": "f79a3637b06567eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "mode": "preview",
                 "source": true
               }
             },
-            "group": "6974d5817f8b31e0"
+            "group": "6c4100935d2252b8"
           }
         ]
       }
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md"
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md"
               }
             }
           }
@@ -169,23 +169,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4f0e72680d40d814",
+  "active": "10f48d3a240cbc20",
   "lastOpenFiles": [
-    "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
+    "2 - NAPDE/output.pdf",
+    "2 - NAPDE/NAPDE - Solutions to past exams.md",
+    "2 - NAPDE/NAPDE - Exam preparation.md",
+    "2 - NAPDE/Untitled.md",
+    "2 - NAPDE/images/Pasted image 20240609154914.png",
+    "2 - NAPDE/images/Pasted image 20240609142152.png",
     "2 - NAPDE/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.md",
+    "exports/NAPDE - Exam preparation.pdf",
+    "2 - NAPDE/images/Pasted image 20240608165518.png",
+    "2 - NAPDE/images/Pasted image 20240608165508.png",
+    "Untitled.canvas",
+    "2024-06-08.md",
+    "2 - NAPDE/images/Pasted image 20240607193145.png",
+    "exports/NAPDE - Solutions to past exams.pdf",
+    "2 - NAPDE/images/Pasted image 20240605151229.png",
+    "2 - NAPDE/images/Pasted image 20240605151218.png",
+    "2 - NAPDE/images/Pasted image 20240605143504.png",
+    "2 - NAPDE/images/Pasted image 20240604175911.png",
+    "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
     "2 - NAPDE/images/Pasted_image_20240603171049-removebg-preview.png",
-    "2 - NAPDE/images/Pasted image 20240603171049.png",
-    "2 - NAPDE/images/Pasted image 20240603171035.png",
-    "2 - NAPDE/images/Pasted image 20240603171025.png",
     "3 - ML/ML - Machine Learning - D. Loiacono.md",
-    "2 - NAPDE/images/Pasted image 20240603160023.png",
-    "2 - NAPDE/images/Pasted image 20240603144121.png",
-    "2 - NAPDE/images/Pasted image 20240603144049.png",
-    "2 - NAPDE/images/image-removebg-preview (3).png",
-    "2 - NAPDE/images/Pasted image 20240530173124.png",
     "2 - NAPDE/images",
     "exports/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.pdf",
-    "3 - ML/images/Pasted image 20240530155828.png",
     "3 - ML/Untitled.md",
     "3 - ML/Untitled 4.md",
     "3 - ML/Untitled 3.md",
@@ -198,15 +206,12 @@
     "exports/example.pdf",
     "exports/Untitled 1.pdf",
     "3 - ML/Untitled 1.html",
-    "3 - ML/Untitled 1.tex",
-    "3 - ML/Untitled 1.pdf",
     "2 - NAPDE/Project/Hugo's model.md",
     "2 - NAPDE/Project/2024.05.18.md",
     "Untitled.md",
     "2 - NAPDE/Project/R loss.md",
     "2 - NAPDE/Project/Project rewrite.md",
     "Untitled 1.canvas",
-    "Untitled.canvas",
     "2024-05-14.md",
     "0 - GENERAL/Error propagation for logarithims.md"
   ]
