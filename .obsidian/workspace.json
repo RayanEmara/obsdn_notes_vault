@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
+                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
+                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
                 "mode": "preview",
                 "source": true
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
+                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
+                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2 - NAPDE/NAPDE - Exam preparation.md"
+                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md"
               }
             }
           }
@@ -171,9 +171,11 @@
   },
   "active": "10f48d3a240cbc20",
   "lastOpenFiles": [
+    "3 - ML/images/Pasted image 20240616161041.png",
+    "3 - ML/images/Pasted image 20240616151603.png",
+    "2 - NAPDE/NAPDE - Exam preparation.md",
     "2 - NAPDE/output.pdf",
     "2 - NAPDE/NAPDE - Solutions to past exams.md",
-    "2 - NAPDE/NAPDE - Exam preparation.md",
     "2 - NAPDE/Untitled.md",
     "2 - NAPDE/images/Pasted image 20240609154914.png",
     "2 - NAPDE/images/Pasted image 20240609142152.png",
@@ -190,7 +192,6 @@
     "2 - NAPDE/images/Pasted image 20240605143504.png",
     "2 - NAPDE/images/Pasted image 20240604175911.png",
     "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "2 - NAPDE/images/Pasted_image_20240603171049-removebg-preview.png",
     "3 - ML/ML - Machine Learning - D. Loiacono.md",
     "2 - NAPDE/images",
     "exports/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.pdf",
@@ -205,7 +206,6 @@
     "example.md",
     "exports/example.pdf",
     "exports/Untitled 1.pdf",
-    "3 - ML/Untitled 1.html",
     "2 - NAPDE/Project/Hugo's model.md",
     "2 - NAPDE/Project/2024.05.18.md",
     "Untitled.md",

@@ -921,4 +921,63 @@ One of the biggest advantages of kernel functions is that they allow us to compu
 
 ## Support vector machines
 
-The main computational burden in kernel methods lies in the need to calculate the kernel matrix (also known as the Gram matrix). For a training set with nnn samples, this matrix is n×nn \times nn×n in size, where each entry K(xi,xj)K(x_i, x_j)K(xi​,xj​) represents the kernel function evaluated on a pair of samples xix_ixi​ and xjx_jxj​.
+The main computational burden in kernel methods lies in the need to calculate the kernel matrix (also known as the Gram matrix). For a training set with $N$ samples, this matrix is $N\times N$ in size, where each entry $K(x_i,x_j)$ represents the kernel function evaluated on a pair of samples $x_i$​ and $x_j$​.
+
+Let's say we're looking for a decision boundary, in the context of **support vector machines** we aim to maximize the margin, which is the minimum distance from one sample to the decision boundary.
+
+![[Pasted image 20240616151603.png]]
+
+<figcaption>Visual representation of the margin</figcaption> 
+
+$$margin=\min_n\frac{t_n(\mathbf{w}^T\phi(\mathbf{x}_n)+b)}{||\mathbf{w}||}$$
+
+Thus our problem becomes an *optimization* problem where we're trying to maximize this margin.
+$$
+\arg\max\limits_{\mathbf{w},b}\left\{\min\limits_{n}\left[\frac{t_n(\mathbf{w}^T\phi(\mathbf{x}_n)+b)}{||\mathbf{w}||}\right]\right\}
+$$
+
+This is a really complex problem to solve directly, therefore we reconstruct it as 
+$$
+\operatorname*{min}\frac{1}{2}\|\mathbf{w}\|_{2}^{2}$$
+
+$$\mathrm{Subject~to~}t_{n}\left(\mathbf{w}^{T}\phi\left(\mathbf{x}_{n}\right)+b\right)\geq1,\forall n
+$$
+
+where we obtained the objective function by bounding the numerator in the previous optimization problem to be at least 1, there minimizing the inverse of a norm is equivalent to minimizing the norm itself. Keep in mind this will only find a solution with minimum distance equal to 1!
+
+We can derive the dual problem using Lagrange multipliers:
+$$\mathcal{L}(\mathbf{w},b,\alpha)=\frac{1}{2}\|\mathbf{w}\|^2-\sum_{i=1}^n\alpha_i\left(t_i\left(\mathbf{w}^T\phi(\mathbf{x}_i)+b\right)-1\right)$$
+We need to maximize $\mathcal{L}$ with respect to $\alpha$ and minimize it with respect to $\mathbf{w}$ and $b$
+We can compute the gradient w.r.t. $\mathbf{w}$ and $b$ and derive dual representation
+$$\begin{aligned}&\frac{\partial}{\partial\mathbf{w}}\mathcal{L}=0\quad\Rightarrow\quad\mathbf{w}=\sum_{i=1}^n\alpha_it_i\phi(\mathbf{x}_i)\\&\frac{\partial}{\partial b}\mathcal{L}=0\quad\Rightarrow\quad\sum_{i=1}^n\alpha_it_i=0\end{aligned}$$
+
+$$
+\mathrm{Maximize}\quad\tilde{\mathcal{L}}(\alpha)=\sum_{n=1}^{N}\alpha_{n}-\frac{1}{2}\sum_{n=1}^{N}\sum_{m=1}^{N}\alpha_{n}\alpha_{m}t_{n}t_{m}k(\mathbf{x}_{n},\mathbf{x}_{m})$$
+$$\mathrm{Subject~to}\quad\alpha_{n}\geq0\mathrm{~and~}\sum_{n=1}^{N}\alpha_{n}t_{n}=0,\quad\mathrm{~for~}n=1,\ldots,N
+$$
+
+the resulting discriminant function is 
+$$
+y(\mathbf{x})=\sum_{n=1}^N\alpha_nt_nk(\mathbf{x},\mathbf{x}_n)+b
+$$
+
+![[Pasted image 20240616161041.png]]
+
+<figcaption>An example of SVM discriminant function using Gaussian kernel function</figcaption> 
+
+### Non-separable problems
+
+So far we've looked at linearly separable problems, to be perfectly precise we even asked for a linearly separable with minimum distance of 1 from the separation boundary. What happens if we have noisy data, we allow for an error $\xi_i$
+
+$$
+\begin{aligned}
+\mathrm{Minimize~~~}& \frac{1}{2}\left\|\mathbf{w}\right\|_{2}^{2}+C\sum_{n=1}^{N}\xi_{n} \\
+\mathrm{Subject~to~~~} & t_{n}(\mathbf{w}^{T}\phi(\mathbf{x}_{n})+b)\geq1-\xi_{n}, \\
+&\xi_{n}\geq0,
+\end{aligned}
+$$
+
+where $\xi_n$ are **slack variables** and represent penalties to **margin violation**, and $C$ is a parameter allowing for fine tuning of the trade off between error and margin
+- Allows for fine tuning of the bias-variance trade off
+- **Tuning** is required to find the optimal value for $C$ as it depends on how noisy the data is
+
