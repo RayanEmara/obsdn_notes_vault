@@ -198,9 +198,6 @@ Auth: Nicklas Vraa
 
 .markdown-preview-view {
     /* Document-wide. ---------------------------------------------------------------------- */
-    @page { /* Page structure. */
-        margin: 1.5cm !important;
-    }
     a:link, a:visited, a { /* Links. */
         color: rgb(43, 115, 154) !important;
         text-decoration: none !important;

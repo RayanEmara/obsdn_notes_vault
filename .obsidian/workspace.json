@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "mode": "preview",
                 "source": true
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md",
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3 - ML/ML - Machine Learning - D. Loiacono.md"
+                "file": "2 - NAPDE/NAPDE - Exam preparation.md"
               }
             }
           }
@@ -171,6 +171,7 @@
   },
   "active": "10f48d3a240cbc20",
   "lastOpenFiles": [
+    "3 - ML/ML - Machine Learning - D. Loiacono.md",
     "3 - ML/images/Pasted image 20240616161041.png",
     "3 - ML/images/Pasted image 20240616151603.png",
     "2 - NAPDE/NAPDE - Exam preparation.md",
@@ -190,9 +191,7 @@
     "2 - NAPDE/images/Pasted image 20240605151229.png",
     "2 - NAPDE/images/Pasted image 20240605151218.png",
     "2 - NAPDE/images/Pasted image 20240605143504.png",
-    "2 - NAPDE/images/Pasted image 20240604175911.png",
     "1 - APDE/APDE - Advanced Partial Differential Equations - F. Gazzola.md",
-    "3 - ML/ML - Machine Learning - D. Loiacono.md",
     "2 - NAPDE/images",
     "exports/NAPDE - Numerical Analysis for Partial Differential Equations  - A. Paola.pdf",
     "3 - ML/Untitled.md",
