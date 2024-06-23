@@ -9,8 +9,6 @@ $$\begin{cases}-\Delta u=f&\text{in }\Omega\\\quad u=0&\text{on }\partial\Omega\
 we consider the approximation as done on triangles
 $K$ like 
 
-![[Pasted image 20240609142152.png]]
-
 ![[Pasted image 20240608165518.png|250]]
 
 
